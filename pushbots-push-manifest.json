@@ -1,7 +1,1 @@
-{
-  "name": "SITE_NAME",
-  "short_name": "SHORT_NAME",
-  "start_url": "/",
-  "display": "standalone",
-  "gcm_sender_id": "519659307484"
-}
+<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>{"name":"SITE_NAME","short_name":"SHORT_NAME","start_url":"/","display":"standalone","gcm_sender_id":"519659307484"}
