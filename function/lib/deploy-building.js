@@ -1,6 +1,6 @@
-const fetch = require('node-fetch');
 
 exports.handler = async function (event, context, callback) {
+    const fetch = require('node-fetch');
     // Get newPost.json from your site.
     var newPostOnlineSite = await fetch('https://www.inevitable.tech/newPost.json')
     newPostOnlineSite = await newPostOnlineSite.json();
