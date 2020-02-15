@@ -5,8 +5,8 @@
   "main": "lib/deploy-building.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "netlify-lambda install",
-    "commit": "npx git-cz"
+    "commit": "npx git-cz",
+    "build": "npm i"
   },
   "repository": {
     "type": "git",
