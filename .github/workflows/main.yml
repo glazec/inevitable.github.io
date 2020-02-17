@@ -1,2 +1,20 @@
-- name: Push web notification
-  uses: glazec/web-push-notification@v1.1
+name: web push notification
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Push web notification
+      id: notification
+      uses: glazec/web-push-notification@v1.1
+      env:
+        webpushrKey: ${{ secrets.webpushrKey }}
+        webpushrAuthToken: ${{ secrets.webpushrAuthToken }}
+        newPostRepo: ${{ secrets.newPostRepo }}
+        newPostOnlineSite: ${{ secrets.newPostOnlineSite }}
+        buildHook: ${{ secrets.buildHook }}
