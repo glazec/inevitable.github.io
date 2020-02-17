@@ -1,3 +1,0 @@
-[build]
-functions = "lib"
-command = "node i"
