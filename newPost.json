@@ -1,1 +1,1 @@
-{"title":"Hexo使用Web Push Notification 浏览器通知推送","id":"posts/98ae9e55/","date_published":"02/25/2020","summary":"Web Push Notification 是怎么工作的？个人博客为什么要使用它？如何使用它？","url":"https://www.inevitable.tech/posts/98ae9e55/","tags":["hexo","push notifications","服务器推送技术"],"categories":["开发"]}
+{"title":"自动推送新博客的泛用实现方案","id":"posts/a1b574bb/","date_published":"02/27/2020","summary":"这是一个适合大多数人的解决方案。它可以帮助你自动推送新博客给你的读者。有效提高网站的访问量。","url":"https://www.inevitable.tech/posts/a1b574bb/","tags":["hexo","push notifications","自动化","CI"],"categories":["开发"]}
