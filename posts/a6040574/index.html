@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon256.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon256.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="59ThkXhI_2jGcF6EsQmUQacPyHPoqWEElgS18VR7eM8">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.loli.net/css?family=EB Garamond:300,300italic,400,400italic,700,700italic|Long Cang:300,300italic,400,400italic,700,700italic|Noto Serif SC:300,300italic,400,400italic,700,700italic|Source Code Pro:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.inevitable.tech","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="网络是这个时代最神奇的东西，是它将人类联系在了一起。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安全学习笔记一（网络）">
+<meta property="og:url" content="https://www.inevitable.tech/posts/a6040574/index.html">
+<meta property="og:site_name" content="Inevitable">
+<meta property="og:description" content="网络是这个时代最神奇的东西，是它将人类联系在了一起。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.inevitable.tech/static/images/network1.jpg">
+<meta property="og:image" content="https://www.inevitable.tech/static/images/network-gift.jpg">
+<meta property="article:published_time" content="2017-11-09T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-01-02T06:19:03.063Z">
+<meta property="article:author" content="琉璃">
+<meta property="article:tag" content="安全">
+<meta property="article:tag" content="网络">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.inevitable.tech/static/images/network1.jpg">
+
+<link rel="canonical" href="https://www.inevitable.tech/posts/a6040574/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>安全学习笔记一（网络） | Inevitable</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Inevitable" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Inevitable</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">文字所表现出来的美丽、恐惧。。还有率真之类的东西，我觉得在其他事物中还是很难寻得的。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.inevitable.tech/posts/a6040574/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琉璃">
+      <meta itemprop="description" content="有些时候就算拼尽全力想要表达什么，也什么都表达不到。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Inevitable">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          安全学习笔记一（网络）
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-11-10 00:00:00" itemprop="dateCreated datePublished" datetime="2017-11-10T00:00:00+08:00">2017-11-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-01-02 14:19:03" itemprop="dateModified" datetime="2021-01-02T14:19:03+08:00">2021-01-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AE%89%E5%85%A8/" itemprop="url" rel="index"><span itemprop="name">安全</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/posts/a6040574/" class="post-meta-item leancloud_visitors" data-flag-title="安全学习笔记一（网络）" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/a6040574/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/a6040574/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>网络是这个时代最神奇的东西，是它将人类联系在了一起。</p>
+<a id="more"></a>
+<p>一共有三种主要的网络模型，分别是OSI七层模型，TCP/IP五层模型和TCP/IP 四层模型。 # 0x01 网络模型</p>
+<h2 id="seven-layers-of-osi-model">Seven Layers of OSI Model:</h2>
+<p>7.Application Layer 6.Presentation Layer 5.Session Layer 4.Transport Layer 3.Network Layer 2.Data Link Layer 1.Physical Layer</p>
+<h2 id="five-layers-of-tcpip-model">Five Layers of TCP/IP Model:</h2>
+<p>5+6+7.Process&amp;Application Layer 4.Transport Layer 3.Network Layer 2.Data Link Layer 1.Physical Layer</p>
+<h2 id="four-layers-of-tcpip-model">Four layers of TCP/IP Model:</h2>
+<p>5+6+7.Process&amp;Application Layer 4.Transport Layer 3.Network Layer 1+2.Physical Layer</p>
+<table>
+<thead>
+<tr class="header">
+<th>Five Layers of TCP/IP</th>
+<th>Protocol</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Process&amp;Application Layer</td>
+<td>Message(报文):<strong>SMTP</strong>,<strong>FTP</strong>,<strong>TELNET</strong>,<strong>DNS</strong>,<strong>TFTP</strong>,<strong>RPC</strong>....</td>
+</tr>
+<tr class="even">
+<td>Transportation Layer</td>
+<td>Communications Protocol(传输协议):<strong>TCP</strong>,<strong>UDP</strong></td>
+</tr>
+<tr class="odd">
+<td>Network Layer</td>
+<td>IP Datagram(IP 数据报):<strong>IP</strong>(ICMP...),<strong>ARP</strong>,<strong>RARP</strong></td>
+</tr>
+<tr class="even">
+<td>Data Link Layer</td>
+<td>Frame(帧)</td>
+</tr>
+<tr class="odd">
+<td>Physical Layer</td>
+<td><strong>Ethernet</strong>,<strong>Token-Ring</strong>,<strong>X.25</strong>,<strong>FDDI</strong></td>
+</tr>
+</tbody>
+</table>
+<p>接下来介绍一下在OSI模型中各个layer的用处。</p>
+<h3 id="physical-layer物理层">1. Physical Layer(物理层)</h3>
+<p>物理层用来激活、维持、关闭通信端点之间的机械特性、电气特性、功能特性以及过程特性。为上层协议提供一个可靠的物理媒体。<strong>物理层确保数据可以在各种物理媒体上传输</strong>。</p>
+<p>重要设备 * Repeater(中继器) * Hub(集线器)</p>
+<h3 id="data-link-layer数据链路层">2. Data Link Layer(数据链路层)</h3>
+<p>数据链路层将源自网络层来的数据可靠地传输到相邻节点的网络层。因此，数据链路层拥有这样的一些主要功能: 数据成<strong>帧</strong>(<strong>frame</strong>-数据链路层的基本数据传送单位)，物理地址寻址，流量控制，数据检错、重发。</p>
+<p>重要设备 * Bridge(网桥) * Switch(交换机)</p>
+<p>主要协议 * Ethernet(以太网协议)</p>
+<h3 id="network-layer网络层">3. Network Layer(网络层)</h3>
+<p>网络层用来实现两个端系统之间的数据透明传送。网络层拥有这样的一些主要功能: 寻址，路由选择，连接的建立、保持和终止。</p>
+<p>主要协议 * Internet Protocol(因特网互联协议) * Internet Control Message Protocol(因特网控制报文协议) * Address Resolution Protocol (地址解析协议) * Reverse Address Resolution Protocol(逆地址解析协议)</p>
+<p>重要设备 * Router(路由器)</p>
+<h3 id="transportation-layer传输层">4. Transportation Layer(传输层)</h3>
+<p>传输层负责将数据可靠的传送到相应的<strong>端口</strong>，并利用子网的特性为会话层提供建立、维护和取消传输链接的功能。传输层还要处理端口到端口的差错控制和流量控制问题。</p>
+<p>数据传送的协议数据单元称为datagram(段、报文)</p>
+<p>主要协议 * Transmission Control Protocol(传输控制协议) * User Datagram Protocol(用户数据报协议)</p>
+<p>重要设备 * 网关</p>
+<h3 id="session-layer会话层">5. Session Layer(会话层)</h3>
+<p>会话层管理主机之间的会话进程，校验数据的同步</p>
+<h3 id="presentation-layer表示层">6. Presentation Layer(表示层)</h3>
+<p>表示层保证一个主机应用层的信息可以被另一个主机的应用层理解。表示层用数据的加密、压缩、格式转换等来对数据包进行转化。</p>
+<h3 id="application-layer应用层">7. Application Layer(应用层)</h3>
+<p>为操作系统和应用程序提供访问网络服务的接口。</p>
+<p>重要协议 in Session Layer、Presentation Layer、Application Layer * FTP(文件传送协议) * Telnet(远程登录协议) * DNS(域名解析协议) * SMTP(邮件传送协议) * POP3(邮局协议) * Hyper Text Transfer Protocol(超文本传输协议)</p>
+<h1 id="x02-ip地址">0x02 IP地址</h1>
+<p>IP地址是四串用"."连接起来的数字。例如192.156.122.122。转化为二进制便是8*4位。</p>
+<p>每个ip地址便有网络标识段和主机标识段构成。</p>
+<p>在二进制下，当主机号全为0，则代表了网络号所代表的网络。</p>
+<p>在二进制下，当主机号全为1，则向网络号所代表的网络中发放广播。改网络内的所有主机都能收到广播信息。这样的地址被称为<strong>Broadcast Address(广播地址)</strong></p>
+<p>255.255.255.255为受限的广播地址。受限广播地址只能用于本地网络，不能跨子网传播。</p>
+<p>0.0.0.0常用与寻找自己的IP地址</p>
+<p>127.0.0.0/8(/8为子网掩码)被用作回环地址。回环地址表示本机的地址，常用与对本机的测试。</p>
+<h2 id="abcd类地址">A、B、C、D类地址</h2>
+<p>A类地址以0开头(二进制下)，第一个字节（二进制下的前八位数字）作为网络标识段，地址范围为：0.0.0.0~127.255.255.255</p>
+<p>B类地址以10开头(二进制下)，前两个字节作为标识段（二进制下的前十六位数字），地址范围是：128.0.0.0~191.255.255.255</p>
+<p>C类地址以110开头(二进制下)，前三个字节作为标识段(二进制下的前二十四位数字），地址范围是：192.0.0.0~223.255.255.255</p>
+<p>D类地址以1110开头，地址范围是224.0.0.0~239.255.255.255，D类地址作为<strong>Multicast Address(组播地址)</strong>（一对多的通信）</p>
+<h2 id="abcd类私有地址private-address">A、B、C、D类私有地址(Private Address)</h2>
+<p>Private Address 也叫专有地址，只具有本地意义。 A类私有地址：10.0.0.0/8，范围是：10.0.0.0~10.255.255.255 B类私有地址：172.16.0.0/12，范围是：172.16.0.0~172.31.255.255 C类私有地址：192.168.0.0/16，范围是：192.168.0.0~192.168.255.255</p>
+<h2 id="子网掩码以及网络划分">子网掩码以及网络划分</h2>
+<p>随着网络应用的扩大，由于IPv4网络标识段太长，而主机标识段太短的弊端暴露了出来。即主机地址越来越少。因此人们采用子网即对一个高类别的IP地址进行再划分，以形成多个子网，提供给不同规模的用户群使用。。</p>
+<p>如何计算子网掩码呢，例如 192.168.0.5/24。 24 在在这意味着IP地址(二进制下)前24位为网络标识段，之后的8位为主机标识段。 子网掩码便是24个1加8个0.即为255.255.255.0 在一个/24的子网下共可以容纳2**8-3个主机(减去网关地址，广播地址以及网络地址)。</p>
+<h2 id="arp-协议">ARP 协议</h2>
+<p>即根据IP地址获取物理地址(MAC地址)</p>
+<h2 id="tcp-协议">TCP 协议</h2>
+<p>TCP是面向连接的，可靠的字节流服务 TCP的三次握手和四次挥手 <img class="lazyload" data-src="/static/images/network1.jpg"></p>
+<h2 id="udp-协议">UDP 协议</h2>
+<p>DP是面向无连接的，不可靠的数据报服务。 UDP与TCP位于同一层。它是面向无连接的通讯协议。UDP不管数据包的顺序、错误或重发。所以UDP用于面向查询应答的服务，只需交换较小信息量的服务。</p>
+<h2 id="dns协议">DNS协议</h2>
+<p>Domain Name System(DNS) 用来将url转换为IP地址。</p>
+<h2 id="nat协议">NAT协议</h2>
+<p>NAT网络地址转换(Network Address Translation)是一种将私有（保留）地址转化为合法IP地址的转换技术。例如现在运营商运用NAT技术，一个小区同用一个出口IP。</p>
+<h2 id="dhcp协议">DHCP协议</h2>
+<p>DHCP动态主机设置协议（Dynamic Host Configuration Protocol）用来动态地给内部网络或网络服务供应商自动分配IP</p>
+<h2 id="http协议">HTTP协议</h2>
+超文本传输协议（HTTP，HyperText Transfer Protocol)用来向服务器请求数据。
+<hr>
+<p><img class="lazyload" data-src="/static/images/network-gift.jpg"></p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\eeff9e70\" rel="bookmark">Kali Docker的配置</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\4054467b\" rel="bookmark">Hack the box-Irked</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\ed65a4a4\" rel="bookmark">HackEdu 试用</a></div>
+    </li>
+  </ul>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>琉璃
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://www.inevitable.tech/posts/a6040574/" title="安全学习笔记一（网络）">https://www.inevitable.tech/posts/a6040574/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/glazecl" rel="external nofollow noreferrer">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%AE%89%E5%85%A8/" rel="tag"># 安全</a>
+              <a href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag"># 网络</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/197cebf2/" rel="prev" title="Bitcoin">
+      <i class="fa fa-chevron-left"></i> Bitcoin
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/ccaf9d6e/" rel="next" title="水滴状耳坠">
+      水滴状耳坠 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#seven-layers-of-osi-model"><span class="nav-number">1.</span> <span class="nav-text">Seven Layers of OSI Model:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#five-layers-of-tcpip-model"><span class="nav-number">2.</span> <span class="nav-text">Five Layers of TCP&#x2F;IP Model:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#four-layers-of-tcpip-model"><span class="nav-number">3.</span> <span class="nav-text">Four layers of TCP&#x2F;IP Model:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#physical-layer%E7%89%A9%E7%90%86%E5%B1%82"><span class="nav-number">3.1.</span> <span class="nav-text">1. Physical Layer(物理层)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#data-link-layer%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82"><span class="nav-number">3.2.</span> <span class="nav-text">2. Data Link Layer(数据链路层)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#network-layer%E7%BD%91%E7%BB%9C%E5%B1%82"><span class="nav-number">3.3.</span> <span class="nav-text">3. Network Layer(网络层)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#transportation-layer%E4%BC%A0%E8%BE%93%E5%B1%82"><span class="nav-number">3.4.</span> <span class="nav-text">4. Transportation Layer(传输层)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#session-layer%E4%BC%9A%E8%AF%9D%E5%B1%82"><span class="nav-number">3.5.</span> <span class="nav-text">5. Session Layer(会话层)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#presentation-layer%E8%A1%A8%E7%A4%BA%E5%B1%82"><span class="nav-number">3.6.</span> <span class="nav-text">6. Presentation Layer(表示层)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#application-layer%E5%BA%94%E7%94%A8%E5%B1%82"><span class="nav-number">3.7.</span> <span class="nav-text">7. Application Layer(应用层)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#x02-ip%E5%9C%B0%E5%9D%80"><span class="nav-number"></span> <span class="nav-text">0x02 IP地址</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#abcd%E7%B1%BB%E5%9C%B0%E5%9D%80"><span class="nav-number">1.</span> <span class="nav-text">A、B、C、D类地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#abcd%E7%B1%BB%E7%A7%81%E6%9C%89%E5%9C%B0%E5%9D%80private-address"><span class="nav-number">2.</span> <span class="nav-text">A、B、C、D类私有地址(Private Address)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%90%E7%BD%91%E6%8E%A9%E7%A0%81%E4%BB%A5%E5%8F%8A%E7%BD%91%E7%BB%9C%E5%88%92%E5%88%86"><span class="nav-number">3.</span> <span class="nav-text">子网掩码以及网络划分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#arp-%E5%8D%8F%E8%AE%AE"><span class="nav-number">4.</span> <span class="nav-text">ARP 协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tcp-%E5%8D%8F%E8%AE%AE"><span class="nav-number">5.</span> <span class="nav-text">TCP 协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#udp-%E5%8D%8F%E8%AE%AE"><span class="nav-number">6.</span> <span class="nav-text">UDP 协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dns%E5%8D%8F%E8%AE%AE"><span class="nav-number">7.</span> <span class="nav-text">DNS协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nat%E5%8D%8F%E8%AE%AE"><span class="nav-number">8.</span> <span class="nav-text">NAT协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dhcp%E5%8D%8F%E8%AE%AE"><span class="nav-number">9.</span> <span class="nav-text">DHCP协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#http%E5%8D%8F%E8%AE%AE"><span class="nav-number">10.</span> <span class="nav-text">HTTP协议</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">琉璃</p>
+  <div class="site-description" itemprop="description">有些时候就算拼尽全力想要表达什么，也什么都表达不到。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">87</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">95</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/glazec" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;glazec" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:i@inevitable.tech" title="E-Mail → mailto:i@inevitable.tech" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/glazecl" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;glazecl" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/glazecl" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;glazecl" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-telegram fa-fw"></i>Telegram</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">琉璃</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener external nofollow noreferrer" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 28798,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://www.inevitable.tech/posts/a6040574/',]
+      });
+      });
+  </script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : '4h5SYcsd7q5SV1HJXHe43Vsu-MdYXbMMI',
+      appKey     : 'gecurcq4AfQgDFik3siEf0Jx',
+      placeholder: "你好吗？我很好。",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+<script>(function(w,d, s, id) {w.webpushr=w.webpushr||function(){(w.webpushr.q=w.webpushr.q||[]).push(arguments)};var js, fjs = d.getElementsByTagName(s)[0];js = d.createElement(s); js.id = id;js.src = 'https://cdn.webpushr.com/app.min.js';fjs.parentNode.appendChild(js);}(window,document, 'script', 'webpushr-jssdk'));webpushr('init','BKOlpbdgvBCWXqXI6PtsUzobY7TLV9gwJU8bzMktrwfrSERg_xnLVbjpCw8x2GmFmi1ZcLTz0ni6OnX5MAwoM58');</script></body>
+</html>

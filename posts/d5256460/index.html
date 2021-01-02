@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon256.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon256.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="59ThkXhI_2jGcF6EsQmUQacPyHPoqWEElgS18VR7eM8">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.loli.net/css?family=EB Garamond:300,300italic,400,400italic,700,700italic|Long Cang:300,300italic,400,400italic,700,700italic|Noto Serif SC:300,300italic,400,400italic,700,700italic|Source Code Pro:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.inevitable.tech","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="全面翻修个人站点，并添加功能。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo翻修">
+<meta property="og:url" content="https://www.inevitable.tech/posts/d5256460/index.html">
+<meta property="og:site_name" content="Inevitable">
+<meta property="og:description" content="全面翻修个人站点，并添加功能。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.inevitable.tech/static/images/hexo-config0.5.png">
+<meta property="og:image" content="https://www.inevitable.tech/static/images/hexo-config1.png">
+<meta property="og:image" content="https://www.inevitable.tech/static/images/hexo-config2.png">
+<meta property="og:image" content="https://www.inevitable.tech/static/images/hexo-config3.png">
+<meta property="og:image" content="https://www.inevitable.tech/static/images/hexo-config4.png">
+<meta property="og:image" content="https://www.inevitable.tech/static/images/hexo-config5.png">
+<meta property="og:image" content="https://www.inevitable.tech/static/images/hexo-config6.png">
+<meta property="og:image" content="https://www.inevitable.tech/static/images/hexo-config7.png">
+<meta property="og:image" content="https://www.inevitable.tech/static/images/hexo-config8.png">
+<meta property="og:image" content="https://www.inevitable.tech/static/images/hexo-gift.jpg">
+<meta property="article:published_time" content="2018-01-08T23:09:09.000Z">
+<meta property="article:modified_time" content="2021-01-02T06:18:45.597Z">
+<meta property="article:author" content="琉璃">
+<meta property="article:tag" content="Server">
+<meta property="article:tag" content="Aria2">
+<meta property="article:tag" content="Sync">
+<meta property="article:tag" content="Media server">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.inevitable.tech/static/images/hexo-config0.5.png">
+
+<link rel="canonical" href="https://www.inevitable.tech/posts/d5256460/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Hexo翻修 | Inevitable</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Inevitable" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Inevitable</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">文字所表现出来的美丽、恐惧。。还有率真之类的东西，我觉得在其他事物中还是很难寻得的。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.inevitable.tech/posts/d5256460/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琉璃">
+      <meta itemprop="description" content="有些时候就算拼尽全力想要表达什么，也什么都表达不到。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Inevitable">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hexo翻修
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-01-09 07:09:09" itemprop="dateCreated datePublished" datetime="2018-01-09T07:09:09+08:00">2018-01-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-01-02 14:18:45" itemprop="dateModified" datetime="2021-01-02T14:18:45+08:00">2021-01-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Technology/" itemprop="url" rel="index"><span itemprop="name">Technology</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/posts/d5256460/" class="post-meta-item leancloud_visitors" data-flag-title="Hexo翻修" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/d5256460/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/d5256460/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>全面翻修个人站点，并添加功能。 <a id="more"></a></p>
+<h1 id="x01-introduction">0x01 Introduction</h1>
+<p>我的服务器到现在为止就只运行了一个博客，而且还是hexo这样的静态博客。所有的资源全是静态的。视频和照片放在了网站目录下，设置了755的权限。这样有些浪费资源，我这样想。应该增加点什么功能。</p>
+<p>不知道各位用过没有离线下载，有没有感受过国内下载国外的种子有多慢。离线下载的本质便是先把你需要下载的文件下载到服务器上，再在需要的时候把资源取回本地。离线下载的优势来自于服务器更高的带宽，强大的稳定性(自从升级到window inside，崩溃已成为家常便饭。) <img data-src="/static/images/hexo-config0.5.png" alt="windows inside" /> <img data-src="/static/images/hexo-config1.png" alt="aria高速下载" /></p>
+<p>那么怎么取回本地呢? 用同步软件！ 什么东西是可以不用取回本地呢？ 视频啊！我们可以直接在线播放视频，这样可以节省不少时间。 为了方便连接这些服务，为每一个服务都设置一个子域名，并且加上https。</p>
+<p><strong>我的系统是Ubuntu。</strong></p>
+<h1 id="x02-hexo-edit">0x02 Hexo-edit</h1>
+<h2 id="x001-introduction">0x001 introduction</h2>
+<p><img data-src="/static/images/hexo-config2.png" alt="Hexo-editor" /> 我第一个部署的服务是Hexo-edit(<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/tajpure/hexo-editor">传送门</a>)。Hexo-editor为编辑Hexo博客提供了一个在线的可视化的界面。以前，我通常是在本地写博客，写完后用github同步到Hexo上。Hexo-editor提供了一键publish和一键deploy。这对于把博客托管在github上的非常有用。但是对于我，把博客直接搭在vps上的人，deploy并不能实现我博客的更新。我需要修改一下程序来实现我想要的功能。并且编辑的时候，左边的可选项太少了。只有tag，time等选项。并没有comment等选项。</p>
+<figure>
+<img data-src="/static/images/hexo-config3.png" alt="Hexo-editor" /><figcaption aria-hidden="true">Hexo-editor</figcaption>
+</figure>
+<p>Hexo-editor支持插入图片，并且可以帮助你上传图片到Hexo-editor指定的目录，我需要自定义这个目录，例如我就把图片统一放在/static里。</p>
+<p><em>注意：</em>请不要在heox-blog的根目录下建立一个media的文件夹，来存放所有的媒体文件：音乐，视频等。在你执行<code>hexo generate</code>的时候，会出现<code>kill</code>。原因是media目录太大，渲染失败。Hexo的渲染器对于目录大小有限制，大约在5-10M。</p>
+<p>我把所有媒体文件都放在了<code>/var/www/hexo/static</code>中。注意设置权限。<code>sudo chown -R $USER:$USER /var/www/hexo/static sudo</code>,<code>chmod -R 755 /var/www/hexo</code>。</p>
+<h2 id="x002-installation">0x002 Installation</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/tajpure/hexo-editor.git</span><br><span class="line"><span class="built_in">cd</span> hexo-editor</span><br><span class="line">npm install --production</span><br><span class="line">npm start</span><br></pre></td></tr></table></figure>
+<p>非常简单的安装.</p>
+<p>如果想要改变端口，配置文件是<code>hexo-editor/_config.yml</code>。最后请不要忘记打开端口。以端口32400为例 <code>sudo iptables -A INPUT -p tcp --dport 32400 -j ACCEPT</code></p>
+<h1 id="x03-aria2-and-webui">0x03 Aria2 and WebUI</h1>
+<h2 id="x001-introduction-1">0x001 Introduction</h2>
+<p>Aria2(<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/aria2/aria2">传送门</a>)是一款命令行下载工具。虽然只能用命令行使用Aria2,AriaNG(<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/mayswind/AriaNg">传送门</a>)，但是它的功能的确很强大，比迅雷强大的多。Aria支持种子，磁力链接，链接，metalink。可以手动设置每个服务器的最大连接数，可以设置多线程下载是区块的大小。也可以手动导入tracker server等。例如我们可以加入国内的一些节点，这样即使服务器在国外，也可以高速下载国内的种子。</p>
+<p>虽然没有官方的GUI，但是第三方的GUI也是不错的。例如webui-aria2(<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/ziahamza/webui-aria2">传送门</a>),AriaNG(<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/mayswind/AriaNg">传送门</a>)。AriaNG是一个新上线的项目,star并不如webui-aria2多。 由于我第一个接触到的是webui-aria2，再加上webui-aria2和AriaNG在功能上没有特别大的差距，我就没有尝试AriaNG。 <img data-src="/static/images/hexo-config4.png" alt="webui" /></p>
+<h2 id="x002-installation-for-aria2">0x002 Installation for Aria2</h2>
+<p>我们先安装Aria2，在安装它的GUI webui-aria2。 简单一些，对于Ubuntu的同学来说可以直接<code>apt-get install aria2</code> 这样做非常的快捷，只是版本比较老，为2015年发布的1.19。 关于编译请参考这篇文章(<a target="_blank" rel="noopener external nofollow noreferrer" href="https://npchk.info/debian-aria2-install/">传送门</a>)</p>
+<p>从官方仓库直接下载旧版Aria2<code>apt-get install aria2</code></p>
+<h2 id="x003-configuration-for-aria2">0x003 Configuration for Aria2</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#创建配置文件夹并进入</span></span><br><span class="line">mkdir ~/.aria2 &amp;&amp; <span class="built_in">cd</span> ~/.aria2</span><br><span class="line"><span class="comment">#下载配置文件</span></span><br><span class="line">wget http://cloud.vccvps.com/aria2/aria2.conf</span><br><span class="line"><span class="comment">#用来发现DHT节点，解决国外下载国内种子没有速度</span></span><br><span class="line">wget http://cloud.vccvps.com/aria2/dht.dat</span><br><span class="line"><span class="comment">#创建一个空的 Aria2 下载任务保存文件</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;&#x27;</span> &gt; /root/.aria2/aria2.session</span><br></pre></td></tr></table></figure>
+<p>由于有中文注释，所以aria2.conf打开可能会出现乱码。</p>
+<p>添加了DHT节点后，我们可以继续添加Tracker Server。 这儿推荐一个自动更新的Tracker列表——&gt;<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/ngosang/trackerslist">传送门</a> 添加前20的节点到aria2.conf。 例如： <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">bt-tracker=udp://tracker.skyts.net:6969/announce,udp://tracker.safe.moe:6969/announce,udp://tracker.piratepublic.com:1337/announce,udp://tracker.pirateparty.gr:6969/announce,udp://tracker.coppersurfer.tk:6969/announce,udp://tracker.leechers-paradise.org:6969/announce,udp://allesanddro.de:1337/announce,udp://9.rarbg.com:2710/announce,http://p4p.arenabg.com:1337/announce,udp://p4p.arenabg.com:1337/announce,udp://tracker.opentrackr.org:1337/announce,http://tracker.opentrackr.org:1337/announce,udp://public.popcorn-tracker.org:6969/announce,udp://tracker2.christianbro.pw:6969/announce,udp://tracker1.xku.tv:6969/announce,udp://tracker1.wasabii.com.tw:6969/announce,udp://tracker.zer0day.to:1337/announce,udp://tracker.mg64.net:6969/announce,udp://peerfect.org:6969/announce,udp://open.facedatabg.net:6969/announce</span><br><span class="line">#抗DMCA的服务器设置如下选项</span><br><span class="line">enable-dht=true</span><br><span class="line">bt-enable-lpd=true</span><br><span class="line">enable-peer-exchange=true</span><br></pre></td></tr></table></figure> 如果想要开启token认证，在aria.conf写入： <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rcp-secure=true</span><br><span class="line">rcp-secret=your-secret-token</span><br></pre></td></tr></table></figure> 如果使用用户名和密码，在aria.conf写入： <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rcp-secure=true</span><br><span class="line">rpc-user=yourusername</span><br><span class="line">rpc-passwd=yourpasswd</span><br></pre></td></tr></table></figure> 如果设置SSL，在aria.conf写入： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#关于如何用let&#x27;s encrypt免费生成证书，将在之后 0x06 域名设置 中提到。</span></span><br><span class="line">rpc-certificate=/etc/letsencrypt/live/yourdomain.com/fullchain.pem</span><br><span class="line">rpc-private-key=/etc/letsencrypt/live/yourdomain.com/privkey.pem</span><br></pre></td></tr></table></figure> <em>附Aria2 参数翻译，请见文末</em></p>
+<h2 id="x003-starting-aria2">0x003 Starting Aria2</h2>
+<p>我们需要建立一个下载目录，例如 <code>~/aria2-download</code>。 启动Aria2 <code>aria2c --enable-rpc --rpc-listen-all</code> <em>可用<a target="_blank" rel="noopener external nofollow noreferrer" href="http://blog.jobbole.com/87278/">tmux</a>来管理窗口，或者防止关闭ssh窗口，服务自动结束</em></p>
+<p><strong>注意</strong>打开端口<code>sudo iptables -A INPUT -p tcp --dport 32400 -j ACCEPT</code>。 <strong>注意</strong>下载目录的权限。 如果出现端口冲突，执行<code>lsof -i :端口</code>。然后杀死占用端口的进程<code>kill -9 进程ID</code></p>
+<h2 id="x004-webui-aria2">0x004 Webui-aria2</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#下载源码</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/ziahamza/webui-aria2.git</span><br><span class="line"><span class="comment">#编辑配置文件</span></span><br><span class="line">vim configuration.js</span><br></pre></td></tr></table></figure>
+<p>请注意配置encrypt(若为true，则意味着启用了SSL)。 auth的配置需要和aria2.conf中一致。 启动服务器<code>node node-server.js</code> 请注意打开端口<code>sudo iptables -A INPUT -p tcp --dport 6800 -j ACCEPT</code></p>
+<h2 id="x005-browse-the-service">0x005 browse the service</h2>
+<p>访问youserverip:6800 左侧max-connection-per-server可以设置的最大值为16。 如果<code>configuration.js</code>中的<code>encrypt</code>设置为了`true，需要勾选<strong>启用 SSL/TLS 加密</strong>。 <img class="lazyload" data-src="/static/images/hexo-config5.png"></p>
+<h1 id="x04-syncthing">0x04 Syncthing</h1>
+<h2 id="x001-introduction-2">0x001 Introduction</h2>
+<p>资源下完了接下来就是同步。开源的Syncthing更加适合用于服务器与服务器之间备份，它支持像github一样基于版本的更新及备份。但是它的速度并没有Resilio Sync快。并且它并没有苹果客户端。它拥有官方包以及社区封装的安装包。</p>
+<h2 id="x002-installation-1">0x002 Installation</h2>
+<p>安装syncthing官方版本。 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install apt-transport-https</span><br><span class="line">curl -s https://syncthing.net/release-key.txt | sudo apt-key add -</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;deb https://apt.syncthing.net/ syncthing stable&quot;</span> | sudo tee /etc/apt/sources.list.d/syncthing.list</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install syncthing</span><br></pre></td></tr></table></figure> 修改syncthing本地监听为公网监听。 修改/root/.config/syncthing/config.xml 中27行 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;address&gt;127.0.0.1:8384&lt;/address&gt;</span><br><span class="line">//修改为</span><br><span class="line">&lt;address&gt;0.0.0.0:8384&lt;/address&gt;</span><br></pre></td></tr></table></figure> 注意打开端口。 登陆 yourIP:8384 <img class="lazyload" data-src="/static/images/hexo-config6.png"> Syncthing支持KCP加速--&gt;<a target="_blank" rel="noopener external nofollow noreferrer" href="https://forum.syncthing.net/t/connections-over-udp/9382">传送门</a></p>
+<h1 id="x05-resilio-sync">0x05 Resilio Sync</h1>
+<h2 id="x001-introduction-3">0x001 Introduction</h2>
+<p>Resilio Sync是一个跨平台支持P2P下载，节点越多下载速度越快的分布式网盘。即使单个节点向本地机器备份，速度也很快。然而它并不是开源的，pro版本支持<strong>选择性同步</strong>,支持加密后同步到第三方服务器。支持公网上相互同步，也支持内网中相互同步。文件大小没有限制，文件数量没有限制。Resilio Sync 在2.2x版本之前，Resilio Sync支持DHT，但是现在只支持官方Tracker Server。然而在中国Tracker Server被墙了。不走全局代理是没有办法连上Tracker Server的。</p>
+<p>Resilio Sync 解决Tracker Server被屏蔽---&gt;<a target="_blank" rel="noopener external nofollow noreferrer" href="https://medium.com/@dawnray/resilio-sync%E7%BF%BB%E5%A2%99%E6%96%B9%E6%A1%88-d6f0551fec48">传送门</a></p>
+<p>或者使用拥有DHT功能的旧版本Resilio Sync(又名BT Sync)---&gt;下载地址来自官网：<a href="2.0.124/windows64/BitTorrent-Sync_x64.exe">windows 7 or later</a></p>
+<h2 id="x002-installation-2">0x002 Installation</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;deb http://linux-packages.resilio.com/resilio-sync/deb resilio-sync non-free&quot;</span> | sudo tee /etc/apt/sources.list.d/resilio-sync.list</span><br><span class="line">wget -qO - https://linux-packages.resilio.com/resilio-sync/key.asc | sudo apt-key add -</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install resilio-sync</span><br></pre></td></tr></table></figure>
+<p>启动 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service resilio-sync start|stop</span><br></pre></td></tr></table></figure> 开机自动启动 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update-rc.d resilio-sync <span class="built_in">enable</span></span><br></pre></td></tr></table></figure> 修改配置文件/etc/resilio-sync/config.json，修改成0.0.0.0，公网监听。 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;webui&quot;:</span><br><span class="line">&#123;</span><br><span class="line"><span class="attr">&quot;listen&quot;</span> : <span class="string">&quot;0.0.0.0:8888&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> <strong>注意</strong>开启端口 <strong>注意</strong>端口冲突</p>
+<p>重启Resili Sync,访问<code>yourip:8888</code>。 同步时注意文件夹权限。 使用chown -R rslsync:rslsync /path/to/folder 来更改所有者</p>
+<h1 id="x06-plex">0x06 Plex</h1>
+<h2 id="x001-introduction-4">0x001 Introduction</h2>
+<p>Plex是一个多媒体管理软件。它可以帮助你管理视频，音乐，电影。它也可以帮助你进行转码，以流媒体的方式在线播放。例如你可以用离线下载，高速下载小姐姐，然后在线观看超清的小姐姐。想想是不是就很激动呢。</p>
+<h2 id="x002-installation-3">0x002 Installation</h2>
+<p>在plex注册，并下载最新的Ubuntu安装包。---&gt;(<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.plex.tv/">官网</a>) 使用<code>dpkg -i pelxmeida.deb</code>进行安装。</p>
+<h2 id="x003-configuration">0x003 Configuration</h2>
+<p>启动Plex <code>service plexmediaserver start</code> <strong>注意</strong>打开端口。 因为Plex只支持本地访问并配置，所以我们使用ssh隧道进行连接并且配置。 在这里我使用的是putty。首先正确配置putty，保证可以连接到服务器。 配置SSH Tunnels。 <img class="lazyload" data-src="/static/images/hexo-config7.png"> 打开浏览器，访问<code>http://localhost:8888/web</code>。 按着指示配置下去就好了。 <strong>注意</strong>媒体文件夹的权限 <strong>注意</strong>实时转码非常的慢。1080P实时转码一直卡，即使使用八核的vps。 我们可以先优化，先进行转码，转完码再看。这样我们只需要一个速度快一点的网。根据我自己的测试，一集23分钟的番533.8MB转码后的大小为2个G。也就是说你需要1.5M/s的实际网速才可以流畅播放1080P视频。 <img class="lazyload" data-src="/static/images/hexo-config8.png"></p>
+<h1 id="x07-mount-digital-space">0x07 Mount digital space</h1>
+<h2 id="x001-introduction-5">0x001 Introduction</h2>
+<p>我们可以在vps上放这么多东西，20GB的空间怎么够？vps的空间也的确是贵。但是我们可以用云盘-Digitalocean space（$5 250G）。我们可以将space挂载到vps上。</p>
+<h2 id="x002-installation-4">0x002 Installation</h2>
+<p>我们借助s3fs-fuse来进行挂载。 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#下载编译工具</span></span><br><span class="line">sudo apt-get install automake autotools-dev fuse g++ git libcurl4-gnutls-dev libfuse-dev libssl-dev libxml2-dev make pkg-config</span><br><span class="line"><span class="comment">#下载源码</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/s3fs-fuse/s3fs-fuse.git</span><br><span class="line"><span class="comment">#编译</span></span><br><span class="line"><span class="built_in">cd</span> s3fs-fuse</span><br><span class="line">./autogen.sh</span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure> ## 0x002 Configuration 我们要拥有一个spaces，拥有API Spaces access keys的key和secret。由于secret刷新一次页面就会隐藏掉，所以我们要Generate new keys。记下key和secret。 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#编辑配置文件</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;your-spaces-name:your-key:your-secret&#x27;</span> &gt; ~/.passwd-s3fs</span><br><span class="line"><span class="comment">#设置权限</span></span><br><span class="line">chmod 0600 ~/.passwd-s3fs</span><br><span class="line"><span class="comment">#挂载</span></span><br><span class="line">s3fs your-space-name /mount-directory -ourl=https://yourendpoint.com -o allow_other -o no_check_certificate</span><br></pre></td></tr></table></figure> 由于程序的不稳定，会遇到<code>fail to connect</code>。可以先<code>umount</code>在重新进行挂载<code>s3fs your-space-name /mount-directory -ourl=https://yourendpoint.com -o allow_other -o no_check_certificate</code>。</p>
+<p>#0x08 HTTPS 我们使用let's encrypt来生成SSL证书 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#安装certbot</span></span><br><span class="line">apt-get install certbot</span><br><span class="line"><span class="comment">#为微服务，没有根目录的服务生成证书。注意停止nginx，因为生成证书需要占用443端口。</span></span><br><span class="line">certbot certonly --standalone -d yourdomain.com</span><br></pre></td></tr></table></figure> 证书生成在<code>/etc/letsencrypt/live/</code> 下对应的域名文件中。 证书的有效期为90天，所以我们将其设置为自动更新。 新建一个文件<code>certbot-auto-renew-cron</code> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">15 2 * */2 * certbot renew --pre-hook <span class="string">&quot;service nginx stop&quot;</span> --post-hook <span class="string">&quot;service nginx start&quot;</span></span><br></pre></td></tr></table></figure> 每隔 两个月的 凌晨 2:15 执行 更新操作 最后加载脚本<code>crontab certbot-auto-renew-cron</code>。</p>
+<h1 id="x09-域名设置">0x09 域名设置</h1>
+<p>首先添加A记录，设置子域名。 编辑nginx配置<code>/etc/nginx/sites-available/default</code> 以plex服务作为例子。Plex的端口是32400. 我们使用端口转发。 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line"> listen 80;</span><br><span class="line"> listen 443 ssl;</span><br><span class="line">ssl_certificate /etc/letsencrypt/live/subdomain.yourdomain.com/fullchain.pem;</span><br><span class="line">ssl_certificate_key /etc/letsencrypt/live/subdomain.yourdomain.com/privkey.pem;</span><br><span class="line">    include /etc/letsencrypt/options-ssl-nginx.conf;</span><br><span class="line">    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;</span><br><span class="line"> server_name yourdomain.com;</span><br><span class="line">  location /&#123;</span><br><span class="line"> proxy_redirect off;</span><br><span class="line"> proxy_pass http://127.0.0.1:32400;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 重启nginx，就可以访问我们的子域名了。</p>
+<h1 id="x09-参考">0x09 参考</h1>
+<a target="_blank" rel="noopener external nofollow noreferrer" href="http://www.senra.me/aria2-conf-file-parameters-translation-and-explanation/">Aria 参数翻译</a>
+<hr>
+<p><img data-src="/static/images/hexo-gift.jpg" /></p>
+
+    </div>
+
+    
+    
+    
+      
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>琉璃
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://www.inevitable.tech/posts/d5256460/" title="Hexo翻修">https://www.inevitable.tech/posts/d5256460/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/glazecl" rel="external nofollow noreferrer">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Server/" rel="tag"># Server</a>
+              <a href="/tags/Aria2/" rel="tag"># Aria2</a>
+              <a href="/tags/Sync/" rel="tag"># Sync</a>
+              <a href="/tags/Media-server/" rel="tag"># Media server</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/66394fdc/" rel="prev" title="Introduction to Social Dynamic">
+      <i class="fa fa-chevron-left"></i> Introduction to Social Dynamic
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/32e0bd78/" rel="next" title="Sugarfull Tempering(糖调)">
+      Sugarfull Tempering(糖调) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#x01-introduction"><span class="nav-number">1.</span> <span class="nav-text">0x01 Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#x02-hexo-edit"><span class="nav-number">2.</span> <span class="nav-text">0x02 Hexo-edit</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#x001-introduction"><span class="nav-number">2.1.</span> <span class="nav-text">0x001 introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#x002-installation"><span class="nav-number">2.2.</span> <span class="nav-text">0x002 Installation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#x03-aria2-and-webui"><span class="nav-number">3.</span> <span class="nav-text">0x03 Aria2 and WebUI</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#x001-introduction-1"><span class="nav-number">3.1.</span> <span class="nav-text">0x001 Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#x002-installation-for-aria2"><span class="nav-number">3.2.</span> <span class="nav-text">0x002 Installation for Aria2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#x003-configuration-for-aria2"><span class="nav-number">3.3.</span> <span class="nav-text">0x003 Configuration for Aria2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#x003-starting-aria2"><span class="nav-number">3.4.</span> <span class="nav-text">0x003 Starting Aria2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#x004-webui-aria2"><span class="nav-number">3.5.</span> <span class="nav-text">0x004 Webui-aria2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#x005-browse-the-service"><span class="nav-number">3.6.</span> <span class="nav-text">0x005 browse the service</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#x04-syncthing"><span class="nav-number">4.</span> <span class="nav-text">0x04 Syncthing</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#x001-introduction-2"><span class="nav-number">4.1.</span> <span class="nav-text">0x001 Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#x002-installation-1"><span class="nav-number">4.2.</span> <span class="nav-text">0x002 Installation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#x05-resilio-sync"><span class="nav-number">5.</span> <span class="nav-text">0x05 Resilio Sync</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#x001-introduction-3"><span class="nav-number">5.1.</span> <span class="nav-text">0x001 Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#x002-installation-2"><span class="nav-number">5.2.</span> <span class="nav-text">0x002 Installation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#x06-plex"><span class="nav-number">6.</span> <span class="nav-text">0x06 Plex</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#x001-introduction-4"><span class="nav-number">6.1.</span> <span class="nav-text">0x001 Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#x002-installation-3"><span class="nav-number">6.2.</span> <span class="nav-text">0x002 Installation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#x003-configuration"><span class="nav-number">6.3.</span> <span class="nav-text">0x003 Configuration</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#x07-mount-digital-space"><span class="nav-number">7.</span> <span class="nav-text">0x07 Mount digital space</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#x001-introduction-5"><span class="nav-number">7.1.</span> <span class="nav-text">0x001 Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#x002-installation-4"><span class="nav-number">7.2.</span> <span class="nav-text">0x002 Installation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#x09-%E5%9F%9F%E5%90%8D%E8%AE%BE%E7%BD%AE"><span class="nav-number">8.</span> <span class="nav-text">0x09 域名设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#x09-%E5%8F%82%E8%80%83"><span class="nav-number">9.</span> <span class="nav-text">0x09 参考</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">琉璃</p>
+  <div class="site-description" itemprop="description">有些时候就算拼尽全力想要表达什么，也什么都表达不到。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">87</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">95</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/glazec" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;glazec" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:i@inevitable.tech" title="E-Mail → mailto:i@inevitable.tech" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/glazecl" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;glazecl" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/glazecl" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;glazecl" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-telegram fa-fw"></i>Telegram</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">琉璃</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener external nofollow noreferrer" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 28798,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://www.inevitable.tech/posts/d5256460/',]
+      });
+      });
+  </script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : '4h5SYcsd7q5SV1HJXHe43Vsu-MdYXbMMI',
+      appKey     : 'gecurcq4AfQgDFik3siEf0Jx',
+      placeholder: "你好吗？我很好。",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+<script>(function(w,d, s, id) {w.webpushr=w.webpushr||function(){(w.webpushr.q=w.webpushr.q||[]).push(arguments)};var js, fjs = d.getElementsByTagName(s)[0];js = d.createElement(s); js.id = id;js.src = 'https://cdn.webpushr.com/app.min.js';fjs.parentNode.appendChild(js);}(window,document, 'script', 'webpushr-jssdk'));webpushr('init','BKOlpbdgvBCWXqXI6PtsUzobY7TLV9gwJU8bzMktrwfrSERg_xnLVbjpCw8x2GmFmi1ZcLTz0ni6OnX5MAwoM58');</script></body>
+</html>

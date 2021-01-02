@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Inevitable</title>
+  <icon>https://www.inevitable.tech/icon.png</icon>
+  <subtitle>文字所表现出来的美丽、恐惧。。还有率真之类的东西，我觉得在其他事物中还是很难寻得的。</subtitle>
+  <link href="https://www.inevitable.tech/atom.xml" rel="self"/>
+  
+  <link href="https://www.inevitable.tech/"/>
+  <updated>2021-01-02T06:11:59.019Z</updated>
+  <id>https://www.inevitable.tech/</id>
+  
+  <author>
+    <name>琉璃</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2020 这一年</title>
+    <link href="https://www.inevitable.tech/posts/e12efce4/"/>
+    <id>https://www.inevitable.tech/posts/e12efce4/</id>
+    <published>2020-12-31T16:00:00.000Z</published>
+    <updated>2021-01-02T06:11:59.019Z</updated>
+    
+    <content type="html"><![CDATA[<p>我们走，2021。</p><a id="more"></a><h1 id="课程">课程</h1><p>今年一共上了 16 节课。</p><figure><img data-src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/df079def-4f11-4e19-92fc-458451e08c69/download_(1).png" alt="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/df079def-4f11-4e19-92fc-458451e08c69/download_(1).png" /><figcaption aria-hidden="true">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/df079def-4f11-4e19-92fc-458451e08c69/download_(1).png</figcaption></figure><h1 id="side-project">Side project</h1><p>今年一共做了 13 个，大概是一个月一个。这其中有些 Project 计划是一起用的。比如 Gallery 和 Daily Picture 。Daily Picture 负责抓取图片，Gallery 负责前端显示，Image Excerpt 负责为十几张图片生成一个统一的颜色预览图。</p><p>👛 <a href="https://github.com/glazec/friendToken">FRIEND</a> ：这是我目前正在进行的项目。我希望可以探索一下代币化个人价值和社交价值。目前的想法是可以将个人代币的价值与你朋友的代币进行锚定。个人可以更改这个锚定价格。毕竟人都在进步，如果你进步的比你朋友快，你就应该提高代币的锚定价格。</p><p>那这些个人代币可以怎么使用，又有什么价值呢？目前我想到的是这些代币可以用于赞助，VIP，付费阅读，付费提问，自定义化的付费服务，等等。代币可以分发给那些支持者，比如在社交媒体上给你点赞，转发你的推文等等。</p><p>这是我第一次尝试智能合约开发。踏过了 Solidity，各种开发框架，本地环境搭建，Debug，Test 等等的坑。智能合约开发和 Debug 都比 Web 开发或者 Python 之类的难度高。由于智能合约更新的困难，我也写了很多 Test。Test 代码大概在合约代码的两倍左右。</p><p>具体的一些坑可以看我的 <a href="https://twitter.com/cruz_lyp">Twitter</a>。关于智能合约开发的推荐流程如果大家感兴趣的化可以考虑以后整理一下。</p><p>🎰 <a href="https://github.com/glazec/VAE-for-CP-Decompostion">Variational Inference Solver for CP Decomposition</a> ：这个是我第一次使用 Pytorch，第一次尝试机器学习。感觉倒是不错。Pytorch 非常的简单易用，至少写网络结构的时候是这样的。比较麻烦的是训练，测试和调参的代码。这些代码的行数是网络结构的 4 倍。</p><p>这个项目是张量计算的期末项目。虽说是张量积算课，这个项目更需要的是机器学习的技巧。在众多的 Variational Inference Solver 中，我们最后选择了 Variational AutoEncoder 去实现 CP Decompostion 的重建。</p><p>这个项目主要的困难之一是对问题的定义。这个题目是教授直接扔给我们的。看到题目的那一瞬间就是迷茫，根本不知道题目里的这些术语是什么意思。在未知的领域逐渐摸索，找到思路。这可能是对大多数人来说最害怕的部分。因为在探索的过程中不知道自己的思路是否正确，离终点到底还有多远。随着截止日期的临近，这种压力会越来越大。</p><p>接下来的困难就是技术实现上的难题了。之前提到过我以前从来没有用过机器学习，幸亏 Pytorch 上手容易，我并没有在网络结构上吃太多的亏。主要的问题还是调参。应该用多大的网络，训练数据要多大，batch，learning rate 又分别是多少。我最后采用了 Ray 来进行自动调参。自动调参的想法很简单，就是尝试不同的超参数组合。但自动调参的代码写起来还挺多的，上百行的样子。最后的效果其实也差不多，没有想象中翻天覆地的变化。</p><p>💰 <a href="https://github.com/glazec/Ethereum_wallets_analysis">Ethereum wallet analysis</a> ：这是在 DEFI 火热的时候写的。用于分析某个钱包地址 DEFI 投资的表现。如果这个钱包表现好的话，我可以选择跟单，也去赚一点钱。</p><p>这个项目的主要难点之一是数据清洗。我从 <a href="http://zerio.io">Zerio.io</a> 上获取钱包的交易数据，用 Pandas 进行清洗。第一次使用 Pandas 清洗数据遇到不少难点。比如怎么处理日期，怎么对行和列进行操作等等的基础问题。</p><p>后续的分析也遇到不少问题。分析的思路很简单，首先把交易根据交易对进行分类，然后分析每个交易对的盈利情况。进一步分析就把交易对的交易记录详细分成单子。去寻找开仓和平仓的时候，然后分析这一个仓位的盈利情况。但在实际操作中会遇到各种各样的问题。比如用户不平仓，用户的交易对比较复杂，把不同的代币进行呼唤。又比如用户从其他钱包里收到了钱，然后进行交易。这些情况都使分析更加困难。或许用 Time Weighted Rate Of Return 或者 Dollar Weighted Rate Of Return 会更好。</p><p>即使找到了好的钱包，真正跟单的时候也很困难。由于 Defi 的高波动率，即使是 1，2 分钟的数据延迟都会对收益造成巨大影响。</p><p>关于区块链的新技术，新思想如果大家感兴趣的化可以考虑以后整理一下。</p><p>🖼️ <a href="https://github.com/glazec/daily_pics">Daily picture</a> ：这个项目可以把你在 Pixiv 和 Twitter 上点赞的插画给下载下来。我的出发点是希望把我喜欢的插画下载到本地，方便随时欣赏。毕竟一张图片包含着那么多的信息，绝对不是在手机上一眼扫过去 3 秒内能够欣赏完的（上完艺术史的课才意识到一张画应该如何去体会）。因此我采用了增量更新的方式。如果你是第一次运行脚本，它会下载你最近喜欢的 50 张图片。当你下次运行脚本时，它只会下载你最新喜欢的所有图片。</p><p>这个项目的难点只是挑选合适的库。好用的 Pixiv 库还真的不多，大部分都有点缺胳膊少腿的感觉。</p><p>✉️ <a href="https://github.com/glazec/hexo-web-push-notification">Webpush notification</a> ：这是我今年的第一个项目。它可以帮助基于 Hexo 的博客给读者通过浏览器推送通知。如果你希望你的读者能够第一时间知道你的更新，这个插件非常的实用。</p><p>在实际开发的过程中，遇到最大的问题就是 Hexo 文档。Hexo 的文档挺简陋的，关于插件开发在网上也没有太多的资料，大部分时候都得自己动动脑子。 而且制作插件也没有什么配套的开发或者 Debug 工具，得自己用最原始的方式慢慢来。</p><p>🚗 <a href="https://github.com/glazec/common_vps_setup">Ansible playbook for common VPS setup</a>：在之前折腾新的 VPS 的时候，我采用了 Ansible 来做自动化部署。Ansible 我在以前介绍过，可以很方便的进行自动化运维，强大的 Devop 工具。这个仓库包含了我自己常用的 Ansible 脚本。</p><p>☁️ <a href="https://github.com/glazec/BlenderCloudRender">BlenderCloudRender</a>：用 VPS 或者免费的 Goolge Colab 来渲染自己的 3D 作品。那段时间我特别喜欢做一些 3D 的东西。但是 3D 的东西渲染又很慢。所以动手写了这样一个脚本可以把渲染放在云端。由于专业的渲染服务器太贵，我就选择了把渲染交给便宜的 VPS 或者免费的 Google Colab。</p><p>这个项目的难点在于和服务器通信。和服务器搭建了 SSH 连接后怎么跟它进行通信，怎么要求它执行脚本，如何获取脚本执行结果。</p><p>➕ ShuttleBus：这个项目是优化班车排班，是我运筹学的扩展。由于全程调用 Google 的 OR 库，其实并没太要求运筹学。</p><p>项目的难点在于将问题建模，变成一个个 constraint。然后将这些 constratint 按照文档一个个变成代码。有一些比较偏门的 constraint 我找了很久。另一个难点便是数据。由于要求每段路程的驾车时间，如何获取这些时间。如果我们从导航上获取这些时间，可信度又是多少？我们需要基于统计学给出一些解释。</p><p>🕸️ <a href="https://github.com/glazec/hexo-cheatsheets">Hexo cheatsheet</a> ：这也是今年上半年的一个项目。现在看来这就是个换皮项目。将别人的 cheatsheets 网站样式扒下来放到 Hexo 里去。当初觉得自己需要一个记录 cheatsheet 的网站，但实际做完以后发现不如 Notion 好用。</p><p>我的 CSS 一直挺菜的，做这个最挣扎的就是改 CSS 和模板文件。</p><p>⚙️ <a href="https://github.com/glazec/tool-box">Tool Site</a>：这个网站计划是来展示我的工具的。随着使用的工具越来越多，我觉得有必要记录并且展示这些工具。但最后还是发现不如 Notion 好用。</p><p>由于我不擅长写 CSS，我前期使用了可视化的网站开发工具。把样式做好了以后直接导出 React 代码，自己再给它接上数据就行了。实际使用体验还不错，基本避过了我最讨厌的 CSS。缺点之一是导出的 React 代码有点奇怪，用了不少那个开发工具定制化的组件。另一个缺点就是接上数据以后的项目就不能重新倒入了。不太方便迭代。</p><p>🖼️ <a href="https://github.com/glazec/gallery">Gallery</a>：这是个半成品，是作为 Daily Picture 的前端。原来的构想是可以有一个网页来欣赏自己喜欢的插画。希望这个网页可以尽可能大的展示插画。但是由于我自己养成不了欣赏以前喜欢的插画的原因，不了了之。</p><p>🖼️ <a href="https://github.com/glazec/imageExcerpt">ImageExcerpt</a>：Gallery 的配套工具。用于给一个帖子几十张图片生成预览图。思路是我们提取每一张图片的调色盘。接着我们按照图片顺序，将这些调色盘一行行的堆叠起来。这样只看预览图就可以感受到这个帖子里图片的色调和情感。</p><p>📔 <a href="https://github.com/glazec/hetushu">Hetushu</a> ：这是一个很简单的项目。只是把小说从网站上扒下来。</p><p>这个项目的难点是后续去除广告。网站的反爬措施之一就是添加了很多广告在正文。网页浏览时看不见，但你把文字扒下来的时候就会发现这些千奇百怪很难用正则匹配去除的广告。</p><h1 id="明年">明年</h1><p>明年也就是 2021 年已经来了。2021 年应该是比较重要的一年，因为大学要毕业了。这一年的决定将会直接影响未来的 2-3 年。到底是走哪个方向呢？数据科学？应用数学？区块链？</p><p>明年希望能够拓展一下知识面。多看一点书，多学学其他的东西。就目前来看，希望 2021 年可以看一些诗词有关的书。古人对于字词的精确运用令人叹为观止。作为一个讲白话文的现代人也只有羡慕的份了。举个例子，大家可以感受一下古人的用词。“小山重叠金明灭，鬓云欲度香腮雪”来自温庭筠写的菩萨蛮。如果让我来概括这句词，大概就是大中午的，女孩子还在睡觉。这画面感，韵味差的实在是太远了。原词中对颜色运用强烈的刺激着读者的感官。明年希望以次为契机，能够提升对字词的运用。</p><p>生活在一个法治社会，不学习一点法律怎么行。希望明年通过罗翔的视频了解一下中国的法律，也是了解一下专精于法律的人他们是怎么思考的。</p><p>不少人对明年的区块链都抱有期待。期待看到 DEFI 催化的一系列变动。我也是挺希望明年能够以开发者去加入这个生态。现在以太坊的手续费实在是太高了，我一再怀疑是不是只能做一些跟钱有关的应用。只有更多的利益能够战胜更高的手续费。今年区块链的热门项目都跟经济学有着很大变化。一个好的激励措施可以让用户真正自发的参与到项目当中去。经济学或许会应用到未来更多的区块链项目中。要不是学校里经济专业的预备课程打分太低，我都想修经济专业了。</p><p>另一个比较重要的是对知识和信息的整理。今年磕磕绊绊开始使用 Notion 了。用 Notion 来记录一些比较好用的工具，整理一些笔记和知识。实际需要用到这些笔记的次数也在不断增加。随着记录越来越多的东西，今后可能会更加频繁的回过头来找些什么。整理信息是明年最重要的，我需要一个存储空间更大的脑子。</p><p>类似于信息整理，下半年上网课的时候我发现了 Figma 非常适合用来做笔记。它强大的排版功能让我随心所欲的整理知识点。把重要的定义或者公式截图下来根据章节放到不同的 Frame 里。目前最大的问题在于索引。没办法搜索图片中的文字，或者知识点。另一个问题是图片的尺寸大小不一，字或大或小，不太工整。看看明年怎么改进一下，应该不会太难。大不了写两个插件。这种无限大小的画布用来整理知识点真的很赞。</p><p>祝各位读者新的一年要快乐，自由，有意义。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;我们走，2021。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="生活随想" scheme="https://www.inevitable.tech/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E6%83%B3/"/>
+    
+    
+    <category term="生活随想" scheme="https://www.inevitable.tech/tags/%E7%94%9F%E6%B4%BB%E9%9A%8F%E6%83%B3/"/>
+    
+    <category term="年终小结" scheme="https://www.inevitable.tech/tags/%E5%B9%B4%E7%BB%88%E5%B0%8F%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从哪儿寻找新的区块链项目？</title>
+    <link href="https://www.inevitable.tech/posts/5b7ede32/"/>
+    <id>https://www.inevitable.tech/posts/5b7ede32/</id>
+    <published>2020-12-31T16:00:00.000Z</published>
+    <updated>2021-01-02T06:11:59.048Z</updated>
+    
+    <content type="html"><![CDATA[<p>人间一天，币圈一年。这些新项目我们应该去哪里找呢？ <a id="more"></a></p><p><a href="https://github.com/w3f/General-Grants-Program/blob/master/grants/accepted_grant_applications.md">Web3 基金会</a>也会定期放出他们资助的项目。 <a href="https://esp.ethereum.foundation/en/projects/">Ethereum 基金会</a>：在它的<a href="https://blog.ethereum.org/category/ecosystem-support-program/">Blog</a>中可以看到最近受到资助的项目。</p><h1 id="风投机构">风投机构</h1><p>可以在 Crunchbase 上订阅他们。</p><p>Dragonfly Capital 投资了很多区块链项目，团队成员以中国人为主，主管是冯波。在<a href="https://www.dcp.capital/portfolio">它的投资列表</a>中可以找到很多熟悉的项目。在<a href="https://medium.com/dragonfly-research">Dragonfly Capital 的研报</a>中可以看见他们投资的新项目。 https://pic1.zhimg.com/80/v2-a6527926ff86de682628f686bb2d20ec_720w.jpg</p><p>#HASHED 是一个来自韩国的风投机构，关注亚洲和美国的区块链项目。<a href="https://www.hashed.com/portfolio">他们主要投资</a>区块链平台，金融基础设施和应用。<a href="https://www.hashed.com/content">在这</a>可以发现他们的最新动态。</p><p><a href="https://dekrypt.capital/">dekrypt capital</a></p><p><a href="https://lemniscap.com/portfolio">Lemniscap</a>。<a href="https://medium.com/lemniscap">他们的 Blog。</a></p><p>FBG Capital</p><p><a href="https://www.astronaut.capital/#What%20we%20do">Astronaut Capital</a></p><p><a href="https://www.placeholder.vc/">Placeholder</a></p><p>Picolo Research 聚合了各种区块链项目并且提供调研报告。</p><p><a href="https://cryptofundintelligence.com/">Cryptofund</a>提供各种加密货币基金。</p><p>Dekrypt Capital 专注于投资区块链基础设施</p><p><a href="https://ventures.coinbase.com/">Coinbase 风投</a></p><p><a href="https://www.ideocolab.com/ventures/">Ideocolab 风投</a></p><p><a href="https://blockchain.capital/portfolio/">Blockchain Capital</a></p><p><a href="https://www.panteracapital.com/portfolio">Pantera Capital</a></p><p><a href="http://consensus-lab.com/">共识实验室</a>提供基金月报。</p><center><img class="lazyload" data-src="/static/images/blockchainProject.png" height="80%" width="80%"></center>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;人间一天，币圈一年。这些新项目我们应该去哪里找呢？</summary>
+    
+    
+    
+    <category term="Blockchain" scheme="https://www.inevitable.tech/categories/Blockchain/"/>
+    
+    
+    <category term="Blockchain" scheme="https://www.inevitable.tech/tags/Blockchain/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Create Smart Contract</title>
+    <link href="https://www.inevitable.tech/posts/458d64bd/"/>
+    <id>https://www.inevitable.tech/posts/458d64bd/</id>
+    <published>2020-12-31T16:00:00.000Z</published>
+    <updated>2021-01-02T07:46:27.955Z</updated>
+    
+    <content type="html"><![CDATA[<p>一键搭建初始化以太坊开发环境。</p><a id="more"></a><h1 id="开发经历">开发经历</h1><p>这个项目有点类似 create-react-app。目的是帮助开发者快速初始化开发环境。做起来还是挺简单的。就是写一个 Node 脚本。里面包含初始化项目文件夹，安装依赖和替换模板文件。具体项目使用和介绍可以 <a href="https://github.com/glazec/create-smart-contract">看 Github 主页</a>。</p><h1 id="使用指南">使用指南</h1><p>首先你得已经全局安装 truffle。这样<code>create-smart-contract myapp</code>，会用 truffle 为你初始化一个项目文件夹。然后为你安装一系列有用的插件和包。最后给你生成一些默认的配置文件。以下是包含的框架，插件，包和配置文件。由于目前 Openzeppelin 不支持 0.8 的 solc，所以我默认使用 0.7 的最新版。</p><ul><li><a href="https://www.npmjs.com/package/truffle">truffle</a><ul><li><span class="citation" data-cites="truffle/hdwallet-provider">[@truffle/hdwallet-provider]</span>(https://www.npmjs.com/package/<span class="citation" data-cites="truffle/hdwallet-provider">@truffle/hdwallet-provider</span>)</li><li><a href="https://www.npmjs.com/package/eth-gas-reporter">eth-gas-reporter</a></li><li><a href="https://www.npmjs.com/package/solidity-coverage">solidity-coverage</a></li><li><a href="https://www.npmjs.com/package/truffle-assertions">truffle-assertions</a></li></ul></li><li><a href="https://www.npmjs.com/package/hardhat">hardhat</a><ul><li><span class="citation" data-cites="nomiclabs/hardhat-ethers">[ @nomiclabs/hardhat-ethers]</span>(https://www.npmjs.com/package/<span class="citation" data-cites="nomiclabs/hardhat-ethers">@nomiclabs/hardhat-ethers</span>)</li><li><span class="citation" data-cites="nomiclabs/hardhat-truffle5">[@nomiclabs/hardhat-truffle5]</span>(https://www.npmjs.com/package/<span class="citation" data-cites="nomiclabs/hardhat-ethers">@nomiclabs/hardhat-ethers</span>)</li><li><span class="citation" data-cites="nomiclabs/hardhat-waffle">[@nomiclabs/hardhat-waffle]</span>(https://www.npmjs.com/package/<span class="citation" data-cites="nomiclabs/hardhat-waffle">@nomiclabs/hardhat-waffle</span>)</li><li><span class="citation" data-cites="nomiclabs/hardhat-web3">[@nomiclabs/hardhat-web3]</span>(https://www.npmjs.com/package/<span class="citation" data-cites="nomiclabs/hardhat-web3">@nomiclabs/hardhat-web3</span>)</li></ul></li><li><a href="https://www.npmjs.com/package/ethers">ethers</a></li><li><span class="citation" data-cites="openzeppelin/contracts">[@openzeppelin/contracts]</span>(https://www.npmjs.com/package/<span class="citation" data-cites="openzeppelin/contracts">@openzeppelin/contracts</span>)</li><li><a href="https://www.npmjs.com/package/chai">chai</a></li><li><a href="https://www.npmjs.com/package/solidity-docgen">solidity-docgen</a></li><li><a href="https://www.npmjs.com/package/mocha">mocha</a></li><li><a href="https://www.npmjs.com/package/prettier">prettier</a></li><li><a href="https://www.npmjs.com/package/prettier-plugin-solidity">prettier-plugin-solidity</a></li><li><a href="https://www.npmjs.com/package/solc">solc</a></li><li><a href="https://www.npmjs.com/package/web3">web3</a></li><li><a href="https://www.npmjs.com/package/ethereum-waffle">ethereum-waffle</a></li><li>.gitignore</li><li>.prettierrc</li><li>hardhat.config.js</li><li>slither.config.json</li><li>solcover.js</li><li>truffle-config.js</li></ul><p>除此之外我还加入了一些有用的 Node 脚本。</p><ul><li><code>npm run test</code>: 用来跑测试的。我这采用了 Hardhat。因为它跑 test 的速度快，并且支持在智能合约中使用<code>console.log</code>。</li><li><code>npm run doc</code>: 根据 <a href="https://docs.soliditylang.org/en/v0.8.0/natspec-format.html">doxygen</a> 自动生成文档。</li><li><code>npm run coverage</code>: 根据配置文件 <code>.solcover.js</code> 生成测试覆盖率报告。</li><li><code>npm run analyze</code> 根据配置文件 <code>slither.config.json</code> 静态分析智能合约。<em>注意：要求已经安装 <a href="https://github.com/crytic/slither#how-to-install">Slither</a></em></li></ul><h2 id="自定义">自定义</h2><h3 id="包">包</h3><p>你可以自定义想要的包。更改<code>index.js</code>的<code>installPackages</code>。例如</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> installPackages = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;\nInstalling hardhat\n&quot;</span>.cyan);</span><br><span class="line">    shell.exec(<span class="string">`npm install --save-dev hardhat`</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&quot;\nFinished installing packages\n&quot;</span>.green);</span><br><span class="line">      resolve();</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h3 id="模板">模板</h3><p>你可以自己更改，添加或删除模板。例如你想要添加模板，你需要将模板文件加入 <code>templates/</code> 然后修改 <code>templates/templates.js</code>。例如</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fs = <span class="built_in">require</span>(<span class="string">&quot;fs&quot;</span>);</span><br><span class="line"><span class="keyword">let</span> path = <span class="built_in">require</span>(<span class="string">&quot;path&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> gitIgnore = fs.readFileSync(path.resolve(__dirname, <span class="string">&quot;./gitignore&quot;</span>));</span><br><span class="line"><span class="keyword">const</span> solcover = fs.readFileSync(path.resolve(__dirname, <span class="string">&quot;./solcover.js&quot;</span>));</span><br><span class="line"><span class="keyword">const</span> slither = fs.readFileSync(</span><br><span class="line">  path.resolve(__dirname, <span class="string">&quot;./slither.config.json&quot;</span>)</span><br><span class="line">);</span><br><span class="line"><span class="keyword">const</span> hardhatConfig = fs.readFileSync(</span><br><span class="line">  path.resolve(__dirname, <span class="string">&quot;./hardhat.config.js&quot;</span>)</span><br><span class="line">);</span><br><span class="line"><span class="keyword">const</span> truffleConfig = fs.readFileSync(</span><br><span class="line">  path.resolve(__dirname, <span class="string">&quot;./truffle-config.js&quot;</span>)</span><br><span class="line">);</span><br><span class="line"><span class="keyword">const</span> prettier = fs.readFileSync(path.resolve(__dirname, <span class="string">&quot;./.prettierrc&quot;</span>));</span><br><span class="line"><span class="keyword">const</span> package = fs.readFileSync(path.resolve(__dirname, <span class="string">&quot;package.json&quot;</span>));</span><br><span class="line"><span class="keyword">const</span> env = fs.readFileSync(path.resolve(__dirname, <span class="string">&quot;.env&quot;</span>));</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="string">&quot;.gitignore&quot;</span>: gitIgnore,</span><br><span class="line">  <span class="string">&quot;solcover.js&quot;</span>: solcover,</span><br><span class="line">  <span class="string">&quot;slither.config.json&quot;</span>: slither,</span><br><span class="line">  <span class="string">&quot;truffle-config.js&quot;</span>: truffleConfig,</span><br><span class="line">  <span class="string">&quot;hardhat.config.js&quot;</span>: hardhatConfig,</span><br><span class="line">  <span class="string">&quot;.prettierrc&quot;</span>: prettier,</span><br><span class="line">  <span class="string">&quot;package.json&quot;</span>: package,</span><br><span class="line">  <span class="string">&quot;.env&quot;</span>: env,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>祝你开发愉快。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;一键搭建初始化以太坊开发环境。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="开发" scheme="https://www.inevitable.tech/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="Blockchain" scheme="https://www.inevitable.tech/tags/Blockchain/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Polkadot：今年最有潜力的公链</title>
+    <link href="https://www.inevitable.tech/posts/7dd50f2f/"/>
+    <id>https://www.inevitable.tech/posts/7dd50f2f/</id>
+    <published>2020-11-23T16:00:00.000Z</published>
+    <updated>2021-01-02T06:11:59.089Z</updated>
+    
+    <content type="html"><![CDATA[<p>我最近才知道有<a href="https://polkadot.network/">Polkadot</a>这么一条公链。它的市值排名第八。我知道的的确有点晚了。它的创始人是以太坊的联合创始人。它有 Web3 基金会的支持。如果说在以太坊上开发的是智能合约，Polkadot 上开发的就是区块链。可以自定义的区块链给了开发者更多的自由，我们可以改变它的 Runtime，改变它的共识算法等等。官方也发行了开发工具 Substrate 帮助开发者快速构建自己想要的区块链。Polkadot 这条公链便是基于 Substrate 框架。在 Polkadot 创始人的一次演讲中，他为了展示 Substrate 的易用性，现场 Coding Demo 特意拿出刚刚从苹果店买的 Macbook Pro。现场开箱并使用 Substrate 开发了一条区块链。</p><p>说了这么多开发者关心的问题，Polkadot 到底解决了什么问题呢？ 在我看来 Polkadot 解决了并发的问题。因为其独特的 Relay Network, Polkadot 可以并行的处理所有挂在其上面的公链的交易。跨链在 Polkadot 的设计下也变得简单了。数据，资产都可以在不同的链上进行转化。如果用过 Flamingo 等跨链资产工具的人应该知道这些工具有多难用。每次跨链都得调用很多的合约，交不少的手续费。另一个有意思的特性是区块链的升级。这应该算是 Substrate 的特性。由于其将 Runtime 编译成 WASM 放在区块中，区块链的升级不再会导致硬分叉。传统区块链升级需要矿工们升级节点软件版本。如果有些矿工不愿意升级或者忘记升级，这条区块链就会变成两条，也就是硬分叉。</p><p>对于挂在 Polkadot 上的链，官方称其为 Parachain。这些 Parachain 既可以是公开的，也可以是私有的。既然 Polkadot 是基于 Substrate 开发的，Parachain 也需要基于 Substrate 开发，那么我们可不可以挂一条 Polkadot 到 Polkadot 上呢？这的确是可行的，我们可以无限套娃。目前官方给出的正在开发的 Parachain 有兼容 EVM 的智能合约区块链，文件存储区块链，身份验证区块链，隐私区块链，金融区块链，IOT 区块链，预言机（Chainlink）等等。这些项目有的看的云里雾里，有的只是把现有的应用拷贝到 Polkadot 上。</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;我最近才知道有&lt;a href=&quot;https://polkadot.network/&quot;&gt;Polkadot&lt;/a&gt;这么一条公链。它的市值排名第八。我知道的的确有点晚了。它的创始人是以太坊的联合创始人。它有 Web3</summary>
+        
+      
+    
+    
+    
+    <category term="Blockchain" scheme="https://www.inevitable.tech/categories/Blockchain/"/>
+    
+    
+    <category term="Blockchain" scheme="https://www.inevitable.tech/tags/Blockchain/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2020 年第 41 周</title>
+    <link href="https://www.inevitable.tech/posts/b3172510/"/>
+    <id>https://www.inevitable.tech/posts/b3172510/</id>
+    <published>2020-10-10T16:00:00.000Z</published>
+    <updated>2021-01-02T06:11:59.017Z</updated>
+    
+    <content type="html"><![CDATA[<p>确定了这个学期的选课。</p><a id="more"></a><h1 id="这周做了什么">这周做了什么</h1><h2 id="vps-设置">VPS 设置</h2><p>把 VPS 给设置好了。其中最花时间的是网络的配置，反向代理的配置。这些部分出错了很难找到原因，需要不断的去更改配置找到正确的方法。</p><p>我本来以为 VPS 价格翻倍性能也翻倍，其实并不是。$5 的 VPS 是 1G1C。$10 的 VPS 是 2G1C。价格翻倍了，但是 CPU 数量没变。但是从$20 到开始，基本就是价格翻倍，性能翻倍了。</p><p>关于具体在 VPS 上安装了那些软件，怎么进行维护可以看 <a href="https://www.inevitable.tech/posts/693c10/">这一篇文章</a>。</p><h1 id="这周看了什么">这周看了什么</h1><ul><li><a href="https://www.nature.com/articles/s41586-020-2649-2">Array programming with NumPy</a>：这篇文章展示了 Numpy Array Computation 的火爆以及先进。大致感觉就是 Numpy 自己吹自己一波。Numpy 觉得未来的挑战将会是面临更多的用户以及为不同的专业计算平台做适配，比如 FPGA，TPU 等等。</li><li><a href="https://github.com/nginx-proxy/nginx-proxy">Nginx-proxy</a>：方便快捷的为运行在 Docker 中的服务做反向代理。</li><li><a href="https://github.com/huginn/huginn">Huginn</a>: 自动化软件，像 IFTTT。</li><li><a href="https://zhuanlan.zhihu.com/c_158208519">用谁都能看懂的方法解释分布式系统，大概。.</a>：一个听不错的分布式系统专栏。</li><li><a href="https://zhuanlan.zhihu.com/c_212000558">一个书魔程序员的读书简评</a>：同上。</li><li><a href="https://rsms.me/">rsms</a>: 一个设计师的个人网站。颜色的运用很棒。</li><li><blockquote><p>一本书：Designing Data-Intensive Applications， 对应程序员 3 能力中的工具箱深度广度两个概念-1：多范式编程和最小表达力原则 (least expressiveness principle), 对应程序员 3 能力中的程序语言理解深度和表达抽象能力两个概念-2：领域驱动设计 (Domain Driven Design)，对应程序员 3 能力中的方法论，编程大道 (programming in the big)，和构架能力。</p></blockquote></li></ul><h2 id="歌曲">歌曲</h2><h3 id="oskar-roman-jezior">Oskar Roman Jezior</h3><p><a href="https://space.bilibili.com/566258416/">Oskar Roman Jezior</a> 是一位德国的钢琴家。他弹奏了很多华语流行歌曲，比如《时间煮雨》，《不为谁而作的歌》，《十年》，《说好不哭》。他的弹奏富有感情，轻重缓急的对比非常明显。</p><h1 id="这周评价">这周评价</h1><p>除了网格交易，上周要做的都做了。 Designing Data-Intensive Applications 目前进度：1/12</p><h1 id="下周做什么">下周做什么</h1><ul><li>读一章 Designing Data-Intensive Applications</li><li>自动抓取 Twitter 上喜爱的图片保存到本地</li><li>网格交易</li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;确定了这个学期的选课。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="周报" scheme="https://www.inevitable.tech/categories/%E5%91%A8%E6%8A%A5/"/>
+    
+    
+    <category term="VPS" scheme="https://www.inevitable.tech/tags/VPS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我拿 VPS 来干什么</title>
+    <link href="https://www.inevitable.tech/posts/693c10/"/>
+    <id>https://www.inevitable.tech/posts/693c10/</id>
+    <published>2020-10-10T16:00:00.000Z</published>
+    <updated>2021-01-02T06:11:59.111Z</updated>
+    
+    <content type="html"><![CDATA[<p>从一开始不知道在 VPS 上跑什么服务，到现在 VPS 上跑满服务。</p><a id="more"></a><p>随着容器技术的成熟，部署软件和维护 VPS 不再像以前那么复杂。以前的软件大多是直接跑在 VPS 上，我们要为其设置反向代理，安装 Nginx。在软件安装的时候也很容易出错。现在很多软件都支持用 Docker 安装。稍微修改一下配置文件，我们就可以一键启动容器了。服务相互之间隔离，管理 Docker 可比之前折腾直接装在本机上的软件方便多了。那么我们具体应该怎么管理 VPS，VPS 上又有什么有用的软件可以安装呢？</p><h1 id="vps-管理">VPS 管理</h1><p>首先介绍几个提升 VPS 使用体验的软件。他们分别是 VSCode,Ansible,Htop,Portainer,Nginx-Proxy,Netdata。</p><h2 id="vscode">Vscode</h2><p>自从 VSCode 推出了远程 SSH 功能，在 VPS 编辑文件一下子变得方便了起来。编辑文件的同时还有 Terminal，还有文件树。如果安装了 Docker 插件，我们还可以轻松的管理容器。不过需要注意的是在 1G1C 的 VPS 上可能跑不动 VSCode。</p><h2 id="ansible">Ansible</h2><p>我曾在第 35 周提到过 <a href="https://www.inevitable.tech/posts/1c32c9b8/">Ansible</a>，一个自动运维工具。我们可以将常用的操作写成 Ansible Playbook 以重复使用。比较好的习惯便是执行一个操作遍将其写成 Ansible Playbook，保证它的可重复性。</p><p>Ansible playbook 某种意义上与<code>docker-compose.yml</code> 有重叠。例如我们在<code>docker-compose.yml</code>中有两个 service，Nginx 和 Portainer。我们既可以在 Ansible playbook 中直接调用这个<code>docker-compose.yml</code>，也可以将 Nginx 和 Portainer 分别写进 Ansible playbook，不再用到 docker-compose.yml。这么做各有利弊，<code>docker-compose.yml</code>更方便进行分享。写进 Ansible playbook 中则更加灵活，方便后续修改和使用。</p><p>目前唯一的缺点是 Ansible 不支持 Windows，我们需要在 WSL 或 Docker 中运行 Ansible。</p><h2 id="htop">Htop</h2><p>一个来查看系统资源的 Linux 命令。可以展示 CPU，RAM，进程占用系统资源的信息。它也支持过滤和搜索，可以展示特定的某些进程的系统资源使用。</p><h2 id="portainer">Portainer</h2><p><a href="https://www.portainer.io/">Portainer</a> 是一个容器管理软件。它有一个 WebUI，让我们可以在 Web 界面管理 VPS 上的容器。以前删除一个容器，我们需要先找到容器的 ID，然后停止它，最后删除它。在 Portainer 上我们可以一键移除容器，并且可以方便的删除现有容器不在使用的 Volume。除了管理容器，Portainer 也可以用来部署容器，给容器分组等等。</p><h2 id="nginx-proxy">Nginx-Proxy</h2><p>为了可以用域名访问到这些在不同端口的服务，我们需要一个反向代理。反向代理会帮助我们将进入的流量转发到对应的服务中去。</p><p><a href="https://github.com/nginx-proxy/nginx-proxy">Nginx-Proxy</a> 就是这样一个软件可以帮助我们将流量自动转发到运行在 Docker 中的服务去。这算是配置非常简单的网络服务软件。如果需要额外的 SSL，可以使用配套的 <a href="https://github.com/nginx-proxy/docker-letsencrypt-nginx-proxy-companion">docker-letsencrypt-nginx-proxy-companion</a>。照着教程走就可以完美完成设置。需要注意的是如果你用 Cloudflare 做 DNS，记得关闭 Proxy 模式，用 DNS Only 模式。</p><h2 id="netdata">Netdata</h2><p>一开始认识到的资源监控软件是 Grafana。Grafana 的灵活度更高但是做不到开箱即用，而且还需要安装额外数据库。因此最后我使用过的是轻巧的 <a href="https://github.com/netdata/netdata">Netdata</a>。Netdata 可以做到开箱即用并且展示了大量的系统资源数据。由于展示的数据过多，会显得有些杂乱。</p><h1 id="我在用的软件">我在用的软件</h1><h2 id="tinytinyrss">TinyTinyRss</h2><p>大家都在用的 RSS 服务。其缺点还是很明显的，很多 UI 设计比较过时，软件较为臃肿占用较多的资源。</p><h2 id="huginn">Huginn</h2><p><a href="https://github.com/huginn/huginn">Huginn</a> 是一个自动化软件。用起来有点类似 IFTTT。</p><p>如果要使用 Huginn 的邮箱服务，我们需要为其 Docker 添加跟 SFTP 有关的环境变量。具体例子 <a href="https://github.com/huginn/huginn/blob/master/.env.example">在这</a>。</p><h2 id="netease-music">Netease music</h2><p><a href="https://github.com/nondanee/UnblockNeteaseMusic">UnblockNeteaseMusic</a> 用来在海外解锁灰掉的网易云音乐。</p>暂时就这些，仔细一整理发现 Devop 的软件比真正干活的软件要多。最后附上我的<code>docker-compose.yml</code>。<script src="https://gist.github.com/glazec/1f8450a05981e615de92bdd6172ff2ee.js"></script>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;从一开始不知道在 VPS 上跑什么服务，到现在 VPS 上跑满服务。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="开发" scheme="https://www.inevitable.tech/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="VPS" scheme="https://www.inevitable.tech/tags/VPS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在 PC 上玩塞尔达传说</title>
+    <link href="https://www.inevitable.tech/posts/b2365e06/"/>
+    <id>https://www.inevitable.tech/posts/b2365e06/</id>
+    <published>2020-10-03T16:00:00.000Z</published>
+    <updated>2021-01-02T06:11:59.051Z</updated>
+    
+    <content type="html"><![CDATA[<p>没有 Switch 也可以玩满分游戏塞尔达：荒野之息</p><a id="more"></a><p>Wiiu 是任天堂的一款掌机平台。大部分登录 Switch 的游戏都会登录 Wiiu。因此想要玩上塞尔达传说，除了用 Switch 模拟器，我们还可以用 Wiiu 模拟器。</p><p><a href="https://cemu.info/">Cemu</a> 便是一款较为成熟，使用方便，支持丰富插件的 Wiiu 模拟器。</p><p>下载安装 Cemu 后，游戏应该去哪下载？需要注意的是 Wiiu 游戏分美版，欧版和日版。这些版本的语言并不通用。大部分的汉化补丁只能运行在日版游戏之上。</p><h1 id="游戏下载">游戏下载</h1><p>游戏下载可以用 <a href="https://github.com/llakssz/FunKiiU">FunKiiU</a>。只要输入需要游戏的 Title 和 Key 即可下载。在 <a href="https://skylerspark.github.io/wiiu-titlekeys/">这个网站</a> 上可以查询到游戏的 Title 和 Key。注意！不要漏掉可能存在的补丁和 DLC。如果漏掉了补丁，可能会出现<code>Your must perform a system update to play ***</code>。<a href="https://youtu.be/pZ8OBRxJWf8">这儿</a> 有解决方法。</p><p>除了 Funkiiu 这个工具，我们也可以在 <a href="https://glazec-awesome-love-4933.github.dev">这个网站</a> 进行下载。这个网站上集合了很多 Wiiu 游戏，并且这些游戏都包含汉化补丁。</p><h1 id="游戏处理和安装">游戏处理和安装</h1><p>下载完游戏，我们需要将这些凌乱的文件解密成 Wiiu 模拟器可读的文件。<a href="https://github.com/skylerspark/CDecrypt-Release">CDecrypt</a> 可以帮助我们进行解密。将<code>title.tik</code>和<code>title.tmd</code>拖入<code>CDecrybt_v2.0b.exe</code>。<code>CDecrybt_v2.0b.exe</code>会将这些文件解密为<code>code/</code>,<code>content/</code>,<code>meta/</code>三个文件夹。具体步骤可以参考 <a href="https://www.youtube.com/watch?v=swIkVIOUsOc">这个视频</a>。</p><p>导入 DLC 和补丁都是打开 Cemu-&gt;文件-&gt;Install game title, update or DLC，选中<code>meta/meta.xml</code>即可。</p><p>汉化补丁以图像插件的形式工作。我们需要将下载下来的汉化补丁放到<code>Cemu/graphicPacks</code>下，并且自己为其编写一份<code>rules.txt</code>。具体操作见<a href="https://www.youtube.com/watch?v=swIkVIOUsOc&amp;ab_channel=TheDarkHollow">这个视频</a>。</p><h1 id="游戏优化">游戏优化</h1><p>在图像插件之中有一些提升画质，粒子效果，阴影的插件，还有锁帧，更改分辨率的插件。这些插件根据个人需要打开。</p><p>Cemu 有两套 API 可以使用。在选项-&gt;工具-&gt;常规设定-&gt;图像中可以查看。分别为 OpenGl，Vulkan。Vulkan 可以调用显卡，提供更好的性能。</p><p>除了更改 API，我们还可以对 CPU 进行设置。右键点击游戏-&gt;Edit game profile, 我们可以根据自己的 CPU 性能调整 CPU ModeMode。 Thread quantum 对性能影响不大。</p><p>最提升性能的是替换 Shader 缓存。在<a href="https://www.reddit.com/r/CEMUcaches/comments/8pocf4/complete_shader_cache_collection/">这个网站</a>上可以找到几乎所有游戏的 shader 缓存，将下载下来的文件放入<code>cemu/shaderCache/transferable/</code>。这个缓存并没有覆盖所有的资源，即在游戏中我们还会需要加载部分资源。但是相较于不替换，有着巨大的提升。具体步骤 <a href="https://www.bilibili.com/s/video/BV1D5411t7sA">参考视频</a>。</p><p>就塞尔达荒野之息，还有 <a href="https://www.youtube.com/watch?v=IQzr-B7DjrU&amp;ab_channel=DigitalDreams">个人开发的光追插件</a>，为塞尔达加上了真实的光影。</p><p>终于可以玩上塞尔达了。这个模拟器的性能还行，虽然不能让我达到全程 60 帧，加载素材总会有一点卡，但也总算是能在不差的画质下流畅的跑起来。就连 Switch 的陀螺仪也可以通过 PS4 手柄的陀螺仪进行模拟。这篇文章只是概述了整个流程，具体步骤我都尽量附上了视频。<a href="https://www.youtube.com/watch?v=swIkVIOUsOc&amp;ab_channel=TheDarkHollow">最后这个视频</a> 解释了游戏下载，游戏文件处理汉化安装和输入设置。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;没有 Switch 也可以玩满分游戏塞尔达：荒野之息&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="游戏" scheme="https://www.inevitable.tech/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+    <category term="Cemu" scheme="https://www.inevitable.tech/tags/Cemu/"/>
+    
+    <category term="Switch" scheme="https://www.inevitable.tech/tags/Switch/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2020 年第 40 周</title>
+    <link href="https://www.inevitable.tech/posts/8e770ca0/"/>
+    <id>https://www.inevitable.tech/posts/8e770ca0/</id>
+    <published>2020-10-02T16:00:00.000Z</published>
+    <updated>2021-01-02T06:11:59.016Z</updated>
+    
+    <content type="html"><![CDATA[<p>开学了！</p><a id="more"></a><h1 id="这周做了什么">这周做了什么</h1><h2 id="塞尔达传说">塞尔达传说</h2><p>塞尔达传说被奉为开放游戏世界的标杆。作为一个游戏爱好者当然不能错过这款游戏，即使我没有Switch也不行。<a href="https://cemu.info/">Cemu</a>给了我在PC上玩塞尔达的机会。它并不是Switch模拟器，而是任天堂的Wiiu模拟器。还有人为其开发了光追插件，塞尔达 RTX ON！具体的安装教程可以参考<a href="https://www.inevitable.tech/posts/b2365e06/">上一篇文章</a>。</p><h2 id="图片展示网站">图片展示网站</h2><p>完成了UI设计，采用了深色背景，图片更有辨识度。很多图片网站都采用了一个网页尽量展示多的图片，比如pixiv，dribbble，点击图片可以进行放大。这种方式有利于展示大量图片，但是不利于用户仔细的观察这些图片。因此我尽可能放更大的图片，给予用户有沉浸感，和更多的图片细节。</p><p>对于文章，我们一般会在主页提供摘要来帮助用户快速了解文章的主要内容。那怎么给图片提供摘要呢？<a href="https://github.com/yyyeying/FilmToLongPicture">这个项目</a>给了我启发。我们可以将所有图片按照某种顺序融合成一张题图。只看题图，我们可以对这些图片的色调有大致的了解。</p><h2 id="defi">DEFI</h2><p>最近大火的DEFI我也参与了一脚。DEFI是Decentralized Finance的缩写，意思为去中心化交易所。整个交易所由智能合约构成，运行在区块链上。交易所的流动资金由用户提供，提供流动资金的用户会获得奖励，一般为交易手续费加上代币奖励。不同DEFI项目区别在于他们的做市商算法，即如何撮合用户的交易。基本所有算法做市商都存在无常损失，即你放进去多少钱提供流动性，拿出来的时候钱只会变少，不会变多。</p><p>怎么看为这些项目提供流动性几乎是稳赚不赔。为相对稳定的交易对提供流动性可以降低无常损失。剩下的只要选择收益高的项目就行了。往往项目初期的时候收益较高。在初期，参与的人较少，有更多的激励。总之会不会暴富这说不好，但是手续费是真的贵。以太坊一次转账就是10刀。流动性挖矿似乎钱越多越划算。</p><p>除了自己寻找项目，不少传统交易所都推出了流动性挖矿的项目，利率高的惊人。传统交易所整合用户资金，选择合适的项目，进行更高效的流动性挖矿。</p><p>从总锁仓价值来看，Defi的快速增长已经过去，目前总锁仓价值在13B左右浮动，已经不在快速增长，甚至出现小幅下滑。</p><h2 id="极简欧洲史">极简欧洲史</h2><p>这本书用的语言比较随意，读起来也比较轻松。书中从宗教，日耳曼人，罗马这几条线讨论了欧洲中世纪到近代的发展。书中有一些点让我记忆深刻。</p><p>中国很早就采用了中央集权，很难理解欧洲到了中世纪还是封建制度。作为国王天天得和自己的强力封臣扯皮，而且国王还打不过这些强力封臣。钱，税收，兵力都得依仗这些封臣。封臣对君主的效忠极大成功依靠契约，而不是利益之类的。随着欧洲各国的摩擦日益加剧，君主们找到了扩充军力的借口。至于这些庞大的军队是为了保家卫国，还是对内打压不听话的封臣就看君主的想法了。在这些扩军的国家中，最神奇的便是英国。英国作为岛国，海军是它与其他国家作战的主力。可是这海军可不能用来打自己的封臣，要打自己的封臣得靠陆军。因此英国的君权仍旧极大的受限于封臣。</p><p>统治阶级是如何看待中产阶级呢？统治阶级认为中产阶级的生活依赖于城市，而不是这些统治者。即换了个统治者，中产阶级仍旧那样的活着。 &gt; 这些欧洲君王降伏旧日贵族后,随即成为一个活跃的 新兴阶级一一城市里的中产阶级的支持者。当年这些君主势单力簿,曾经允许各个城镇自治,而随着城市的财富日增,这个让步也变得更加举足轻重。相较于自拥大军、躲在城堡里防御自己的贵族,中产阶级似乎平和得多,不具威胁性。然而,无论贵族多难应付,他们毕竟是社会秩序的一部分,而在这个社会秩序里,国王是天经地义的元首;反观中产阶级,他们的生活方式根本无需国王的存在。长远来看,对于王政的威胁远比贵族更棘手。 # 这周看了什么 * <a href="https://keycombiner.com/">Key Combiner</a>：这个网站可以帮助我们学习和记忆快捷键。网站提供了常用软件的快捷键。 * <a href="https://www.coingecko.com/en">Coin Gecko</a>：查看和追踪加密货币价格。 * <a href="https://www.macrotrends.net/">Macro Trends</a>: 提供不同宏观经济指标的走势图。可以查看不同的股票指数，按照行业，市值排序查看股票。 * <a href="https://zapper.fi/dashboard">Zapper.fi</a>：提供钱包的Defi资产分析，提供一键式流动性挖矿。界面美观。 * <a href="https://debank.com/">DeBank</a>：同上，但是提供更多的Defi分析，比如锁仓价值，流动挖矿利率。 * <a href="https://github.com/microsoft/playwright-python">Playwright for Python</a>：微软出品的Python端到端自动化框架，有点像<a href="https://developers.google.com/web/tools/puppeteer">Puppeteer</a></p><h2 id="歌曲">歌曲</h2><h3 id="octopath-traveller-ost">Octopath Traveller OST</h3><p><a href="http://music.163.com/album?id=71747233&amp;userid=92955555">《八方旅人》原声带</a>，作者为西木康智。很难想象这么优美有古典风格的曲子是仅仅30岁的西木康智制作的。非常期待他以后的作品。<a href="https://www.youtube.com/watch?v=bPPqMnf91VY&amp;t=148s">8-bit Music Theory</a>对西木康智在曲子中大量运用转调进行了分析。我乐理差，这个分析也听得一知半解的。</p><h3 id="山居秋暝">山居秋暝</h3><p><a href="http://music.163.com/song?id=1439379112&amp;userid=92955555">活泼的嗓音唱出王维的《山居秋暝》。</a>用流行音乐重新诠释古诗给我带来了不同的感觉，不同于中学时代背诵古诗的感觉。这种音律让古诗更加动听，我也更愿意去听。除了这首《<a href="http://music.163.com/song?id=1439379112&amp;userid=92955555">山居秋暝</a>》，<a href="http://music.163.com/song?id=1375935067&amp;userid=92955555">《杨花落尽子规啼》</a>也是我很喜欢的一首，它并不是那种活泼的感觉。</p><h1 id="这周评价">这周评价</h1><p>其实这些事情来自最近一个月。自从夏校结束，假期开始我就开始躺，自然也就什么计划，写不出周报。不得不说开学了以后，做事的效率突然飙升。就像电脑从关机状态变成开机运行一样。娱乐的时间减少了倒是真真确确的减少了。我们真的需要那么多娱乐时间吗？假期的时候陪女朋友看了沉默的真相。这属于那种看了开头就知道是什么味道的片子。这部片子的主题是司法公正，官商勾结。这些也算是老生长谈了。这电视剧我不怎么喜欢，总感觉节奏拖沓。有点类似玩手游的感觉。手游厂商跟玩家反着干，给玩家设置诸多限制，不让玩家轻易的拿到他们想要的，比如体力限制，升级需要大量的素材。电视剧为了让观众不那么快的了解到真相，谜底，叙事弯弯绕绕，给线索跟挤牙膏一样。电视剧的叙事手法有点东野圭吾的感觉，寻找案件背后的故事。</p><h1 id="下周做什么">下周做什么</h1><ul><li>读一章Designing Data-Intensive Applications</li><li>看Array Programming with Numpy</li><li>尝试ActionsFlow</li><li>尝试网格交易</li><li>使用Trafik</li><li>使用Portainer</li><li>使用Huginn</li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;开学了！&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="周报" scheme="https://www.inevitable.tech/categories/%E5%91%A8%E6%8A%A5/"/>
+    
+    
+    <category term="塞尔达传说" scheme="https://www.inevitable.tech/tags/%E5%A1%9E%E5%B0%94%E8%BE%BE%E4%BC%A0%E8%AF%B4/"/>
+    
+    <category term="Cemu" scheme="https://www.inevitable.tech/tags/Cemu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2020 年第 36 周</title>
+    <link href="https://www.inevitable.tech/posts/1c32c9b8/"/>
+    <id>https://www.inevitable.tech/posts/1c32c9b8/</id>
+    <published>2020-09-12T16:00:00.000Z</published>
+    <updated>2021-01-02T06:11:59.014Z</updated>
+    
+    <content type="html"><![CDATA[<p>期末结束了。新学期也快要开始了。新增了这周看了什么板块。</p><a id="more"></a><h1 id="这周做了什么">这周做了什么</h1><h2 id="pm2">PM2</h2><p><a href="https://pm2.keymetrics.io/">PM2</a> 是用来管理，监控 Node.js 服务和进程的，当然它也支持监控 bash 程序。</p><p>在这之前我们使用<code>node app.js</code>来启动一个 Node.js 服务。如果想要保证这个服务在 SSH 窗口退出后保持运行，我们需要将其放在 Screen 或者 Tmux 中。</p><p>有了 PM2 后，执行<code>pm2 app.js</code>就可以启动 Node.js 程序了。退出 ssh 窗口也不会中止<code>app.js</code>。PM2 还提供了查看<code>app.js</code>的日志，重启，中止程序的功能。我们也可执行<code>pm2 plus</code>以登录 PM2 账号，这样就可以在 PM 官网的仪表盘上管理和监控我们的服务。</p><p>如果想要传入参数，可以执行以下命令。<code>pm2 start app.js --name my-api -- --port 4000</code>。这样就传入了<code>port</code>参数给 Node，并且将<code>app.js</code>这个进程命名为 my-api。</p><h2 id="steam-挂卡卖卡">Steam 挂卡&amp;卖卡</h2><p>Steam 挂卡通过使用 Steam 机器人 24 小时不间断玩游戏来获取集换卡片。卖卡就是将这些集换卡片在市场卖出。如果用 Steam 令牌添加了新设备，集换卡片七天内不能交易。</p><p><a href="https://github.com/JustArchiNET/ArchiSteamFarm">ASF</a> 是比较热门的挂卡程序。我们可以选择在本地挂卡或者在 VPS 上进行挂卡。本地不可能 24 小时开机，所以我选择在 VPS 上进行挂卡。<a href="https://www.eaglemoe.com/archives/177">教程 1</a>，<a href="https://moe.best/yoimono/asf-see.html">教程 2</a>。</p><p>在教程 1 当中，作者将 ASF 程序放在另一个 Screen 中运行。像上一节描述的那样，我么可以用 PM2 来达到更好的效果。<code>pm2 ./ArchiSteamFarm</code>。</p><h2 id="pixiv">Pixiv</h2><p>写了一个脚本把点赞的图收集起来，每周都可以回顾一下过去一周点赞的图，好好的欣赏，评价一下。至于怎么评价可以看<a href="https://www.youtube.com/watch?v=gAie0aa0e-4">怎么判断画的是神作，还是被无脑吹捧的狗屎</a>。由于点赞列表数据里不含时间，所以就增量更新。以前下载到哪里，我们就把在那之后的点赞的图下载一遍。图片相关信息就直接写进图片元数据中，这样移动起来比较方便。</p><p>图片元数据的格式分为 EXIF，IPTC，XMP 这几种格式。每一种格式有着自己的数据规范。比如 EXIF 是没有 Title 这一栏的，但是 XMP 却有。对比了他们所提供的格式和我自己所获取的图片数据，我选择 XMP。</p><p>虽然将所有图片信息写入元数据方便图片的移动，但我比较担心读取和写入数据时的性能开销。如果影响不大，这个方法比把数据单独写入数据库要简洁很多。即便图片改了名字，元数据也不会丢。</p><p>这个 <a href="https://www.thexifer.net">工具</a> 可以在线查看元数据。</p><h2 id="star-renegade">Star Renegade</h2><p><a href="https://store.steampowered.com/app/651670/Star_Renegades/">像素风，回合制，Roguelike，RPG 游戏</a>。虽然是像素风格，光影却是正常的。打击特效和音效做的不错，但是看上那么多遍还是会疲劳。</p><p>作为一个 Roguelike 游戏，随机的成分并不是特别多，地图虽然是随机，但是 Boss 和资源变化并不大。在每次旅途中会有装备，等级，和队友互相之间的好感系统。这个养成系统感觉是很 RPG 的。但这个 RPG 是在 Roguelike 的框架下，也就是每次死亡，装备，等级，好感都会重置，需要重新获取。由于回合制的节奏，以及 RPG 的机制，每一把的时间都特别长，大概在三个小时左右，这还是打到一大半的位置。</p><p>地图与其他简洁明了的 Roguelike 不同，这款游戏并没有地图，取而代之的是 2D RPG 游戏的那种设计。玩家可以在区域内走来走去。整个大区域被划分成更加细小的区划，通过限制玩家进入新的区划的次数来限制玩家的行动点。整个大区域的设计更像是图，而不是 Slay the Spire 那样的树。Star Renegade 通过这种方式更好的展示了游戏的美术设定，玩家也可以与区域中的一些物品进行互动，从而触发一些关于背景文化的对话。这样的坏处就是玩家不容易看清图的结构，游戏的节奏也会被拉慢，因为玩家在游戏战斗之间需要探索。</p><p>游戏中独特的扎营机制也放缓了游戏节奏。消耗完三个行动点，玩家就需要扎营，等待新的一天。在扎营期间，玩家可以培养人物之间的好感，使用各种 Buff 的卡片。</p><p>相比 Slay the Spire，选择节点，打怪，选择节点，打怪，这款游戏的节奏慢了很多。打一把需要更长的时间。那么每一把之后，玩家会变强从而在下一次走的更远吗？我个人觉得不怎么会。每一把之后的结算所能获取的东西并不多，我至今还卡在第三关。每一次花费两三个小时来到第三关，然后死亡，然后重来，最后放弃。我想这是游戏节奏的问题，又或者是去掉 Roguelike 可以解决的问题。</p><h2 id="ansible">Ansible</h2><p><a href="https://www.ansible.com/">Ansible</a> 是一个来自 Red Hat 的运维工具。它可以自动化，批量进行许多操作。它适合用来在<strong>已有的服务器</strong>上安装和管理软件。</p><p>我日常会用到 VPS，并在上面安装或者管理软件。常用的软件也就那几个。那么我们可以把这几个软件的安装和管理写成 Ansible Playbook。以后我们就不再需要重复安装和管理软件的步骤，只需要执行 Playbook 就可以了。用自动化解放了我们的双手。</p><p>Ansible 的 Playbook 编写采用渐进式，用户需要写下每一步需要做什么。Ansible 有丰富的 Role（库，插件，比如 <a href="https://github.com/geerlingguy/ansible-role-nodejs">安装 Node.js</a>），组件支持，大部分操作都可以用现成的 Role 或者组件实现，不需要自己额外进行编写。</p><p>Ansible 没有 Master 的概念，任何一个节点都可以推送命令。Ansible 通过 SSH 连接上节点后，执行对应的命令。由于采用 SSH 进行命令推送，接受命令推送的节点不需要安装 Ansible 客户端。</p><p>因此对于我来说最好的实践便是在本地安装好 Ansible，注意它不支持 Windows。将常用的软件配置写成 Ansible Playbook。介于丰富的组件和 Role，这并不难。每当有新的 VPS 时，我们执行相应的 Ansible Playbook 就可以完成所有工作。比如我写了 Tiny Tiny Rss，Unblock Netease Music 的 Playbook，如果以后更换 VPS 就可以很方便的安装这些软件。</p><p>我们可以把用到的 Role 放到 Requirement.yml 中，这可以保证换个环境，安装完依赖后，我们之前写的 Playbook 还可以正常运行。</p><p>最后推荐一个 <a href="https://www.youtube.com/watch?v=5hycyr-8EKs">视频教程</a>，视频教程虽然看起来慢但是比较容易理解使用者的思路，易于模仿。</p><h1 id="这周看了什么">这周看了什么</h1><ul><li><a href="http://music.163.com/song?id=1449678888&amp;userid=92955555">回到夏天</a>: 作曲：爱写歌的小田，作词：雷壮、爱写歌的小田，编曲：罗洋（卡其漠）。然而这个旋律从头到尾就没怎么变过。</li><li><a href="https://github.com/Mikubill/transfer">Trasfer</a>: 这个工具整合了所有主流的文件分享工具，比如 airpotal，奶牛快传等。文件的分享和下载可以通过<strong>命令行</strong>完成。传输方法不是点对点，因此借助第三方服务器需要消耗更多的时间。如果想要点对点，节省时间的传输方式可以用 <a href="https://winscp.net/eng/index.php">WinSCP</a> 等软件采用 SFTP 的传输方式。</li><li><a href="https://blog.spencerwoo.com/2019/11/batch-git-pull/">Batch Git Pull</a>: 批量更新 Git 仓库。我想很少有人一次性更新所有仓库吧。对于那些不怎么维护的 Git 仓库，更新了之后只会徒增 bug。那些正在维护的仓库，应该会一个个的更新，慢慢解决 Bug。</li><li><a href="https://www.tabnine.com/">Tabnine</a>: 非常好用的 AI 自动补全。当别人只能一个词一个词补全的时候，它可以补全整句话。连<code>for</code>语句也可以帮你补全，list 的 index 也可以帮我补全。</li><li><a href="https://github.com/eugeneyan/applied-ml">Applied ML</a>: 大公司发的人工智能文章。</li><li><a href="https://www.heropatterns.com/">Hero Pattern</a>: 可以自定义的 SVG 几何背景图。</li><li><a href="https://github.com/alirezamika/autoscraper">autoscrapper</a>: 一个智能的爬虫库。用户将目标告诉它，这个库会返回类似的结果。比如要抓取一个博客中所有文章的标题，用户可以将一个文章的标题告诉它，它便输出所有标题。</li><li><a href="https://www.youtube.com/watch?v=gAie0aa0e-4">怎么判断画的是神作，还是被无脑吹捧的狗屎</a>: 这个视频讲述了作者自己如何判断一幅画好看不好看。<ul><li>艺术元素：<ul><li>线条</li><li>明暗和颜色</li><li>主体形状</li><li>材质</li><li>空间</li></ul></li><li>艺术原理：<ul><li>平衡</li><li>引导线（视线运动）</li><li>对比<ul><li>颜色明暗</li><li>颜色冷暖</li><li>颜色饱和</li></ul></li><li>风格统一</li><li>规则变化（不重复和呆板）<ul><li>软的线条和硬的线条组合</li><li>直和弯的组合</li></ul></li></ul></li><li>数据指标：<ul><li>初次观看时长</li><li>重复观看次数</li><li>观看后的思考</li></ul></li></ul></li><li><a href="https://www.morganstanley.com/ideas/thoughts-on-the-market">Thoughts on the market</a>: Morgan Stanley 对于市场的分析。</li><li><a href="https://www.myfonts.com/WhatTheFont/">MyFonts</a>: 识别图片中的字体。</li><li>《乔布斯传》作者沃尔特，艾萨克森：“一个具有强烈个性的人身上集合了人文和科学的天赋后所产生的创造力，是在 21 世纪建立创新型经济的关键因素。”</li></ul><h1 id="下周做什么">下周做什么</h1><ul><li>GRE 备考</li><li>极简欧洲史</li><li>Pixiv 完善</li><li>图片展示网站 UI 设计</li><li>整理手机浏览器标签页</li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;期末结束了。新学期也快要开始了。新增了这周看了什么板块。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="周报" scheme="https://www.inevitable.tech/categories/%E5%91%A8%E6%8A%A5/"/>
+    
+    
+    <category term="Pixiv" scheme="https://www.inevitable.tech/tags/Pixiv/"/>
+    
+    <category term="Star Renegade" scheme="https://www.inevitable.tech/tags/Star-Renegade/"/>
+    
+    <category term="Pm2" scheme="https://www.inevitable.tech/tags/Pm2/"/>
+    
+    <category term="Steam" scheme="https://www.inevitable.tech/tags/Steam/"/>
+    
+    <category term="Transfer" scheme="https://www.inevitable.tech/tags/Transfer/"/>
+    
+    <category term="Ansible" scheme="https://www.inevitable.tech/tags/Ansible/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2020 年第 35 周</title>
+    <link href="https://www.inevitable.tech/posts/5b92b368/"/>
+    <id>https://www.inevitable.tech/posts/5b92b368/</id>
+    <published>2020-09-05T16:00:00.000Z</published>
+    <updated>2021-01-02T06:11:59.013Z</updated>
+    
+    <content type="html"><![CDATA[<p>期末了！</p><a id="more"></a><h1 id="这周做了什么">这周做了什么</h1><h2 id="整理电子书">整理电子书</h2><p>这周抽空把电脑里的电子书整理了一下，给他们分分类，搬一个新家。<a href="https://calibre-ebook.com/">Caliber</a> 是一个很不错的电子书管理软件，除了 UI 丑一点。Caliber 在导入电子书时会将源文件拷贝到自己的文件夹里。导入成功后，我们就可以把源文件给删掉了。我主要用 Caliber 来管理书籍的元数据和转换格式。很多书的元数据残缺不全，连标题都没有。看着封面输入标题，作者，标签，出版社，评分挺花时间的。如果是一些热门的书籍，可以只添加 ISBN，接着让 Caliber 帮助你自动添加信息。</p><p>对于我来说，元数据缺的多的书大多是那些过时的很烂的书。整理的时候舍不得把他们删掉（其实以后也未必会扫两眼），那就得给他们填充元数据。</p><h2 id="群星">群星</h2><p>心血来潮，加了一些 mod 开了一局。策略游戏总是需要玩家做很多选择题。这些选择题的目的都是累积更多的资源。多玩两把就会发现局部最优解。再玩下去则可能变成不断重复自己以前做的决策，陷在局部最优解中。在这一段时间里，每一局游戏都不能带来一些新鲜的反馈。如果想要走出这样的重复可以选择一些以前没有玩过的开局。比如以前走种田流，现在选择多打仗进行扩张。这种选择促使我们找到新的局部最优解，毕竟以前的解不可靠了。</p><p>群星里面的事件完成后都有语音提示。在事件较多的中后期，语言提示出现的相当频繁。在手游萌化的当下，手游们请着各式各样的优秀 CV 来配音。群星里翻来覆去都是那几个死板的配音，跟手游们背道而驰，严重损害了游戏体验。得益于丰富的 Mod 支持，我发现有玩家特意氪金聘请战舰少女中的 CV 录制了新的语音，制做成了 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1970249743">免费的 Mod</a>。</p><h2 id="歌曲">歌曲</h2><h3 id="shelter">Shelter</h3><p><a href="https://www.youtube.com/watch?v=fzQ6gRAEoy0">Shelter</a> 是 Porter Robinson 的一首电音。其实我不怎么听电音，但这首曲子的特点在于它的 MV 由 A1 Picture 制作，讲述了世界末日后少女孤独的在 VR 中生活，直到有一天她想起了自己的童年和父亲。西方电音配上日本动画，这个组合非常有意思。有文化差异的音乐和画面表达着同样的情绪。有了这个 MV，观众们得以更加容易的捕捉到这首歌曲所要传达的情绪。例如开头的画面和音乐共同谱写了喜悦的情绪。</p><blockquote><p>谢谢谢谢谢谢 porter+ madeon 本来日系 ACG 和欧美 EDM 是极少有交集的两个世界，一个在欧美常常背着负面，边缘化，死宅的名声，一个在主流中渐渐变成流行，被认可，只是中间隔了太多文化的刻板印象………直到今天两个世界总算和在了一起 美好的东西本不该被贴上标签 <span class="citation" data-cites="Lewreko">@Lewreko</span> 网易云</p></blockquote><h3 id="越单纯越幸福">越单纯越幸福</h3><p>王筝的 <a href="https://www.youtube.com/watch?v=3czJfPNmfnA&amp;list=RD3czJfPNmfnA&amp;start_radio=1&amp;ab_channel=Z%C3%A9NetoeCristianoMusicChannel">越单纯越幸福</a> 是杜拉拉升职记的推广曲。这算是很久很久以前，十年前的歌。整首歌也跟标题一样，乐器用的较为简单，很匹配整首歌的情绪。歌词写的很棒。</p><p>第一句”你说起那条回家的路“就把听众拉入了回忆之中。我想起小学和初中时每天挤公交车回家。公交车站上都是放学的学生和跟着他们的家长。</p><p>”越害怕越孤单谁的付出多一点，越躲藏越相爱越怕输。” 很多时候你让一步我就快乐，我让一步你就快乐。</p><p>“越长大越怀念少年时有多勇敢，骑单车摔多痛也笑着哭。” 怎么看都是在说现在的不勇敢。想到江南对路明非勇敢的赞扬。</p><p>“心像开满花的树。” 这个比喻也很不错。一般我们把心和花连在一起，比如心花怒放。但这儿又加了树。树总感觉和叶是一伙的，叶又是用来衬托花的。</p><h3 id="如烟">如烟</h3><p>五月天的 <a href="https://www.youtube.com/watch?v=Qd9YGu3FWgc">如烟</a> 也是 2010 年左右的老歌。这首歌的歌词也是很棒，讲述了一个在床上等待死亡的老人回顾自己的一生。</p><blockquote><p>〔... 有没有那么一个世界 永远不天黑 星星太阳万物都 听我的指挥。..〕 石头的曲，结合阿信的词，一向都有一种壮阔瑰丽的美感，这首歌阿信挑战自己，歌词从头到尾没有任何一句重复，把人生一瞬间，如烟飘散眼前的不舍回忆与千万感慨，通通都浓缩进这首歌里头。 藉由一个在床上等待死亡的老人心中，反射出人的一生：从出生到第一个吻，从成家立业到儿孙满堂，从挥霍浪费的青春到没说的一句抱歉，那些残存的人世眷恋和遗憾后悔，最后就化成一滴眼泪如烟消散在人世间。.. 官方介绍</p></blockquote><blockquote><p>不知道是不是只有我覺得這首的文學價值非常之高。</p><p>這首歌提升到探討生死的程度，就像行將就木之人，在靈魂脫離時，回頭看自己滿是皺紋蒼白的臉進行人生的回憶錄一樣，而當中的人可能是阿信自己對於生死的詰問，一問一答之間，不斷的反問自己，生死是怎麼回事，青春是什麼，既然不能擺脫輪迴（人間 瞬間 天地之間 下次我 又是誰），無法抓住已逝去的青春，那是否有對自己的人生感到後悔（無論生存或生活 我都不浪費 不讓故事這麼的後悔），最後他沒有給出答案，因為每個人在離去之前一定會有遺憾之事（有誰能聽見 我不要告別），而當中這一句（爲何人生最後會像一張紙屑 還不如一片花瓣曾經鮮豔）表達出為什麼人年老了會像紙屑、濕落葉一樣沒有價值被唾棄呢？那還不如玫瑰一樣在最鮮豔的時候落下，最後阿信把魂魄比喻成煙又代表著看的到流逝卻摸不著的時間（我坐在床前 看著指尖 已經如煙） youtube 评论</p></blockquote><h1 id="这周评价">这周评价</h1><h1 id="下周做什么">下周做什么</h1><ul><li>GRE 备考</li><li>极简欧洲史</li><li>Pixiv</li><li>Steam 挂卡</li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;期末了！&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="周报" scheme="https://www.inevitable.tech/categories/%E5%91%A8%E6%8A%A5/"/>
+    
+    
+    <category term="群星" scheme="https://www.inevitable.tech/tags/%E7%BE%A4%E6%98%9F/"/>
+    
+    <category term="歌曲" scheme="https://www.inevitable.tech/tags/%E6%AD%8C%E6%9B%B2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2020 年第 33 周</title>
+    <link href="https://www.inevitable.tech/posts/d4d246c8/"/>
+    <id>https://www.inevitable.tech/posts/d4d246c8/</id>
+    <published>2020-08-23T16:00:00.000Z</published>
+    <updated>2021-01-02T06:11:59.010Z</updated>
+    
+    <content type="html"><![CDATA[<p>八月底了，是时候考 GRE 了。</p><a id="more"></a><h1 id="weekly-report-2020-年第-32-周-08-17-到-08-23">Weekly Report 2020 年第 32 周 （08-17 到 08-23）</h1><h2 id="这周做了什么">这周做了什么</h2><h3 id="cg">CG</h3><p>初步尝试了云渲染。效果还可以，但是并不能加速流体。配置渲染节点可以 <a href="https://www.inevitable.tech/posts/7a296127/">看这</a>。本来打算用 Digital Ocean，但是它风控比较严苛，注册新账号有点麻烦。</p><p>我想做了一个流体的字体动画。流体在字体中流体，逐渐充满整个字体。也想做一个 <a href="https://www.youtube.com/watch?v=3EfgsciQ5rM">物体掉入水中的动画</a>。就目前来看，这个动画渲染就得一两个礼拜，或者花个几十刀，使用渲染农场。</p><h3 id="龙族">龙族</h3><p>看完了三本龙族。可以感觉到前两本剧情都比较紧凑，讲的都是和主线有关的故事。到了第三部，整个篇幅长了不少，会有些啰啰嗦嗦的地方。全书中有不少伏笔，但有些伏笔直到故事的结束也没有用上。</p><p>第二本中董事会要求主角团寻找失去的资料。事发地点火车南站出现了两个人的身影，一个是猎人唐威，另一个人应该是夏弥。在书中并没有指出这个人是谁，只是像写伏笔一样提了以下，但后续这个伏笔没用上就是。</p><p>第三本中有很多很多的登场人物，虽然他们大部分都是打酱油的，对主线并没有什么贡献。看江南的随笔《龙与少年游》时，他说到有些故事的产生是由于灵感。“‘校长其实是个后背满是文身的黑道老混子。’这个概念其实是忽然出现在脑海里的，单纯就是觉得这个概念很棒，于是单独衍生出一条校长个人的日本线索来，在这条线上有上杉越，有犬山贺。” 上杉越，犬山贺有着自己的故事，但是他们的故事和主线关系并不大。江南对于这几个人物的构思并不基于主线故事，而是他觉得这个人很酷，所以他想把他写出来。“‘那美好的仗我已经打完了，应行的路我已经行尽了，当守的道我守住了。从此以后，有公义的冠冕为我留存。’我心中的上杉越因为这句话而成形。”</p><p>刚认识路明非的时候，他就是个弱小，懦弱的臭小孩。他一点都不给力，他没有勇气去争取更多的东西，比如诺诺，陈雯雯，社团，在叔叔婶婶家中的地位。但江南说，“路明非真的很棒，对于某些年少而热血的读者、恨其不争的读者，我得说你们再长大一点就会明白，生活不是意淫小说，没有白来的升级机会，而路明非真的很棒，他的勇敢是真勇敢，从骨头里榨出来、从灵魂中淬炼出来的勇敢，我很希望自己能有那样的勇敢。”勇敢和怂本来是对立的，但是在路明非身上共存。路明非想要勇敢，只要付出四分之一的生命。他只有那一份的生命，"路明非是个穷孩子，他很怂他很欠他很不霸气，但他从未吝啬过付出。"</p><p>在那个魔幻世界发生的事情或许很难映射到我们的生活中。但这个例子或许能让你们理解一点。你的朋友要离开这座城市了，你可以和他最后在一起吃一顿饭，但是现在疫情肆虐，你的家人们也反对你出门。你愿意去见他吗？</p><h2 id="这周评价">这周评价</h2><ul class="task-list"><li><input type="checkbox" disabled="" checked="" />提升阅读题目正确率到 80%。</li><li><input type="checkbox" disabled="" checked="" />每天半个小时到一个小时的钢琴练习。</li><li><input type="checkbox" disabled="" />学习完至少 3 个画画课程。</li><li><input type="checkbox" disabled="" checked="" />画不同角度的几何体。</li><li><input type="checkbox" disabled="" checked="" />尝试云渲染动画。</li></ul><p>完成度 80%</p><h2 id="下周做什么">下周做什么</h2><ul><li>GRE 备考</li><li>尝试这个有趣的 <a href="https://www.youtube.com/watch?v=lVIraY22xzw">剪辑</a></li><li>尝试这个 <a href="https://www.youtube.com/watch?v=eoSRMxMDYsk&amp;list=PL4iRNzIK4UEqqUXcG3XwD53YT5IddXmcY&amp;index=43&amp;t=288s">动画</a></li><li>完成一个画画课程</li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;八月底了，是时候考 GRE 了。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="周报" scheme="https://www.inevitable.tech/categories/%E5%91%A8%E6%8A%A5/"/>
+    
+    
+    <category term="Remarkable" scheme="https://www.inevitable.tech/tags/Remarkable/"/>
+    
+    <category term="投资" scheme="https://www.inevitable.tech/tags/%E6%8A%95%E8%B5%84/"/>
+    
+    <category term="插画" scheme="https://www.inevitable.tech/tags/%E6%8F%92%E7%94%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>自建 Blender Render Farm</title>
+    <link href="https://www.inevitable.tech/posts/7a296127/"/>
+    <id>https://www.inevitable.tech/posts/7a296127/</id>
+    <published>2020-08-23T16:00:00.000Z</published>
+    <updated>2021-01-02T06:11:59.047Z</updated>
+    
+    <content type="html"><![CDATA[<p>暂时没打算买新显卡，那渲染慢怎么办？云渲染！</p><a id="more"></a><h1 id="为什么要自建云渲染">为什么要自建云渲染</h1><p>由于本地算力不够，或者单纯想要加快渲染速度，云渲染都是首选。一般的云渲染是使用现成的渲染农场，但是它价格偏高。如果可以使用多个 VPS 进行渲染，成本会比直接使用渲染农场低很多，除了 VPS 比较便宜，很多 VPS 供应商对新账号都会提供代金券。如果我们使用新账号进行云渲染，成本可以进一步被降低。</p><h1 id="配置渲染节点">配置渲染节点</h1><p>我们使用 <a href="https://www.crowd-render.com/">CrowdRender</a> 来管理渲染节点。本地的安装和使用直接看官网教程。我着重解释一下如何配置 VPS 。</p><p>首先我们需要安装最新版本的 Blender。 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade -y</span><br><span class="line">sudo apt-get install wget -y</span><br><span class="line">sudo apt-get install python3-pip -y</span><br><span class="line">sudo snap install blender --classic</span><br><span class="line">echo <span class="string">&#x27;export PATH=/snap/bin:$PATH&#x27;</span>&gt; ~/.bashrc</span><br><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure> 我们需要将 Crowdrender 插件上传到 VPS 上。我们可以使用 Winscp 进行上传。上传 ZIP 文件即可，不需要解压。</p><p>假设我们将 Crowdrender 上传到了<code>/root/cr.zip</code></p><p>接下来便是开启插件。 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">blender -b --python-console</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> bpy</span><br><span class="line">bpy.ops.preferences.addon_install(filepath=<span class="string">&#x27;/root/cr.zip&#x27;</span>)</span><br><span class="line">bpy.ops.preferences.addon_enable(module=<span class="string">&#x27;crowdrender&#x27;</span>)</span><br><span class="line">bpy.ops.wm.save_userpref()</span><br></pre></td></tr></table></figure> <strong>或者</strong>将这一块代码放入<code>enableaddon.py</code>，并用 Blender 执行。 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> bpy</span><br><span class="line">bpy.ops.preferences.addon_install(filepath=<span class="string">&#x27;/root/cr.zip&#x27;</span>)</span><br><span class="line">bpy.ops.preferences.addon_enable(module=<span class="string">&#x27;crowdrender&#x27;</span>)</span><br><span class="line">bpy.ops.wm.save_userpref()</span><br></pre></td></tr></table></figure> 然后用 blender 执行刚刚创建的脚本。 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">blender -b -P enableaddon.py</span><br></pre></td></tr></table></figure> 接下来便是启动渲染服务。 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">blender -b -P ~/.config/blender/<span class="number">2.83</span>/scripts/addons/crowdrender/src/py_3_7/serv_int_start.py -- -t <span class="string">&quot;server_int_proc&quot;</span></span><br></pre></td></tr></table></figure> # 局限 在完成渲染节点的设置后，我们只需要将节点的 IP 地址输入本地的插件中进行连接和同步即可。这个插件的连接是有点慢的。点了铁链图表要过了很久才会弹出选框。</p><p>目前已知的局限性为流体的渲染有点困难，除非你将所有的缓存和烘焙数据同步上去。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;暂时没打算买新显卡，那渲染慢怎么办？云渲染！&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Technology" scheme="https://www.inevitable.tech/categories/Technology/"/>
+    
+    
+    <category term="Blender" scheme="https://www.inevitable.tech/tags/Blender/"/>
+    
+    <category term="Render Farm" scheme="https://www.inevitable.tech/tags/Render-Farm/"/>
+    
+    <category term="渲染农场" scheme="https://www.inevitable.tech/tags/%E6%B8%B2%E6%9F%93%E5%86%9C%E5%9C%BA/"/>
+    
+    <category term="云渲染" scheme="https://www.inevitable.tech/tags/%E4%BA%91%E6%B8%B2%E6%9F%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>初入数值分析，如何写好代码</title>
+    <link href="https://www.inevitable.tech/posts/e6738e32/"/>
+    <id>https://www.inevitable.tech/posts/e6738e32/</id>
+    <published>2020-08-22T16:00:00.000Z</published>
+    <updated>2021-01-02T06:11:59.084Z</updated>
+    
+    <content type="html"><![CDATA[<p>写一些关于数学的代码，和开发程序是两种不同的感觉。接下来是一些我个人常用的 Tips。</p><a id="more"></a><h1 id="sum">Sum</h1><p>求和符号频繁的出现在各种公式里面。比如 Composite Simpson Rule:</p><p><span class="math inline">\(\int^a_b f(x)dx = \frac{h}{3}(f(a)+f(b)+4\sum^{n/2}_{i=1}f(a+(2i-1)h)+2\sum^{(n-2)/2}_{i=1}f(a+2ih))\)</span></p><p>我之前看到求和符号的第一反应是这儿又得用 <code>for loop</code> 了。例如 <span class="math inline">\(\sum^{n/2}_{i=1}f(a+(2i-1)h)\)</span> 可能会用以下的代码来计算。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sum</span>=<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n//<span class="number">2</span>+<span class="number">1</span>):</span><br><span class="line">  <span class="built_in">sum</span> = <span class="built_in">sum</span>+f(a+(<span class="number">2</span>*i-<span class="number">1</span>)*h)</span><br><span class="line"><span class="built_in">sum</span></span><br></pre></td></tr></table></figure><p>这是一个有点冗长，不清楚的写法。</p><h2 id="map">Map</h2><p>我们可以用 <code>np.sum</code> 和 <code>map</code> 函数来实现。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">np.<span class="built_in">sum</span>(np.array(<span class="built_in">list</span>(<span class="built_in">map</span>(<span class="keyword">lambda</span> i:f(a+(<span class="number">2</span>*i-<span class="number">1</span>)*h),np.arange(<span class="number">1</span>,n//<span class="number">2</span>+<span class="number">1</span>)))))</span><br></pre></td></tr></table></figure><p>瞬间把之前的几行代码压缩成了一行。这样写的坏处是括号比较多，在没有括号高亮的情况下容易出现漏括号或者多括号的情况。</p><h2 id="vectorize">Vectorize</h2><p>这个方法全靠 Numpy。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">i = np.arange(<span class="number">1</span>,n//<span class="number">2</span>+<span class="number">1</span>)</span><br><span class="line">sum1 = <span class="keyword">lambda</span> i: f(a+(<span class="number">2</span>*i-<span class="number">1</span>)*h)</span><br><span class="line">vfunc = np.vectorize(sum1)</span><br><span class="line">np.<span class="built_in">sum</span>(vfunc(i))</span><br></pre></td></tr></table></figure><p>这个思路感觉和 <code>map</code> 的思路类似，但是优势是创建了一个可以复用的 Vectorize Function，可以接受数组的输入。</p><h2 id="another-for-loop">Another For Loop</h2><p>这个其实和 <code>for loop</code> 没什么区别，知识短了一点。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">np.<span class="built_in">sum</span>([f(a+(<span class="number">2</span>*i-<span class="number">1</span>)*h) <span class="keyword">for</span> i <span class="keyword">in</span> np.arange(<span class="number">1</span>,n//<span class="number">2</span>+<span class="number">1</span>) ])</span><br></pre></td></tr></table></figure><p>这个方法会比较灵活。在面对多个参数的时候会比较好用。比如有一个函数 f(a,b,c,d), 只有 c 这个参数需要变化，a,b,d 都是不要变化的。我们可以写这样写：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">[f(a,b,c,d) <span class="keyword">for</span> c <span class="keyword">in</span> np.arange(n)]</span><br></pre></td></tr></table></figure><h2 id="矩阵点乘">矩阵点乘</h2><p>这里我们用一个简单一点的例子。我们需要计算<span class="math inline">\(\sum_{i=0}^{n}a_ib_i\)</span>。这个的本质其实是 a 和 b 两个矩阵的点乘。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a=[...]</span><br><span class="line">b=[...]</span><br><span class="line">np.dot(a,b)</span><br></pre></td></tr></table></figure><h1 id="快速生成一个矩阵">快速生成一个矩阵</h1><p>这个很简单。例如生成一个 5*5 矩阵。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">np.zeros((<span class="number">5</span>, <span class="number">5</span>))</span><br></pre></td></tr></table></figure><h1 id="table">Table</h1><h2 id="tabulate"><a href="https://bitbucket.org/astanin/python-tabulate/src/master/">Tabulate</a></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">print(tabulate([[<span class="string">&quot;Name&quot;</span>,<span class="string">&quot;Age&quot;</span>],[<span class="string">&quot;Alice&quot;</span>,<span class="number">24</span>],[<span class="string">&quot;Bob&quot;</span>,<span class="number">19</span>]],headers=<span class="string">&quot;firstrow&quot;</span>))</span><br><span class="line"><span class="comment"># Name      Age</span></span><br><span class="line"><span class="comment"># ------  -----</span></span><br><span class="line"><span class="comment"># Alice      24</span></span><br><span class="line"><span class="comment"># Bob        19</span></span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">print(tabulate(&#123;<span class="string">&quot;Name&quot;</span>: [<span class="string">&quot;Alice&quot;</span>, <span class="string">&quot;Bob&quot;</span>],</span><br><span class="line"><span class="string">&quot;Age&quot;</span>: [<span class="number">24</span>, <span class="number">19</span>]&#125;, headers=<span class="string">&quot;keys&quot;</span>))</span><br><span class="line"><span class="comment">#   Age  Name</span></span><br><span class="line"><span class="comment"># -----  ------</span></span><br><span class="line"><span class="comment">#    24  Alice</span></span><br><span class="line"><span class="comment">#    19  Bob</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="plotly"><a href="https://plotly.com/python/table/">Plotly</a></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> plotly.graph_objects <span class="keyword">as</span> go</span><br><span class="line"></span><br><span class="line">fig = go.Figure(data=[go.Table(header=<span class="built_in">dict</span>(values=[<span class="string">&#x27;A Scores&#x27;</span>, <span class="string">&#x27;B Scores&#x27;</span>]),</span><br><span class="line">                 cells=<span class="built_in">dict</span>(values=[[<span class="number">100</span>, <span class="number">90</span>, <span class="number">80</span>, <span class="number">90</span>], [<span class="number">95</span>, <span class="number">85</span>, <span class="number">75</span>, <span class="number">95</span>]]))</span><br><span class="line">                     ])</span><br><span class="line">fig.show()</span><br></pre></td></tr></table></figure><h1 id="plot">Plot</h1><p>我每次都记不住怎么画图。</p><h2 id="matplotlib">matplotlib</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">fig, ax = plt.subplots(figsize=(<span class="number">9</span>,<span class="number">6</span>))</span><br><span class="line">ax.loglog(hs,composite_trapezoid_rule_error_func1,<span class="string">&#x27;bo-&#x27;</span>,label=<span class="string">&#x27;CTR ERROR&#x27;</span>,lw=<span class="number">2</span>)</span><br><span class="line">ax.loglog(hs,np.power(hs,<span class="number">2</span>),<span class="string">&#x27;ro-&#x27;</span>,label=<span class="string">&#x27;err(h) = h^2&#x27;</span>,lw=<span class="number">2</span>)</span><br><span class="line">ax.set_title(<span class="string">&quot;Error in CTR approximation&quot;</span>,fontsize=<span class="number">22</span>)</span><br><span class="line">ax.legend(fontsize=<span class="number">15</span>)</span><br><span class="line">ax.set_xlabel(<span class="string">&#x27;h&#x27;</span>,fontsize=<span class="number">22</span>)</span><br><span class="line">ax.set_ylabel(<span class="string">&#x27;err(h)&#x27;</span>,fontsize=<span class="number">22</span>)</span><br><span class="line">ax.xaxis.set_tick_params(labelsize=<span class="number">15</span>)</span><br><span class="line">ax.yaxis.set_tick_params(labelsize=<span class="number">15</span>)</span><br></pre></td></tr></table></figure><h1 id="伪代码翻译">伪代码翻译</h1><p>数组的索引从 0 开始，但是很多伪代码是从 1 开始。为了方便翻译，我们可以在所有数组的开头插入一个 0，这样数组的有效数据便从索引 1 开始。这样伪代码和实际代码之间的索引便不会错了。以下为例子。</p><center><img class="lazyload" data-src="/static/images/numerical_analysis_code1.png" height="80%" width="80%"></center><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sor</span>(<span class="params">a,b,XO,omega,TOL,N</span>):</span></span><br><span class="line">    n=<span class="built_in">len</span>(a)</span><br><span class="line">    x=np.zeros(n+<span class="number">1</span>)</span><br><span class="line">    a = np.insert(a,<span class="number">0</span>,<span class="number">0</span>,axis=<span class="number">1</span>)</span><br><span class="line">    a = np.insert(a,<span class="number">0</span>,<span class="number">0</span>,axis=<span class="number">0</span>)</span><br><span class="line">    b = np.insert(b,<span class="number">0</span>,<span class="number">0</span>,axis=<span class="number">0</span>)    </span><br><span class="line">    XO = [<span class="number">0.0</span>]+XO</span><br><span class="line">    <span class="comment"># step 1</span></span><br><span class="line">    k=<span class="number">1</span></span><br><span class="line">    <span class="comment"># step 2</span></span><br><span class="line">    <span class="keyword">while</span> k&lt;=N:</span><br><span class="line">        <span class="comment"># step 3</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> np.arange(<span class="number">1</span>,n+<span class="number">1</span>):</span><br><span class="line">            sum1=<span class="built_in">sum</span>([a[i][j]*x[j] <span class="keyword">for</span> j <span class="keyword">in</span> np.arange(<span class="number">1</span>,i)])</span><br><span class="line">            sum2=<span class="built_in">sum</span>([a[i][j]*XO[j] <span class="keyword">for</span> j <span class="keyword">in</span> np.arange(i+<span class="number">1</span>,n+<span class="number">1</span>)])</span><br><span class="line">            x[i]=(<span class="number">1</span>-omega)*XO[i]+<span class="number">1</span>/a[i][i]*(omega*(np.negative(sum1)-sum2+b[i]))</span><br><span class="line">        <span class="comment"># step 4</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">max</span>(np.<span class="built_in">abs</span>(b-np.dot(a,x)))&lt;TOL:</span><br><span class="line">            print(<span class="string">f&#x27;Number of Iterations: <span class="subst">&#123;k&#125;</span>&#x27;</span>)</span><br><span class="line">            <span class="keyword">return</span> x[<span class="number">1</span>:]</span><br><span class="line">        <span class="comment"># step 5</span></span><br><span class="line">        k = k+<span class="number">1</span></span><br><span class="line">        <span class="comment"># step 6</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> np.arange(<span class="number">1</span>,n+<span class="number">1</span>):</span><br><span class="line">            XO[i]=x[i]</span><br><span class="line">    print(<span class="string">&#x27;Maximum number of iterations exceed&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> XO</span><br><span class="line"></span><br><span class="line"><span class="keyword">assert</span> np.allclose(sor([[<span class="number">4</span>,<span class="number">3</span>,<span class="number">0</span>],[<span class="number">3</span>,<span class="number">4</span>,-<span class="number">1</span>],[<span class="number">0</span>,-<span class="number">1</span>,<span class="number">4</span>]],[<span class="number">24</span>,<span class="number">30</span>,-<span class="number">24</span>],[<span class="number">1.0</span>,<span class="number">1.0</span>,<span class="number">1.0</span>],<span class="number">1.25</span>,<span class="number">1e-05</span>,<span class="number">1000</span>),[<span class="number">3</span>,<span class="number">4</span>,-<span class="number">5</span>], rtol=<span class="number">1e-05</span>, atol=<span class="number">1e-08</span>, equal_nan=<span class="literal">False</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;写一些关于数学的代码，和开发程序是两种不同的感觉。接下来是一些我个人常用的 Tips。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Technology" scheme="https://www.inevitable.tech/categories/Technology/"/>
+    
+    
+    <category term="数学" scheme="https://www.inevitable.tech/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="数值分析" scheme="https://www.inevitable.tech/tags/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/"/>
+    
+    <category term="Numerical Analysis" scheme="https://www.inevitable.tech/tags/Numerical-Analysis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2020 年第 32 周</title>
+    <link href="https://www.inevitable.tech/posts/e9b26f78/"/>
+    <id>https://www.inevitable.tech/posts/e9b26f78/</id>
+    <published>2020-08-15T16:00:00.000Z</published>
+    <updated>2021-01-02T06:11:59.009Z</updated>
+    
+    <content type="html"><![CDATA[<p>Differential Geometry 逐渐变难，下周得多花点时间在上面。</p><a id="more"></a><h1 id="weekly-report-2020-年第-32-周-08-10-到-08-16">Weekly Report 2020 年第 32 周 （08-10 到 08-16）</h1><h2 id="这周做了什么">这周做了什么</h2><h3 id="投资">投资</h3><p>短期尝试做了几单。全部以止损告终。由于短期的仓位都不是特别大，止损点也比较保守，亏损并没有太大。逐渐理解了“Buy Strength，Sell Weakness”的含义。这句话想要强调的是趋势的重要性。例如股票在持续上涨，我们在没有明确强力依据的情况下不应该认为它的趋势会变化。因此我们的选择是买入，而不是卖出。毕竟转折点只有那一个，没有那么容易抓住。</p><h3 id="cg">CG</h3><p>尝试了一些流体。带有气泡，浮沫等粒子效果的流体还是很酷炫的。尤其是这些粒子可以有不同的颜色，这让流体更加的多样性。</p><p>本来我想做一个字体中充斥着流体的感觉。但我发现字体作为流体的 Domain 不是那么靠谱，可能是因为字体转换为 Mesh 后并不是封闭的，导致流体模拟出现差错。既然字体这个复杂的 Mesh 不行，我就取巧用长方体搭一个字体出来。这的确可行，但是一个个设置流体属性和出水口很繁琐。</p><p>流体酷炫就在于它会流动，于是我渲染了 120fps 的 5 秒 1080p 动画，这花了我 4 天时间，效果也不是很理想。光线之类的需要改动，分辨率也有点低，看着糊。看来是时候换一个显卡了。这一个动画等四天实在是有点折磨人。</p><h3 id="插画">插画</h3><p>有一个奇怪的画画分支叫 3D 辅助绘画，应该是国内特有的分支。我在 Youtube 上没有找到类似视频。这个分支的特色是在 3D 软件中做出插画的大概样子，然后再导出进行微调和上色。这么做的好处是 3D 软件的透视是不可能错的，光影也没有任何问题，如果利用 3D 小人，我们人体的动作等也不会有错。这听着好处多多，把很多画画基本功的要求都降低了。</p><p>既然我已经会一些 CG 的东西了，为什么不尝试一下这个分支呢，说不定有 1+1&gt;2 的起效。因此我开始尝试插画。这周看了 <a href="https://www.bilibili.com/video/BV16a4y1t7sN?">这个视频</a>。它教授了如何从画家的角度去观察物体。我们应该避免符号和语言的影响。比如一说到椅子，大家都知道椅子是什么样子，知道转椅的轮子是圆的。但是在实际情境中，由于透视，光线和地面，椅子的轮子就不是圆的。我们需要避免符号和语言的影响，专注于我们所观察到的。</p><p>其中她提到一种方法，叫 Negative Space。也就是如果你眼中看到的具有强烈的符号含义，你可以尝试取反，观察那些没有意义的负空间。比如画椅腿，你可以画没有椅子腿地板的轮廓。我们一共要观察这几个东西：轮廓，光影，空间，线与线之间的角度，长度关系。</p><h2 id="remarkable">Remarkable</h2><p>如果要用软件进行画画，手绘板是必不可少的。现在除了手绘板还有 Ipad 可以选，Ipad 上的 Procreate 真的很厉害。它有着与其他软件不同的设计，它能给用户一个干净的画布，而不是像 PS 有着密密麻麻的侧栏和工具栏。</p><p>我惊喜的发现 Remarkable 通过第三方软件可以变成一块手绘板，虽然没有自定义按键什么的，压力感应也仅支持 Linux 系统，但这也算是短期内为我节省了一块板子钱。最近 Remarkable 已经给我带来了不少惊喜了。</p><h2 id="这周评价">这周评价</h2><p>上周的目标基本都做完了，除了 GRE。基础乐理学习完了，但是我发现这离目标编曲实在是差太多了。我决定继续练琴，积累一些知识。</p><p>GRE 的数学已经接近满分了，但是阅读实在是太拉跨了。下周主要提升阅读理解的正确性，然后巩固单词。</p><ul class="task-list"><li><input type="checkbox" disabled="" />提升 GRE 分数到 325。</li><li><input type="checkbox" disabled="" checked="" />每天半个小时到一个小时的钢琴练习。</li><li><input type="checkbox" disabled="" checked="" />学习完基本乐理。</li><li><input type="checkbox" disabled="" checked="" />做短期交易。</li></ul><p>完成度 75%</p><h2 id="下周做什么">下周做什么</h2><ul><li>提升阅读题目正确率到 80%。</li><li>每天半个小时到一个小时的钢琴练习。</li><li>学习完至少 3 个画画课程。</li><li>画不同角度的几何体。</li><li>尝试云渲染动画。</li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;Differential Geometry 逐渐变难，下周得多花点时间在上面。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="周报" scheme="https://www.inevitable.tech/categories/%E5%91%A8%E6%8A%A5/"/>
+    
+    
+    <category term="Remarkable" scheme="https://www.inevitable.tech/tags/Remarkable/"/>
+    
+    <category term="投资" scheme="https://www.inevitable.tech/tags/%E6%8A%95%E8%B5%84/"/>
+    
+    <category term="插画" scheme="https://www.inevitable.tech/tags/%E6%8F%92%E7%94%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2020 年第 31 周</title>
+    <link href="https://www.inevitable.tech/posts/ae1215a8/"/>
+    <id>https://www.inevitable.tech/posts/ae1215a8/</id>
+    <published>2020-08-08T16:00:00.000Z</published>
+    <updated>2021-01-02T06:11:59.008Z</updated>
+    
+    <content type="html"><![CDATA[<p>这周数学作业计算量真大。</p><a id="more"></a><h1 id="weekly-report-2020-年第-31-周-08-03-到-08-09">Weekly Report 2020 年第 31 周 （08-03 到 08-09）</h1><h2 id="这周做了什么">这周做了什么</h2><h3 id="投资">投资</h3><p>上周的目标本来是学习期权的。但是我的账户目前买不起很多期权，等我账户里钱多一些再去看期权好了。</p><p>这周没有看期权，改为技术分析（Technical Analysis）。学习了一些常见的 K 线图形状。市场上的各种变化都会反应到 k 线图上，因此从 k 线图的形状我们也可以解读出一二，并对市场进行推测。除了 k 线图的形状，我还看了一些指标和一些规则或者说是原则。</p><p>下周尝试用 TradingView 的 Screener 去选择一些股票，去做一周或者几天的短线。目前感觉做短线有点像从股票的 k 线图中去找一些熟悉的形状。当找到两种或者多种迹象表明这个股票明天会涨，那么我们就可以进一步考虑止损设置和止盈设置。如果盈亏比例合理，就可以考虑做一波短期了。</p><h3 id="琴">琴</h3><p>弹琴可真难。左右手的配合，手的移动。我现在像一个都是洞的木桶，哪儿都漏水。谱读的慢，辨别音符都得画上点时间，手的移动很生涩，能按对音都已经不容易了。等按对音了，就可以进一步练习节奏和音乐性。钢琴真的时看起来容易，但是练起来很难。</p><h3 id="google-drive-搜索">Google Drive 搜索</h3><p>与上周相比并没有多大的变化。主要时发现如果要把它做成要给公开的插件需要完成 Google API 的认证，着看着还挺麻烦的。把这个插件放下的一周里，我自己都没用过几次。先把它放在这，等哪天真的用起来了在考虑进一步完善好了。</p><h3 id="e-ink">E-ink</h3><p>重新刷入系统后，我成功将 Remarkable 升级了。原本我是打算买新的写字用的板子，但是系统升级成功的给 Remarkable 续上了。我的 Remarkable 终于收到这三年以来的所有更新。这包含新的功能，续航的提升，性能优化，UI 重做。这些更新让 Remarkable 焕然一新。</p><p>不足：现在还不支持增加书签，大纲；升级以后中文书籍都出现了缺少字体的情况；不支持手指动作进行缩放；关闭笔记本的按钮放在了右上角，很容易误触。 优点：工具栏被重做，原本占据顶栏和侧栏的两个工具栏被合并为侧栏，给内容显示更多的空间。但是由于合并，基本上所有功能有了二级菜单。点点点的次数有所增加。</p><p>与 Remarkable 形成反差的的是 Sony DPT-RP1。在买了 Remarkable 半年后，我买了它。最近也是我第一次给它升级。和 Remarkable 相比，RP1 的升级就没有很大的变化。都是一些不怎么重要的功能。最引人瞩目的是它大大降低了手写笔的延迟。升级前和升级后的延迟区别是可以感知的。</p><h2 id="这周评价">这周评价</h2><p>上周的目标似乎都七七八八做完了。仔细回忆起来，上周并不能称得上时充实的一周。下周可以适当的多做一些事情。</p><ul class="task-list"><li><input type="checkbox" disabled="" checked="" />完善 Google Drive 搜索的 Demo。探索全部使用 Node.js 进行实践，考虑加入 Coda 文档搜索。</li><li><input type="checkbox" disabled="" checked="" />每天半个小时到一个小时的钢琴练习。</li><li><input type="checkbox" disabled="" checked="" />提升 GRE 模考十分。</li><li><input type="checkbox" disabled="" checked="" />学习期技术分析。</li></ul><p>完成度 100%</p><h2 id="下周做什么">下周做什么</h2><ul><li>提升 GRE 分数到 325。</li><li>每天半个小时到一个小时的钢琴练习。</li><li>学习完基本乐理。</li><li>做短期交易。</li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;这周数学作业计算量真大。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="周报" scheme="https://www.inevitable.tech/categories/%E5%91%A8%E6%8A%A5/"/>
+    
+    
+    <category term="Remarkable" scheme="https://www.inevitable.tech/tags/Remarkable/"/>
+    
+    <category term="DPT-RP1" scheme="https://www.inevitable.tech/tags/DPT-RP1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2020 年第 30 周</title>
+    <link href="https://www.inevitable.tech/posts/93723c18/"/>
+    <id>https://www.inevitable.tech/posts/93723c18/</id>
+    <published>2020-08-01T16:00:00.000Z</published>
+    <updated>2021-01-02T06:11:59.007Z</updated>
+    
+    <content type="html"><![CDATA[<p>这周的事情为什么没有做完？因为有期末考试！这借口听着怎么样？</p><a id="more"></a><h1 id="weekly-report-2020-年第-30-周-7-27-到-08-02">Weekly Report 2020 年第 30 周 （7-27 到 08-02）</h1><h2 id="这周做了什么">这周做了什么</h2><h3 id="投资">投资</h3><h4 id="coda-文档完善">Coda 文档完善</h4><p>在上周，文档已经用 Coda 写的差不多了。我可以在文档上记录交易记录，追踪投资组合的价格，提供一些交易所 App 上没有的图表，比如投资组合日波动，即（投资组合今天的价值-投资组合昨天的价值）/投资组合昨天的价值。这份文档也会自动根据市场价格提醒我 Rebalance。</p><p>刷新市场价格的时候我遇到一些问题。在 Coda 自动化面板中有刷新这个功能，但是我实际使用发现股票价格并没有刷新。所以我将刷新功能改成每天定时把旧的价格更改为新的价格（modify row）。这本应该是一个 For Loop，然后修改每一行中的价格列。然而我惊喜的发现 Coda 没有 For Loop，只有 map。在使用 map 的时候我遇到一些跟 row，column，table 有关的问题。鉴于我的组合里只有几只股票，我就直接把 for loop 拆成一个个的定时操作。</p><p>这份 coda 文档未来还有提升的空间，目前它只能记录股票的价格。如果未来我开始用期权，那么应该有着不同于股票的记录方法。</p><h4 id="交易">交易</h4><p>这周黄金价格突破了 2012 年左右的高点。为了 rebalance。我卖出了一些 IAU。</p><p>随着黄金价格不断的攀升，突破过去的最高点，我也开始担心它可能到来的下跌。如果不是为了保证投资组合的比例与我预先设计的一样，我会在这个点抛售手中的黄金。但是为了保证我的组合比例，我不得不捏着它，即使它变得越来越有风险。我可能会考虑买入一些期权来减少可能的损失。这也是我目前学期权的一大目的。</p><h3 id="琴">琴</h3><p>现在用 Yousician 学习弹琴。Yousician 在难度曲线上感觉做的还是挺不错的，循序渐进。基本上 Yousician 上的所有曲子都是有其他乐器的伴奏。和卡拉 ok 一样，Yousician 有一个竖线在琴谱上移动，来表示现在乐曲进行到哪了。相比单纯使用节拍器，这种模式对用户节奏感的要求低了很多。</p><p>用 Yousician 练习曲子就跟打音游一样。连续弹对正确的音可以有连击分数。如果一个音的节奏弹对了，就会有分数加成。如果快慢一拍以上，这个音就算没有弹到。Yousician 只会判断你的音什么时候开始，但是不会判断你的音什么时候结束。比如你把一个全音符弹成十六分音符，Yousician 并不会有任何的反应。</p><p>理论方面的题目感觉会偏难一些。比如给你十几个 C 大调的声音，给定关系，例如第一个音要低于第二个音，第二个音要等于第三个音，让你为他们按照给定给定的关系排列顺序。最难的地方在于你并不知道第一个音是什么。你可能排列完大部分音后发现你第一个音开始的太高了，导致后面的低音没有候选项。</p><p>将琴连接掉电脑上当作 MIDI 键盘的时候，我感觉延时很大。总感觉自己弹的又抢拍的嫌疑。或许是因为声卡的原因，买一个外置声卡可以解决这个问题。</p><h3 id="google-drive-搜索">Google Drive 搜索</h3><p>我开始尝试将 Google Drive 搜索整合到启动器里。本来考虑集成到 Wox 中，但在开发 Wox 插件初期，我并不能成功加载开发中的插件。</p><p>第二个考虑的 <a href="https://u.tools/">Utools</a>。这是一个最近出现的全平台启动器，而且支持图片内容的处理。总的来说就是好看，功能也很强大。它的插件开发需要使用 Js，会更加复杂一些。而且开发者不单单要处理数据，而且还要处理 UI。官方提供了两个很基础的 UI 模板。为了减少工作量，我决定采用模板。开发过程中我发现这东西不支持热重载，Debug 过程变得很繁琐。</p><p>我本来的思路是使用 Google Drive 的 Js API 来进行搜索和获取文件信息。然而最有难度的是授权步骤。授权步骤涉及到授权文件的存放和读取，用户需要点击 URL 进行授权。官方给的样例代码里充满了各种回调。我本以为<code>Await</code> 已经把回调地狱消灭的干干净净，没想到在这又遇到了。</p><p>为了以最快的时间写出 Prototype，我决定采用 Node 调用 Python，把数据处理的部分交给 Python。再见，回调。虽然这样并不能解决授权文件的存放和读取，授权步骤，先有个 demo 试用一下，确认一下方向。</p><p>随着开发的深入，模板 UI 开始显得不够用了。Google Drive 常用的搜索分为文件类型，文件名字，以及全文搜索。如果采用列表式模板 UI，为了提供尽可能灵活的搜索，用户需要输入具体搜索命令，例如 <code>name contains 'hello'</code>。这很繁琐，尤其是经常遗忘的引号。<a href="https://u.tools/">Utools</a> 官方的 Everything 插件 UI 不错。它把常见的搜索模式以 Tab 的形式垂直排放在左侧，但这并不是模板 UI。Google Drive 官方的搜索似乎也不错。在开始搜索的时候，它会显示搜索选项，比如按照文件类型搜索等。如果用户没有进行选择，那么就会进行默认搜索。或许我可以参考这个想法。对用户选择搜索结果的行动进行分类，并且继续使用模板UI。如果是 Enter 阶段，那么用户会看见搜索类型，用户可以选择对应的搜索类型。如果是 Search 阶段，用户选择对应的搜索结果会在浏览器中打开。</p><h2 id="这周评价">这周评价</h2><p>这周并没有完成上周的目标。实际开始完成计划的时候已经是周六周日。如果从周一就开始做这些事情，相信是可以做完的。</p><ul><li><input type="checkbox" disabled="" checked="" />看看能不能把我所有的文档入口集成到启动器当中，即在启动中可以搜索云端文件。</li><li><input type="checkbox" disabled="" checked="" />想买个电钢琴</li><li>[] 优化文件管理</li><li><input type="checkbox" disabled="" />探索个人通知的实践</li></ul><p>完成度 50%</p><h2 id="下周做什么">下周做什么</h2><ul><li>完善 Google Drive 搜索的 Demo。探索全部使用 Node.js 进行实践，考虑加入 Coda 文档搜索。</li><li>每天半个小时到一个小时的钢琴练习。</li><li>提升 GRE 模考十分。</li><li>学习期权的基本概念以及基本策略。</li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;这周的事情为什么没有做完？因为有期末考试！这借口听着怎么样？&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="周报" scheme="https://www.inevitable.tech/categories/%E5%91%A8%E6%8A%A5/"/>
+    
+    
+    <category term="投资" scheme="https://www.inevitable.tech/tags/%E6%8A%95%E8%B5%84/"/>
+    
+    <category term="Coda" scheme="https://www.inevitable.tech/tags/Coda/"/>
+    
+    <category term="Yousician" scheme="https://www.inevitable.tech/tags/Yousician/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2020年第29周</title>
+    <link href="https://www.inevitable.tech/posts/9d9931d5/"/>
+    <id>https://www.inevitable.tech/posts/9d9931d5/</id>
+    <published>2020-07-25T16:00:00.000Z</published>
+    <updated>2021-01-02T06:11:59.021Z</updated>
+    
+    <content type="html"><![CDATA[<p>第一次写周报。看看这周做了什么，下周准备做什么。 <a id="more"></a> # Weekly Report 7 月第四周</p><h2 id="这周做了什么">这周做了什么</h2><h3 id="买美股">买美股</h3><p>在学习了一些股票的基本知识后，开始分析和选择投资组合。原本以为需要写点代码来进行分析和统计计算，其实用 <a href="https://www.portfoliovisualizer.com/">Portfolio Visualizer</a> 就可以做的七七八八了。</p><p>最后选中了 3x S&amp;P500 加 3x 20yr+ 债券的组合。由于这个组合波动太大，我又增加了黄金和 SWAN（据称避免黑天鹅事件的重大损失）。疫情期间 SWAN 的跌幅只有 3%。</p><p>交易日志和组合的表现除了可以在交易所的 App 中进行查看，我自己还在 <a href="https://coda.io/docs">Coda</a> 中构建了一份文档。每当要做这种比较复杂的记录，Notion 和 Coda 的确比 Markdown ，Excel ，Word 好用太多。我本来想用 Excel 来记录数据，但是 Excel 对文本的表现一般。后来想到用 Markdown ，但是 Markdown 的数据处理能力并不好。最后选择了 Coda。里面可以写一段段的文字，也可以做表格，画图表。它还支持自动化，也有股票插件。我可以设置为每天定时运行，自动获取股票价格，自动计算组合的价值并记录下来。</p><h3 id="配置云盘">配置云盘</h3><p>学校送了 G suite 和 Box。这个 Box 不是 Dropbox，是云盘业务的开拓者。学校还特意比较了 Box 和 Dropbox ，对比图中都是 Box 有但是 Dropbox 没有的功能（恰饭警告）。</p><p>我选择 Google Drive 来作为我的云空间（无限容量）。通过 Good Sync 来把本地电脑一些用不到的东西给备份上去，关闭 Propagate Deletion 后就可以把本地的东西给删了。下次把新的文档放进来后又会开始自动同步。有点想念其他软件的 Smart Sync 或者 Selective Sync 的功能。不用的文件会以占位符的形式存放在本地，要用的时候再下载下来。</p><p>我们可以通过 Drive File Stream 来将云盘挂在到本地电脑。相比 Smart Sync 和 Selective Sync ，缺点是一个文档可能会在本地找到，也可能得到挂载在本地的云盘中找到。文档可能存放的地方从一个变成了两个。</p><p>有云盘的一个好处是音乐。如果电脑上的音乐备份到了云端的话，我们可以通过流传输直接在手机上听到电脑上的音乐 。同理，视频也可以直接流传输了。</p><p>另一个好处是 Full Text Search。云端的搜索功能很强，支持按类型，日期等进行搜索。搜索的范围除了文件名，文件信息等还包括文件的内容（如果是文本文件的话），和图片内容。云端的图片管理比本地好上不少，你也可以进一步在云端为这些照片打上标签或帮助云端进行人脸识别和分类。云端的搜索速度也比本地快。但是目前启动器（ Wox ，Flow ）等只支持本地的文件搜索，而并不支持云端文件搜索。</p><h3 id="gre-准备">GRE 准备</h3><p>背完了第一遍单词后，开始了单词复习。百词斩竟然要求一天复习 600 个，难为了我这个脑子。题型的学习也开始了，接下来就是单词和做题并进。</p><p>淘宝上买的 GRE 模考软件很奇怪，需要以管理员权限安装和运行，并且关闭微软的杀毒软件。一个模考软件需要管理员权限运行的确有点奇怪。或许之后我可以尝试分析一下（二进制分析捡起来）。目前我将其运行在 Sandboxie 中，效果非常的不错，沙盒的启动也非常的快。</p><h3 id="死亡搁浅">死亡搁浅</h3><p>有些人说死亡搁浅无聊，因为前几章送快递没有高级装备，没有道路，没有载具 ，单纯送货很劝退。但其实我觉得前几章的送快递才是最有意思的。游戏的 UI 占据屏幕很小的位置，人物的血条等信息也是隐藏的。玩家可以最大程度的沉浸在这个世界中，观赏风景，聚精会神的走路，选择最好的道路，与自然和 BT 做抗争。</p><p>道路修起来了之后，虽然送货效率的确大大增加了，但我发现开车在高速公路上是一件很机械和无聊的事情。横跨整个地图的黑色道路也极大的破坏了风景。现代社会再也回不去原始社会了。回不到一个人在地图里艰难送货的时候。现在开着车送货，脑子里会想着下一单应该往哪里跑。生活节奏大大加快。唯一的鼓励就是其他玩家使用我的道路后，我收到了赞。</p><p>接下来要进雪山了，据说又是枯燥的送货路程，看看能不能回到起点，感到艰难和小心翼翼。</p><h3 id="修复蓝牙">修复蓝牙</h3><p>在更新了 Windows 后蓝牙挂了。通过在 Intel 官网更新驱动修好了蓝牙。</p><h3 id="ie80-声相">IE80 声相</h3><p>由于蓝牙挂了一短时间，用起了 IE80 。发现 IE80 的声响往右偏。解决方法也挺简单的，别把右边的耳塞塞得那么紧。把 IE80 挂在耳朵口就行，别当他是个入耳式。</p><h2 id="下周做什么">下周做什么</h2><ul><li>看看能不能把我所有的文档入口集成到启动器当中，即在启动中可以搜索云端文件。</li><li>想买个电钢琴</li><li>优化文件管理</li><li>探索个人通知的实践</li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;第一次写周报。看看这周做了什么，下周准备做什么。</summary>
+    
+    
+    
+    <category term="周报" scheme="https://www.inevitable.tech/categories/%E5%91%A8%E6%8A%A5/"/>
+    
+    
+    <category term="投资" scheme="https://www.inevitable.tech/tags/%E6%8A%95%E8%B5%84/"/>
+    
+    <category term="游戏" scheme="https://www.inevitable.tech/tags/%E6%B8%B8%E6%88%8F/"/>
+    
+    <category term="云盘" scheme="https://www.inevitable.tech/tags/%E4%BA%91%E7%9B%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Luminar</title>
+    <link href="https://www.inevitable.tech/posts/e200fba8/"/>
+    <id>https://www.inevitable.tech/posts/e200fba8/</id>
+    <published>2020-06-19T16:00:00.000Z</published>
+    <updated>2021-01-02T06:11:59.079Z</updated>
+    
+    <content type="html"><![CDATA[<p>Luminar 是个简单强大的图片批量处理软件（其实不能批量处理，来回切图片载入要半分钟）。</p><a id="more"></a><p>我在夏季打折的时候入了 <a href="https://skylum.com/luminar">Luminar</a>，59 刀两个激活码。购买时除了官方折扣之外，还可以使用一些 aff。这样可以再便宜 10 刀左右。</p><p>Luminar 是一个 Lightroom 的竞品。细节，性能上不如 Lightroom，但是拥有更多的功能。</p><p>第一次使用 Lightroom CC 的时候，我被颇具年代感的 UI 设计给吓到了。浅灰色的背景似乎是移动互联网时代之前的设计。Lightroom（在线版本）具有更好看的设计，但是不能在本地运行。这意味着所有照片都需要传到云端进行编辑。Lightroom 手机版也是免费的，但手机哪会有电脑好用呢？</p><center><img class="lazyload" data-src="/static/images/luminar1.png" height="80%" width="80%"></center><h2 id="功能">功能</h2><p>Luminar 有着丰富的 AI 功能。从最基本的一键调整画面曝光，饱和度等，到一键替换天空应有尽有。从使用者的角度来看，这些功能都非常的实用。以前可能要反反复复调节很多不同的效果，但是现在只要调整一个 AI 效果了。</p><p><a href="https://skylum.com/luminar/filters/accent-ai">AI Accent</a> 是可以智能调节画面的饱和度，曝光等等。单纯调节 <a href="https://skylum.com/luminar/filters/accent-ai">AI Accent</a>，就可以非常快速的得到一张还不错的成品。第一张是原图，第二张是将 AI Accent 拉到 84, 未做其他修改。</p><center><img class="lazyload" data-src="/static/images/luminar2.png" height="80%" width="80%"></center><center><img class="lazyload" data-src="/static/images/luminar3.png" height="80%" width="80%"></center><p><a href="https://space.bilibili.com/430726">图片出处</a></p><p><a href="https://skylum.com/luminar/filters/structure">AI Structure</a> 可以智能的调节画面中的细节。可以让照片锐利不少。</p><p>Smart Contrast 相比于传统的对比度调整，它保留了更多颜色和细节。让照片看上去更加的真实。</p><p>常常感觉我头顶上的天空和别人头顶上的天空是不同的。自己脑袋上的天空灰灰的，没有云，一点都没有层次感。然而别人拍出来的天空立体，生动。AI Sky Replacement 就很好的帮助我将自己头上的天空变得更加生动。这个一键替换的效果非常的真实，就像天空原来就是那样的。我也可以进一步为照片中添加额外的光线。例如添加一些丁达尔效应，又或者是逆光拍摄时漂亮的轮廓光。此处只改变了天空。如果想要看更好的效果，可以看官网的 <a href="https://skylum.com/luminar">范例</a>。</p><center><img class="lazyload" data-src="/static/images/luminar4.png" height="80%" width="80%"></center><center><img class="lazyload" data-src="/static/images/luminar5.png" height="80%" width="80%"></center><p><a href="https://www.signatureedits.com/free-raw-photos/">图片出处</a></p><p>人像也是 Luminar4 主打的功能之一。它可以对眼睛，嘴唇以及面部亮度进行一键调整。甚至还有美颜相机中瘦脸，和把眼睛变大的功能。</p><p>在遮罩层（Mask）上，Luminar4 推出了亮度遮罩层（Luminosity Mask）。这使逆光照片和大光比场景照片的编辑简单了很多。亮度遮罩层可以生成一个对越亮的地方效果越强的遮罩层。这样仅仅在这个遮罩层上调整曝光，我们就可以将亮部曝光下降，让这个照片有更多的细节。如果不使用亮度遮罩层，我们可能需要花更多的时间去为亮部画一个遮罩层，而且还要考虑亮部和主体过渡是不是自然的问题。这张原图的亮部在天空。因此天空部分是纯红色。</p><center><img class="lazyload" data-src="/static/images/luminar6.png" height="80%" width="80%"></center><center><img class="lazyload" data-src="/static/images/luminar7.png" height="80%" width="80%"></center><h2 id="缺点">缺点</h2><p>细节上 Luminar 还缺不少。比如不能一键将照片横平竖直。比如很多颜色，曝光调整工具不支持滴管工具。在 Lightroom 中，我们可以在照片上拖拽来改变曝光或者色相。Luminar 缺少了很多类似的小细节。</p><p>性能也是 Luminar 的短板。在常规功能上，Luminar 就慢于 Lightroom，比如 HSL，曝光调整，照片导出之类的。多照片的编辑性能也很差。编辑完照片A, 打开照片B进行编辑。如果此时再去浏览照片A，需要加载十五秒到半分钟的。加载时间取决于我做的修改有多少。</p><p>在独有的AI功能上便需要更多的运算时间。生成一个亮度遮罩层（Luminosity Mask）需要半分钟。很多功能的运行时间取决于你的图层数量和施加的效果有多少。你改变的越多，运行时间便越长。</p><p>在官方论坛中，用户有着各式各样的特性需，但用户的大部分需求都没有被满足。用户两三年前急需的功能遥遥无期。也有一些官方承诺添加的功能无限制搁置。这看上去并不是一家贴近用户的公司。</p><p>总的来说 Luminar 是一个专注图像AI处理的软件，它着重于开发新功能而不是打磨现有功能。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;Luminar 是个简单强大的图片批量处理软件（其实不能批量处理，来回切图片载入要半分钟）。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Arts" scheme="https://www.inevitable.tech/categories/Arts/"/>
+    
+    
+    <category term="Photo" scheme="https://www.inevitable.tech/tags/Photo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CG日记2-城市</title>
+    <link href="https://www.inevitable.tech/posts/578b8b94/"/>
+    <id>https://www.inevitable.tech/posts/578b8b94/</id>
+    <published>2020-06-02T02:00:00.000Z</published>
+    <updated>2021-01-02T06:11:59.053Z</updated>
+    
+    <content type="html"><![CDATA[<p>累计使用 30 个小时！</p><a id="more"></a><p>终于累计使用时间来到了 30 个小时，可以说有一点入门了。</p><p>这个作品描绘了疫情散布的城市。红色代表了病毒。整个材质的风格想要参考微软的亚克力材质，然而我的还是有点出入。虽然大家都是半透明，但是我的材质没有那种通透的感觉。</p><p>整个制作过程还是很简单的。先通过 <a href="https://gumroad.com/l/blender-osm">OSM</a> 生成城市白模，然后自己做一个类亚克力材质，最后加上天空的光照。天空的光照我用的是 <a href="https://blendermarket.com/products/physical-starlight-and-atmosphere">Physical Starlight And Atmosphere</a>。参数不算多，随便调一调就可以用了。</p><p>模型的颜色我使用了一个相交以前复杂一些的 Node 组合。Node 相较于 Texture paint 非常的灵活。Node 随时可以调整，而且不会对模型造成不可逆的影响。</p><center><img class="lazyload" data-src="/static/images/cg2-1.png" height="80%"></center><p>这次我增加了后期调色的工序。由于 Adobe 太贵，<a href="https://rawtherapee.com/">Rawtherapy</a> 不支持 Blender 到处的 OpenExr 格式，我暂时使用 <a href="https://www.darktable.org/">Darktable</a>。Darktable 体积小巧，功能也大多完整。取色器不知道为什么格外的不好用。如果 Darktable 不适合我，我会考虑尝试 Affinity photo。它又便宜，还有 Vectorscope 等图表，用来调色估计会更加精确。</p><center><img class="lazyload" data-src="/static/images/cg2-2.png" height="80%" width="80%"></center><center><img class="lazyload" data-src="/static/images/cg2-3.png" height="80%" width="80%"></center>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;累计使用 30 个小时！&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Arts" scheme="https://www.inevitable.tech/categories/Arts/"/>
+    
+    
+    <category term="CG" scheme="https://www.inevitable.tech/tags/CG/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>天气之子</title>
+    <link href="https://www.inevitable.tech/posts/d58267cf/"/>
+    <id>https://www.inevitable.tech/posts/d58267cf/</id>
+    <published>2020-05-17T16:00:00.000Z</published>
+    <updated>2021-01-02T06:11:59.116Z</updated>
+    
+    <content type="html"><![CDATA[<p>《天气之子》是一个比《你的名字》更符合我口味的电影。</p><a id="more"></a><h2 id="画面">画面</h2><p>这次的故事发生在东京,繁华的都市与密集的建筑物。或许你会想起《你的名字》中光线在建筑物外表反射，折射，最后构造出绚丽的光影。在《天气之子》中，大部分时候是阴天，偶尔有的也只是小范围的晴天。阴天的大都市塑造了整部电影阴暗压抑的感觉。</p><p>这一次画面的重点在于天气-雨。精确点说就是流体。雨水在画面中的形状，雨水砸在物体上的弹跳，光在雨滴中的反射和折射。仔细看了看，这些雨滴说不上真实。因为光在水中的反射和折射不够真实，以及缺少气泡，飞沫和浮沫。这三个元素是很多流体模拟都缺少的，却很难被发现。但这些雨滴都很美，有着独特的风格。他们还在某种程度上反映了人物的心理活动。比如下面这个场景，男主在被别人打的时候犹豫要不要把枪拿出来。</p><center><img class="lazyload" data-src="/static/images/weatheringwithYou2.png" height="80%" width="80%"></center><center><img class="lazyload" data-src="/static/images/weatheringwithYou3.png" height="80%" width="80%"></center><p>雨水在这一个片段中通过溅射的运动赋予场景表现张力。这一拳头的打击感十足正是因为男主的脸和地面亲密接触溅射出无数的水滴。</p><center><img class="lazyload" data-src="/static/images/weatheringwithYou4.png" height="80%" width="80%"></center><center><img class="lazyload" data-src="/static/images/weatheringwithYou5.png" height="80%" width="80%"></center><center><img class="lazyload" data-src="/static/images/weatheringwithYou6.png" height="80%" width="80%"></center><p>雨滴打在男主的脸上，体现了时间的流逝。这冰冷的雨滴也打在了男主的心里，催促他做出选择。</p><blockquote><p>冷冷的冰雨在脸上胡乱的拍 暖暖的眼泪跟寒雨混成一块 -刘德华《冰雨》</p></blockquote><p>下面是一些光影有关的场景。</p><center><img class="lazyload" data-src="/static/images/weatheringwithYou7.png" height="80%" width="80%"></center><h2 id="故事">故事</h2><p>这一次的故事只有一点小奇幻。相比摆弄时间线的《你的名字》，这次的故事小儿科了很多。《天气之子》在空间和时间跨度上都不如你的名字，出场人物也少于你的名字。故事可以简简单单的用一句话概括，离家出走的少年在东京拯救可以操控天气的女孩。这么小的故事和动不动就毁灭世界的商业片比起来的确观感上的确逊色不少，但我很喜欢这样讲好一个小故事。有两个原因。第一个是细节。在同样的时长下，一个小故事可以有篇幅塞进跟多的细节，让整个故事有多面性。制作者可以从不同的角度去接近这个故事，或者从一些细节来讲述人物不表现出来的内容。比如圭介在雨过天晴后打开窗户，道路积水涌进了室内的镜头。这个镜头人物并没有说什么，但是这象征了圭介的释怀。第二个原因是较为简单的剧情会比较好理解。观众可以把更多的经历放在理解主旨上。</p><h2 id="主题">主题</h2><p>《天气之子》的其中一个主题跟我有较大的共鸣，少年的冲劲。女主阳菜牺牲了自己让东京回归了正常的天气。但是男主帆高不服气，他想让阳菜回来即使东京持续令人厌恶的阴天。在他为这个虚无缥缈的愿望奋斗的时候，之前的种种伏笔都在此刻变成了与帆高对抗的力量。比如警察想要以持枪的罪名逮捕帆高，圭介因为警察的许诺也出面阻止帆高。这个世界上没有谁和帆高一起为了这个目标努力。圭介的侄女须贺夏美和阳菜的弟弟天野凪都只能是辅助，他们的信念不如帆高强大，所付出的也不如帆高。“你小小的肩膀上承载着整个世界”（RADWIMPS）。这句话不只是对让世界放晴的阳菜，对于想要拯救阳菜的帆高也一样。作为一个旁观者，我们仔细思考一下。为了虚无缥缈的拯救，值得付出这么多吗？历史上并没有哪个晴女被救了回来。为了这个虚无缥缈的希望，我们与自己曾经的救命恩人，老板圭介对抗。东京的所有人都在赞颂晴天。他们与我们对立。警察也在因为持枪的事情紧追不舍。与警察对抗或许还会在人生的档案上留下不可磨灭的污点。这也是在于自己的未来抗争。如果现在放弃拯救，整个社会都会原谅我们。坚持去拯救真的值得吗？“人老了就是这样。不得不改变顺序了“（圭介）。先和警察回去，把事情交代清楚再来拯救阳菜或许是个更好的选择。和帆高差不了几岁的我更喜欢这个选择。（我人老了啊。）</p><p>这部电影的最后所有人都和这个执拗的少年和解了。圭介在警察的抓捕行动中被少年的冲劲所感动，选择帮助帆高。警察作为公正的象征，也仅仅是给帆高三年的保护观察处分。这并不会影响到帆高的未来。老奶奶作为东京大众的象征，也并没有对持续的降雨有多少怨言。”东京。。。只是恢复原样“（立花富美）。阳菜在消失的前一刻被帆高救下。如果在晚上个几天，阳菜或许已经消失了。这个社会还是很宽容的呢。</p><h2 id="对比">对比</h2><p>这部作品中的几个对比很有意思。其中一个是光影的对比。在大部分作品中，光是正面的象征。比如洞穴出口的光，火把的光。他们象征了希望或者是一些正能量的元素。黑暗则是有着不好的寓意。但是在这部作品中，这种象征被颠倒了。阴天包含着正面的含义。晴天则是阳菜用生命换来的。</p><center><img class="lazyload" data-src="/static/images/weatheringwithYou8.png" height="80%" width="80%"></center><p>太阳光照进室内。又是一个美好的清晨不是吗。目光向下滑动到帆高满是汗水惊慌的脸上。这时突然反应过来，东京不是在下雨吗？哪来的阳光？难道阳菜消失了？积雨云之上，也是一片亮堂。但是这并不是美好的景色，而是阳菜消失了。从这一刻起，我无比怀念阴天。</p><p>另一个有意思的对比是年龄阅历。阳菜声称自己马上十八岁，生活中也一直扮演者大姐姐的角色，照顾着帆高和自己的弟弟。在警察口中我们得知她其实只有 15 岁。这到底是大姐姐还是小姐姐呢？这个冲突给人物带来的更多的吸引力。这个设定也没有 Bug，因为女孩子在这个年纪比男孩子成熟并且在阳菜在父母双亡的情况下一直照顾着弟弟。阳菜比较成熟也是情理之中。</p><p>总的来说，这部电影的主题是我最喜爱它的原因。少年的冲劲真的很能打动现在的我。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;《天气之子》是一个比《你的名字》更符合我口味的电影。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Film" scheme="https://www.inevitable.tech/categories/Film/"/>
+    
+    
+    <category term="Film" scheme="https://www.inevitable.tech/tags/Film/"/>
+    
+    <category term="新海诚" scheme="https://www.inevitable.tech/tags/%E6%96%B0%E6%B5%B7%E8%AF%9A/"/>
+    
+  </entry>
+  
+</feed>
