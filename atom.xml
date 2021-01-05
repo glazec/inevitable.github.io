@@ -6,7 +6,7 @@
   <link href="https://www.inevitable.tech/atom.xml" rel="self"/>
   
   <link href="https://www.inevitable.tech/"/>
-  <updated>2021-01-02T06:11:59.019Z</updated>
+  <updated>2021-01-05T21:50:19.441Z</updated>
   <id>https://www.inevitable.tech/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2020年第29周</title>
+    <link href="https://www.inevitable.tech/posts/745d9d04/"/>
+    <id>https://www.inevitable.tech/posts/745d9d04/</id>
+    <published>2021-01-04T16:00:00.000Z</published>
+    <updated>2021-01-05T21:50:19.441Z</updated>
+    
+    <content type="html"><![CDATA[<p>目前稳定币的总市值大约在 300 亿美金，24 小时交易量为 1000 亿美金。</p><a id="more"></a><p>缺乏约束的数字货币价格波动总是很大。这让许多习惯以美金计数的人很难受。为了解决数字货币波动性的问题，大家开始研究稳定币。稳定币一般与美元 1：1 兑换。但在实际应用中其汇率会有波动。最先出现的稳定币是基于保证金的。即每个代币背后都有大于等于 1 美金的等价资产作为抵押。</p><p>其中最典型的为 <a href="https://tether.to/">USDT</a> 和 <a href="https://makerdao.com/en/">DAI</a>。USDT 发行于 2014 年，是中心化稳定币的代表。每个 USDT 都有 1 美金的等价物作为担保。和银行类似，USDT 的发行公司有能力冻结用户资产。USDT 目前的市值为 $200 亿。24 小时交易量为 $600 亿。</p><p>DAI 则为去中心化，基于保证金的稳定币代表。同样发行于 2014 年的 DAI 市值为 $11 亿，24 小时交易量为 $3 亿。用户通过超额抵押区块链资产来铸造 DAI。用户归还 DAI 可以赎回自己的资产。目前其质押资产总额约为 $20 亿。DAI 通过改变抵押率来维持其币价。除此之外社区还充当最后的保险。如果抵押资产价格下跌至目标点位（即保证金不够了），社区将充当最后的买家。</p><p>基于保证金的稳定币最大问题在于其资金利用率。保证金并不能得到充分的利用。其好处便是更加稳定的价格。</p><p>今年出现了截然不同的算法稳定币。设计者借鉴法币的历史，基本的财政和货币政策设计出不同的算法稳定币。</p><p>基于通涨和通缩的算法稳定币是最早出现的。他们应用了最基本的供需理论。需求不变时，当供应减少时价格上升，供应增加时价格下降。运用到代币设计中便是当价格大于 $1 时，用户钱包里的代币数量会变多。低于 $1 时，用户钱包里的代币数量会变少。这是一个非常简单的设计，但其问题在于用户钱包里的代币数量会变换，这很反直觉。并且长期持有此代币，其价值会有巨大的变化。比较直观的理解方式是拥有 1 个代币代表拥有此代币市值的固定一部分。市值上升则我获益，市值下降则我亏损。这种稳定币的设计并不能保证此代币在长期持有的过程中有稳定的价值。这种代币的代表为 <a href="https://www.ampleforth.org/">AMPL</a>，市值为 $2.7 亿，24 小时交易量为 $900 万。</p><p>更为精巧的算法稳定币借鉴了央行的货币政策。当价格低于 $1 时用户可以以低于面值的价格购买债券。这些债券在价格高于 $1 时可以兑换。例如用户花价值 $0.6 的代币便可以买到在未来可以兑换 1 个代币的债券。此时购买债券就相当于减少代币流动性。在实际的设计中这些债券往往风险很大，因为债券可能有过期时间，兑换债券有费用，增发的代币无法满足债券的兑换需求等等。当价格高于 $1 时，代币会进行增发。一部分代币会预留给债券的兑换，另一部分代币会奖励给提供代币交易对流动性的用户。<a href="https://docs.emptyset.finance/faqs/basics">ESD</a> 便是这种设计的典型。其市值为 $4.7 亿，24 小时交易量为 $1600 万。</p><p>最新的算法稳定币则采用了债券和股票的机制。债券就跟我们之前讲的一样。股票则是用来分红的。当代币价格大于 $1 时，一部分增发的代币将发给股票的持有者。<a href="https://app.basis.cash/">BASIS</a> 采用了这种设计。其稳定币 BAC 市值为 $9000 万，24 小时交易量为 $3300 万。其股票 BAS 市值为 $1.3 亿，24 小时交易量为 $4600 万。BAS 的市值远超 BAC，颇有公司小小但是估值很高的感觉。</p><p>目前算法稳定币倍诟病较多的便是其债券的设计。债券风险太大并且因为技术上的原因无法在二级市场进行交易。算法稳定币相较基于保证金的稳定币没有了资金领用率的烦恼，并且不需要任何担保资金便可以启动，使其更加的灵活。或许未来能找到其他的用途。</p><p>经济学在稳定币的设计中越发重要。简单的供需理论便是算法稳定币的雏形。希望明年会出现设计更加巧妙的稳定币。</p><h1 id="reference">Reference</h1><p><a href="https://fairlaunch-fi.medium.com/%E7%AE%97%E6%B3%95%E7%A8%B3%E5%AE%9A%E5%B8%81%E6%8C%96%E7%9F%BF%E7%AD%96%E7%95%A5-%E5%BF%83%E5%BE%97%E4%BB%A5%E5%8F%8A%E6%9C%AA%E6%9D%A5%E7%9A%84%E5%8F%91%E5%B1%95%E8%B6%8B%E5%8A%BF-9773e5ab2569">算法稳定币挖矿策略、心得以及未来的发展趋势</a></p><p><a href="https://mp.weixin.qq.com/s/hvRr84HCiEj5VXbFLfKMLg">USDT、BaseCoin 和 MakerDAO 的对比：谁会胜出？</a></p><p>`</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;目前稳定币的总市值大约在 300 亿美金，24 小时交易量为 1000 亿美金。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="区块链" scheme="https://www.inevitable.tech/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+    <category term="区块链" scheme="https://www.inevitable.tech/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    <category term="稳定币" scheme="https://www.inevitable.tech/tags/%E7%A8%B3%E5%AE%9A%E5%B8%81/"/>
+    
+    <category term="Defi" scheme="https://www.inevitable.tech/tags/Defi/"/>
+    
+  </entry>
   
   <entry>
     <title>2020 这一年</title>
@@ -44,7 +69,7 @@
     <link href="https://www.inevitable.tech/posts/5b7ede32/"/>
     <id>https://www.inevitable.tech/posts/5b7ede32/</id>
     <published>2020-12-31T16:00:00.000Z</published>
-    <updated>2021-01-02T06:11:59.048Z</updated>
+    <updated>2021-01-05T21:49:48.762Z</updated>
     
     <content type="html"><![CDATA[<p>人间一天，币圈一年。这些新项目我们应该去哪里找呢？ <a id="more"></a></p><p><a href="https://github.com/w3f/General-Grants-Program/blob/master/grants/accepted_grant_applications.md">Web3 基金会</a>也会定期放出他们资助的项目。 <a href="https://esp.ethereum.foundation/en/projects/">Ethereum 基金会</a>：在它的<a href="https://blog.ethereum.org/category/ecosystem-support-program/">Blog</a>中可以看到最近受到资助的项目。</p><h1 id="风投机构">风投机构</h1><p>可以在 Crunchbase 上订阅他们。</p><p>Dragonfly Capital 投资了很多区块链项目，团队成员以中国人为主，主管是冯波。在<a href="https://www.dcp.capital/portfolio">它的投资列表</a>中可以找到很多熟悉的项目。在<a href="https://medium.com/dragonfly-research">Dragonfly Capital 的研报</a>中可以看见他们投资的新项目。 https://pic1.zhimg.com/80/v2-a6527926ff86de682628f686bb2d20ec_720w.jpg</p><p>#HASHED 是一个来自韩国的风投机构，关注亚洲和美国的区块链项目。<a href="https://www.hashed.com/portfolio">他们主要投资</a>区块链平台，金融基础设施和应用。<a href="https://www.hashed.com/content">在这</a>可以发现他们的最新动态。</p><p><a href="https://dekrypt.capital/">dekrypt capital</a></p><p><a href="https://lemniscap.com/portfolio">Lemniscap</a>。<a href="https://medium.com/lemniscap">他们的 Blog。</a></p><p>FBG Capital</p><p><a href="https://www.astronaut.capital/#What%20we%20do">Astronaut Capital</a></p><p><a href="https://www.placeholder.vc/">Placeholder</a></p><p>Picolo Research 聚合了各种区块链项目并且提供调研报告。</p><p><a href="https://cryptofundintelligence.com/">Cryptofund</a>提供各种加密货币基金。</p><p>Dekrypt Capital 专注于投资区块链基础设施</p><p><a href="https://ventures.coinbase.com/">Coinbase 风投</a></p><p><a href="https://www.ideocolab.com/ventures/">Ideocolab 风投</a></p><p><a href="https://blockchain.capital/portfolio/">Blockchain Capital</a></p><p><a href="https://www.panteracapital.com/portfolio">Pantera Capital</a></p><p><a href="http://consensus-lab.com/">共识实验室</a>提供基金月报。</p><center><img class="lazyload" data-src="/static/images/blockchainProject.png" height="80%" width="80%"></center>]]></content>
     
@@ -53,10 +78,10 @@
     
     
     
-    <category term="Blockchain" scheme="https://www.inevitable.tech/categories/Blockchain/"/>
+    <category term="区块链" scheme="https://www.inevitable.tech/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
     
     
-    <category term="Blockchain" scheme="https://www.inevitable.tech/tags/Blockchain/"/>
+    <category term="区块链" scheme="https://www.inevitable.tech/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
     
   </entry>
   
@@ -65,7 +90,7 @@
     <link href="https://www.inevitable.tech/posts/458d64bd/"/>
     <id>https://www.inevitable.tech/posts/458d64bd/</id>
     <published>2020-12-31T16:00:00.000Z</published>
-    <updated>2021-01-02T07:46:27.955Z</updated>
+    <updated>2021-01-05T21:49:57.885Z</updated>
     
     <content type="html"><![CDATA[<p>一键搭建初始化以太坊开发环境。</p><a id="more"></a><h1 id="开发经历">开发经历</h1><p>这个项目有点类似 create-react-app。目的是帮助开发者快速初始化开发环境。做起来还是挺简单的。就是写一个 Node 脚本。里面包含初始化项目文件夹，安装依赖和替换模板文件。具体项目使用和介绍可以 <a href="https://github.com/glazec/create-smart-contract">看 Github 主页</a>。</p><h1 id="使用指南">使用指南</h1><p>首先你得已经全局安装 truffle。这样<code>create-smart-contract myapp</code>，会用 truffle 为你初始化一个项目文件夹。然后为你安装一系列有用的插件和包。最后给你生成一些默认的配置文件。以下是包含的框架，插件，包和配置文件。由于目前 Openzeppelin 不支持 0.8 的 solc，所以我默认使用 0.7 的最新版。</p><ul><li><a href="https://www.npmjs.com/package/truffle">truffle</a><ul><li><span class="citation" data-cites="truffle/hdwallet-provider">[@truffle/hdwallet-provider]</span>(https://www.npmjs.com/package/<span class="citation" data-cites="truffle/hdwallet-provider">@truffle/hdwallet-provider</span>)</li><li><a href="https://www.npmjs.com/package/eth-gas-reporter">eth-gas-reporter</a></li><li><a href="https://www.npmjs.com/package/solidity-coverage">solidity-coverage</a></li><li><a href="https://www.npmjs.com/package/truffle-assertions">truffle-assertions</a></li></ul></li><li><a href="https://www.npmjs.com/package/hardhat">hardhat</a><ul><li><span class="citation" data-cites="nomiclabs/hardhat-ethers">[ @nomiclabs/hardhat-ethers]</span>(https://www.npmjs.com/package/<span class="citation" data-cites="nomiclabs/hardhat-ethers">@nomiclabs/hardhat-ethers</span>)</li><li><span class="citation" data-cites="nomiclabs/hardhat-truffle5">[@nomiclabs/hardhat-truffle5]</span>(https://www.npmjs.com/package/<span class="citation" data-cites="nomiclabs/hardhat-ethers">@nomiclabs/hardhat-ethers</span>)</li><li><span class="citation" data-cites="nomiclabs/hardhat-waffle">[@nomiclabs/hardhat-waffle]</span>(https://www.npmjs.com/package/<span class="citation" data-cites="nomiclabs/hardhat-waffle">@nomiclabs/hardhat-waffle</span>)</li><li><span class="citation" data-cites="nomiclabs/hardhat-web3">[@nomiclabs/hardhat-web3]</span>(https://www.npmjs.com/package/<span class="citation" data-cites="nomiclabs/hardhat-web3">@nomiclabs/hardhat-web3</span>)</li></ul></li><li><a href="https://www.npmjs.com/package/ethers">ethers</a></li><li><span class="citation" data-cites="openzeppelin/contracts">[@openzeppelin/contracts]</span>(https://www.npmjs.com/package/<span class="citation" data-cites="openzeppelin/contracts">@openzeppelin/contracts</span>)</li><li><a href="https://www.npmjs.com/package/chai">chai</a></li><li><a href="https://www.npmjs.com/package/solidity-docgen">solidity-docgen</a></li><li><a href="https://www.npmjs.com/package/mocha">mocha</a></li><li><a href="https://www.npmjs.com/package/prettier">prettier</a></li><li><a href="https://www.npmjs.com/package/prettier-plugin-solidity">prettier-plugin-solidity</a></li><li><a href="https://www.npmjs.com/package/solc">solc</a></li><li><a href="https://www.npmjs.com/package/web3">web3</a></li><li><a href="https://www.npmjs.com/package/ethereum-waffle">ethereum-waffle</a></li><li>.gitignore</li><li>.prettierrc</li><li>hardhat.config.js</li><li>slither.config.json</li><li>solcover.js</li><li>truffle-config.js</li></ul><p>除此之外我还加入了一些有用的 Node 脚本。</p><ul><li><code>npm run test</code>: 用来跑测试的。我这采用了 Hardhat。因为它跑 test 的速度快，并且支持在智能合约中使用<code>console.log</code>。</li><li><code>npm run doc</code>: 根据 <a href="https://docs.soliditylang.org/en/v0.8.0/natspec-format.html">doxygen</a> 自动生成文档。</li><li><code>npm run coverage</code>: 根据配置文件 <code>.solcover.js</code> 生成测试覆盖率报告。</li><li><code>npm run analyze</code> 根据配置文件 <code>slither.config.json</code> 静态分析智能合约。<em>注意：要求已经安装 <a href="https://github.com/crytic/slither#how-to-install">Slither</a></em></li></ul><h2 id="自定义">自定义</h2><h3 id="包">包</h3><p>你可以自定义想要的包。更改<code>index.js</code>的<code>installPackages</code>。例如</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> installPackages = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;\nInstalling hardhat\n&quot;</span>.cyan);</span><br><span class="line">    shell.exec(<span class="string">`npm install --save-dev hardhat`</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&quot;\nFinished installing packages\n&quot;</span>.green);</span><br><span class="line">      resolve();</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h3 id="模板">模板</h3><p>你可以自己更改，添加或删除模板。例如你想要添加模板，你需要将模板文件加入 <code>templates/</code> 然后修改 <code>templates/templates.js</code>。例如</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fs = <span class="built_in">require</span>(<span class="string">&quot;fs&quot;</span>);</span><br><span class="line"><span class="keyword">let</span> path = <span class="built_in">require</span>(<span class="string">&quot;path&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> gitIgnore = fs.readFileSync(path.resolve(__dirname, <span class="string">&quot;./gitignore&quot;</span>));</span><br><span class="line"><span class="keyword">const</span> solcover = fs.readFileSync(path.resolve(__dirname, <span class="string">&quot;./solcover.js&quot;</span>));</span><br><span class="line"><span class="keyword">const</span> slither = fs.readFileSync(</span><br><span class="line">  path.resolve(__dirname, <span class="string">&quot;./slither.config.json&quot;</span>)</span><br><span class="line">);</span><br><span class="line"><span class="keyword">const</span> hardhatConfig = fs.readFileSync(</span><br><span class="line">  path.resolve(__dirname, <span class="string">&quot;./hardhat.config.js&quot;</span>)</span><br><span class="line">);</span><br><span class="line"><span class="keyword">const</span> truffleConfig = fs.readFileSync(</span><br><span class="line">  path.resolve(__dirname, <span class="string">&quot;./truffle-config.js&quot;</span>)</span><br><span class="line">);</span><br><span class="line"><span class="keyword">const</span> prettier = fs.readFileSync(path.resolve(__dirname, <span class="string">&quot;./.prettierrc&quot;</span>));</span><br><span class="line"><span class="keyword">const</span> package = fs.readFileSync(path.resolve(__dirname, <span class="string">&quot;package.json&quot;</span>));</span><br><span class="line"><span class="keyword">const</span> env = fs.readFileSync(path.resolve(__dirname, <span class="string">&quot;.env&quot;</span>));</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="string">&quot;.gitignore&quot;</span>: gitIgnore,</span><br><span class="line">  <span class="string">&quot;solcover.js&quot;</span>: solcover,</span><br><span class="line">  <span class="string">&quot;slither.config.json&quot;</span>: slither,</span><br><span class="line">  <span class="string">&quot;truffle-config.js&quot;</span>: truffleConfig,</span><br><span class="line">  <span class="string">&quot;hardhat.config.js&quot;</span>: hardhatConfig,</span><br><span class="line">  <span class="string">&quot;.prettierrc&quot;</span>: prettier,</span><br><span class="line">  <span class="string">&quot;package.json&quot;</span>: package,</span><br><span class="line">  <span class="string">&quot;.env&quot;</span>: env,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>祝你开发愉快。</p>]]></content>
     
@@ -77,7 +102,9 @@
     <category term="开发" scheme="https://www.inevitable.tech/categories/%E5%BC%80%E5%8F%91/"/>
     
     
-    <category term="Blockchain" scheme="https://www.inevitable.tech/tags/Blockchain/"/>
+    <category term="区块链" scheme="https://www.inevitable.tech/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    <category term="智能合约" scheme="https://www.inevitable.tech/tags/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/"/>
     
   </entry>
   
@@ -86,7 +113,7 @@
     <link href="https://www.inevitable.tech/posts/7dd50f2f/"/>
     <id>https://www.inevitable.tech/posts/7dd50f2f/</id>
     <published>2020-11-23T16:00:00.000Z</published>
-    <updated>2021-01-02T06:11:59.089Z</updated>
+    <updated>2021-01-05T21:50:11.446Z</updated>
     
     <content type="html"><![CDATA[<p>我最近才知道有<a href="https://polkadot.network/">Polkadot</a>这么一条公链。它的市值排名第八。我知道的的确有点晚了。它的创始人是以太坊的联合创始人。它有 Web3 基金会的支持。如果说在以太坊上开发的是智能合约，Polkadot 上开发的就是区块链。可以自定义的区块链给了开发者更多的自由，我们可以改变它的 Runtime，改变它的共识算法等等。官方也发行了开发工具 Substrate 帮助开发者快速构建自己想要的区块链。Polkadot 这条公链便是基于 Substrate 框架。在 Polkadot 创始人的一次演讲中，他为了展示 Substrate 的易用性，现场 Coding Demo 特意拿出刚刚从苹果店买的 Macbook Pro。现场开箱并使用 Substrate 开发了一条区块链。</p><p>说了这么多开发者关心的问题，Polkadot 到底解决了什么问题呢？ 在我看来 Polkadot 解决了并发的问题。因为其独特的 Relay Network, Polkadot 可以并行的处理所有挂在其上面的公链的交易。跨链在 Polkadot 的设计下也变得简单了。数据，资产都可以在不同的链上进行转化。如果用过 Flamingo 等跨链资产工具的人应该知道这些工具有多难用。每次跨链都得调用很多的合约，交不少的手续费。另一个有意思的特性是区块链的升级。这应该算是 Substrate 的特性。由于其将 Runtime 编译成 WASM 放在区块中，区块链的升级不再会导致硬分叉。传统区块链升级需要矿工们升级节点软件版本。如果有些矿工不愿意升级或者忘记升级，这条区块链就会变成两条，也就是硬分叉。</p><p>对于挂在 Polkadot 上的链，官方称其为 Parachain。这些 Parachain 既可以是公开的，也可以是私有的。既然 Polkadot 是基于 Substrate 开发的，Parachain 也需要基于 Substrate 开发，那么我们可不可以挂一条 Polkadot 到 Polkadot 上呢？这的确是可行的，我们可以无限套娃。目前官方给出的正在开发的 Parachain 有兼容 EVM 的智能合约区块链，文件存储区块链，身份验证区块链，隐私区块链，金融区块链，IOT 区块链，预言机（Chainlink）等等。这些项目有的看的云里雾里，有的只是把现有的应用拷贝到 Polkadot 上。</p>]]></content>
     
@@ -101,10 +128,10 @@
     
     
     
-    <category term="Blockchain" scheme="https://www.inevitable.tech/categories/Blockchain/"/>
+    <category term="区块链" scheme="https://www.inevitable.tech/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
     
     
-    <category term="Blockchain" scheme="https://www.inevitable.tech/tags/Blockchain/"/>
+    <category term="区块链" scheme="https://www.inevitable.tech/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
     
   </entry>
   
@@ -464,29 +491,6 @@
     
     
     <category term="CG" scheme="https://www.inevitable.tech/tags/CG/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>天气之子</title>
-    <link href="https://www.inevitable.tech/posts/d58267cf/"/>
-    <id>https://www.inevitable.tech/posts/d58267cf/</id>
-    <published>2020-05-17T16:00:00.000Z</published>
-    <updated>2021-01-02T06:11:59.116Z</updated>
-    
-    <content type="html"><![CDATA[<p>《天气之子》是一个比《你的名字》更符合我口味的电影。</p><a id="more"></a><h2 id="画面">画面</h2><p>这次的故事发生在东京,繁华的都市与密集的建筑物。或许你会想起《你的名字》中光线在建筑物外表反射，折射，最后构造出绚丽的光影。在《天气之子》中，大部分时候是阴天，偶尔有的也只是小范围的晴天。阴天的大都市塑造了整部电影阴暗压抑的感觉。</p><p>这一次画面的重点在于天气-雨。精确点说就是流体。雨水在画面中的形状，雨水砸在物体上的弹跳，光在雨滴中的反射和折射。仔细看了看，这些雨滴说不上真实。因为光在水中的反射和折射不够真实，以及缺少气泡，飞沫和浮沫。这三个元素是很多流体模拟都缺少的，却很难被发现。但这些雨滴都很美，有着独特的风格。他们还在某种程度上反映了人物的心理活动。比如下面这个场景，男主在被别人打的时候犹豫要不要把枪拿出来。</p><center><img class="lazyload" data-src="/static/images/weatheringwithYou2.png" height="80%" width="80%"></center><center><img class="lazyload" data-src="/static/images/weatheringwithYou3.png" height="80%" width="80%"></center><p>雨水在这一个片段中通过溅射的运动赋予场景表现张力。这一拳头的打击感十足正是因为男主的脸和地面亲密接触溅射出无数的水滴。</p><center><img class="lazyload" data-src="/static/images/weatheringwithYou4.png" height="80%" width="80%"></center><center><img class="lazyload" data-src="/static/images/weatheringwithYou5.png" height="80%" width="80%"></center><center><img class="lazyload" data-src="/static/images/weatheringwithYou6.png" height="80%" width="80%"></center><p>雨滴打在男主的脸上，体现了时间的流逝。这冰冷的雨滴也打在了男主的心里，催促他做出选择。</p><blockquote><p>冷冷的冰雨在脸上胡乱的拍 暖暖的眼泪跟寒雨混成一块 -刘德华《冰雨》</p></blockquote><p>下面是一些光影有关的场景。</p><center><img class="lazyload" data-src="/static/images/weatheringwithYou7.png" height="80%" width="80%"></center><h2 id="故事">故事</h2><p>这一次的故事只有一点小奇幻。相比摆弄时间线的《你的名字》，这次的故事小儿科了很多。《天气之子》在空间和时间跨度上都不如你的名字，出场人物也少于你的名字。故事可以简简单单的用一句话概括，离家出走的少年在东京拯救可以操控天气的女孩。这么小的故事和动不动就毁灭世界的商业片比起来的确观感上的确逊色不少，但我很喜欢这样讲好一个小故事。有两个原因。第一个是细节。在同样的时长下，一个小故事可以有篇幅塞进跟多的细节，让整个故事有多面性。制作者可以从不同的角度去接近这个故事，或者从一些细节来讲述人物不表现出来的内容。比如圭介在雨过天晴后打开窗户，道路积水涌进了室内的镜头。这个镜头人物并没有说什么，但是这象征了圭介的释怀。第二个原因是较为简单的剧情会比较好理解。观众可以把更多的经历放在理解主旨上。</p><h2 id="主题">主题</h2><p>《天气之子》的其中一个主题跟我有较大的共鸣，少年的冲劲。女主阳菜牺牲了自己让东京回归了正常的天气。但是男主帆高不服气，他想让阳菜回来即使东京持续令人厌恶的阴天。在他为这个虚无缥缈的愿望奋斗的时候，之前的种种伏笔都在此刻变成了与帆高对抗的力量。比如警察想要以持枪的罪名逮捕帆高，圭介因为警察的许诺也出面阻止帆高。这个世界上没有谁和帆高一起为了这个目标努力。圭介的侄女须贺夏美和阳菜的弟弟天野凪都只能是辅助，他们的信念不如帆高强大，所付出的也不如帆高。“你小小的肩膀上承载着整个世界”（RADWIMPS）。这句话不只是对让世界放晴的阳菜，对于想要拯救阳菜的帆高也一样。作为一个旁观者，我们仔细思考一下。为了虚无缥缈的拯救，值得付出这么多吗？历史上并没有哪个晴女被救了回来。为了这个虚无缥缈的希望，我们与自己曾经的救命恩人，老板圭介对抗。东京的所有人都在赞颂晴天。他们与我们对立。警察也在因为持枪的事情紧追不舍。与警察对抗或许还会在人生的档案上留下不可磨灭的污点。这也是在于自己的未来抗争。如果现在放弃拯救，整个社会都会原谅我们。坚持去拯救真的值得吗？“人老了就是这样。不得不改变顺序了“（圭介）。先和警察回去，把事情交代清楚再来拯救阳菜或许是个更好的选择。和帆高差不了几岁的我更喜欢这个选择。（我人老了啊。）</p><p>这部电影的最后所有人都和这个执拗的少年和解了。圭介在警察的抓捕行动中被少年的冲劲所感动，选择帮助帆高。警察作为公正的象征，也仅仅是给帆高三年的保护观察处分。这并不会影响到帆高的未来。老奶奶作为东京大众的象征，也并没有对持续的降雨有多少怨言。”东京。。。只是恢复原样“（立花富美）。阳菜在消失的前一刻被帆高救下。如果在晚上个几天，阳菜或许已经消失了。这个社会还是很宽容的呢。</p><h2 id="对比">对比</h2><p>这部作品中的几个对比很有意思。其中一个是光影的对比。在大部分作品中，光是正面的象征。比如洞穴出口的光，火把的光。他们象征了希望或者是一些正能量的元素。黑暗则是有着不好的寓意。但是在这部作品中，这种象征被颠倒了。阴天包含着正面的含义。晴天则是阳菜用生命换来的。</p><center><img class="lazyload" data-src="/static/images/weatheringwithYou8.png" height="80%" width="80%"></center><p>太阳光照进室内。又是一个美好的清晨不是吗。目光向下滑动到帆高满是汗水惊慌的脸上。这时突然反应过来，东京不是在下雨吗？哪来的阳光？难道阳菜消失了？积雨云之上，也是一片亮堂。但是这并不是美好的景色，而是阳菜消失了。从这一刻起，我无比怀念阴天。</p><p>另一个有意思的对比是年龄阅历。阳菜声称自己马上十八岁，生活中也一直扮演者大姐姐的角色，照顾着帆高和自己的弟弟。在警察口中我们得知她其实只有 15 岁。这到底是大姐姐还是小姐姐呢？这个冲突给人物带来的更多的吸引力。这个设定也没有 Bug，因为女孩子在这个年纪比男孩子成熟并且在阳菜在父母双亡的情况下一直照顾着弟弟。阳菜比较成熟也是情理之中。</p><p>总的来说，这部电影的主题是我最喜爱它的原因。少年的冲劲真的很能打动现在的我。</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;《天气之子》是一个比《你的名字》更符合我口味的电影。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Film" scheme="https://www.inevitable.tech/categories/Film/"/>
-    
-    
-    <category term="Film" scheme="https://www.inevitable.tech/tags/Film/"/>
-    
-    <category term="新海诚" scheme="https://www.inevitable.tech/tags/%E6%96%B0%E6%B5%B7%E8%AF%9A/"/>
     
   </entry>
   
