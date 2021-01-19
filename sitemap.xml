@@ -655,13 +655,6 @@
 
   
     <url>
-        <loc>https://www.inevitable.tech/tags/Novelty/</loc>
-        <lastmod>2021-01-19</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.6</priority>
-    </url>
-  
-    <url>
         <loc>https://www.inevitable.tech/tags/%E7%94%9F%E6%B4%BB%E9%9A%8F%E6%83%B3/</loc>
         <lastmod>2021-01-19</lastmod>
         <changefreq>daily</changefreq>
@@ -670,20 +663,6 @@
   
     <url>
         <loc>https://www.inevitable.tech/tags/%E5%B9%B4%E7%BB%88%E5%B0%8F%E7%BB%93/</loc>
-        <lastmod>2021-01-19</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.6</priority>
-    </url>
-  
-    <url>
-        <loc>https://www.inevitable.tech/tags/Remarkable/</loc>
-        <lastmod>2021-01-19</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.6</priority>
-    </url>
-  
-    <url>
-        <loc>https://www.inevitable.tech/tags/DPT-RP1/</loc>
         <lastmod>2021-01-19</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
@@ -705,6 +684,20 @@
   
     <url>
         <loc>https://www.inevitable.tech/tags/Yousician/</loc>
+        <lastmod>2021-01-19</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+        <loc>https://www.inevitable.tech/tags/Remarkable/</loc>
+        <lastmod>2021-01-19</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+        <loc>https://www.inevitable.tech/tags/DPT-RP1/</loc>
         <lastmod>2021-01-19</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
@@ -830,6 +823,13 @@
     </url>
   
     <url>
+        <loc>https://www.inevitable.tech/tags/Technology/</loc>
+        <lastmod>2021-01-19</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
         <loc>https://www.inevitable.tech/tags/Server/</loc>
         <lastmod>2021-01-19</lastmod>
         <changefreq>daily</changefreq>
@@ -858,20 +858,6 @@
     </url>
   
     <url>
-        <loc>https://www.inevitable.tech/tags/Technology/</loc>
-        <lastmod>2021-01-19</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.6</priority>
-    </url>
-  
-    <url>
-        <loc>https://www.inevitable.tech/tags/Book/</loc>
-        <lastmod>2021-01-19</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.6</priority>
-    </url>
-  
-    <url>
         <loc>https://www.inevitable.tech/tags/Android/</loc>
         <lastmod>2021-01-19</lastmod>
         <changefreq>daily</changefreq>
@@ -880,6 +866,13 @@
   
     <url>
         <loc>https://www.inevitable.tech/tags/Program/</loc>
+        <lastmod>2021-01-19</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+        <loc>https://www.inevitable.tech/tags/Book/</loc>
         <lastmod>2021-01-19</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
@@ -914,27 +907,6 @@
     </url>
   
     <url>
-        <loc>https://www.inevitable.tech/tags/Cloud/</loc>
-        <lastmod>2021-01-19</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.6</priority>
-    </url>
-  
-    <url>
-        <loc>https://www.inevitable.tech/tags/Azure/</loc>
-        <lastmod>2021-01-19</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.6</priority>
-    </url>
-  
-    <url>
-        <loc>https://www.inevitable.tech/tags/Philosophy/</loc>
-        <lastmod>2021-01-19</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.6</priority>
-    </url>
-  
-    <url>
         <loc>https://www.inevitable.tech/tags/Archlinux/</loc>
         <lastmod>2021-01-19</lastmod>
         <changefreq>daily</changefreq>
@@ -949,6 +921,20 @@
     </url>
   
     <url>
+        <loc>https://www.inevitable.tech/tags/Cloud/</loc>
+        <lastmod>2021-01-19</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+        <loc>https://www.inevitable.tech/tags/Azure/</loc>
+        <lastmod>2021-01-19</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
         <loc>https://www.inevitable.tech/tags/Cryptocurrency/</loc>
         <lastmod>2021-01-19</lastmod>
         <changefreq>daily</changefreq>
@@ -957,6 +943,20 @@
   
     <url>
         <loc>https://www.inevitable.tech/tags/Investment/</loc>
+        <lastmod>2021-01-19</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+        <loc>https://www.inevitable.tech/tags/Philosophy/</loc>
+        <lastmod>2021-01-19</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+        <loc>https://www.inevitable.tech/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/</loc>
         <lastmod>2021-01-19</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
@@ -1040,6 +1040,13 @@
     </url>
   
     <url>
+        <loc>https://www.inevitable.tech/tags/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/</loc>
+        <lastmod>2021-01-19</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
         <loc>https://www.inevitable.tech/tags/%E5%AE%89%E5%85%A8/</loc>
         <lastmod>2021-01-19</lastmod>
         <changefreq>daily</changefreq>
@@ -1055,6 +1062,13 @@
   
     <url>
         <loc>https://www.inevitable.tech/tags/Kali/</loc>
+        <lastmod>2021-01-19</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+        <loc>https://www.inevitable.tech/tags/Novelty/</loc>
         <lastmod>2021-01-19</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
@@ -1096,14 +1110,14 @@
     </url>
   
     <url>
-        <loc>https://www.inevitable.tech/tags/Mix/</loc>
+        <loc>https://www.inevitable.tech/tags/Photo/</loc>
         <lastmod>2021-01-19</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
   
     <url>
-        <loc>https://www.inevitable.tech/tags/Photo/</loc>
+        <loc>https://www.inevitable.tech/tags/Mix/</loc>
         <lastmod>2021-01-19</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
@@ -1188,6 +1202,20 @@
   
     <url>
         <loc>https://www.inevitable.tech/tags/SSG/</loc>
+        <lastmod>2021-01-19</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+        <loc>https://www.inevitable.tech/tags/%E7%A8%B3%E5%AE%9A%E5%B8%81/</loc>
+        <lastmod>2021-01-19</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+        <loc>https://www.inevitable.tech/tags/Defi/</loc>
         <lastmod>2021-01-19</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
@@ -1312,42 +1340,7 @@
         <priority>0.6</priority>
     </url>
   
-    <url>
-        <loc>https://www.inevitable.tech/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/</loc>
-        <lastmod>2021-01-19</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.6</priority>
-    </url>
-  
-    <url>
-        <loc>https://www.inevitable.tech/tags/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/</loc>
-        <lastmod>2021-01-19</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.6</priority>
-    </url>
-  
-    <url>
-        <loc>https://www.inevitable.tech/tags/%E7%A8%B3%E5%AE%9A%E5%B8%81/</loc>
-        <lastmod>2021-01-19</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.6</priority>
-    </url>
-  
-    <url>
-        <loc>https://www.inevitable.tech/tags/Defi/</loc>
-        <lastmod>2021-01-19</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.6</priority>
-    </url>
-  
 
-  
-    <url>
-        <loc>https://www.inevitable.tech/categories/Technology/</loc>
-        <lastmod>2021-01-19</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.6</priority>
-    </url>
   
     <url>
         <loc>https://www.inevitable.tech/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E6%83%B3/</loc>
@@ -1378,7 +1371,7 @@
     </url>
   
     <url>
-        <loc>https://www.inevitable.tech/categories/Book/</loc>
+        <loc>https://www.inevitable.tech/categories/Technology/</loc>
         <lastmod>2021-01-19</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
@@ -1386,6 +1379,20 @@
   
     <url>
         <loc>https://www.inevitable.tech/categories/%E5%BC%80%E5%8F%91/</loc>
+        <lastmod>2021-01-19</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+        <loc>https://www.inevitable.tech/categories/Book/</loc>
+        <lastmod>2021-01-19</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+        <loc>https://www.inevitable.tech/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/</loc>
         <lastmod>2021-01-19</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
@@ -1414,13 +1421,6 @@
   
     <url>
         <loc>https://www.inevitable.tech/categories/%E4%BA%BA%E6%96%87%E4%BF%AE%E5%85%BB/</loc>
-        <lastmod>2021-01-19</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.6</priority>
-    </url>
-  
-    <url>
-        <loc>https://www.inevitable.tech/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/</loc>
         <lastmod>2021-01-19</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
