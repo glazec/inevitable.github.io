@@ -29,7 +29,7 @@
 <meta property="og:description" content="区块链开发的体验还是有点差。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-03-05T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-03-06T23:38:56.510Z">
+<meta property="article:modified_time" content="2021-03-06T23:39:33.568Z">
 <meta property="article:author" content="琉璃">
 <meta property="article:tag" content="区块链">
 <meta property="article:tag" content="开发">
@@ -214,7 +214,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-07 07:38:56" itemprop="dateModified" datetime="2021-03-07T07:38:56+08:00">2021-03-07</time>
+                <time title="修改时间：2021-03-07 07:39:33" itemprop="dateModified" datetime="2021-03-07T07:39:33+08:00">2021-03-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -263,7 +263,7 @@
 <p>随着 Defi 的发展，智能合约开始相互调用。这给开发和测试带来了一定的难度。我们可以在本地搭建测试链，然后部署需要调用的外部合约。也可以直接使用测试网络，调用部署上面的外部合约。这两种方法都很麻烦。对于第一种方法，如果需要重置环境，那么我们每次都要重新部署外部合约。对于第二种方法，不是所有的合约都部署到了测试网络，而且有些测试网络上的合约和主网会有所区别。</p>
 <p>最简单的方法就是我们从主网分叉一条链进行本地开发和维护。需要重置时，就重新进行分叉。这样测试环境基本和主网就是一摸一样了。</p>
 <h2 id="truffle-team">Truffle Team</h2>
-<p>这是 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://my.truffleteams.com/">Truffle Teams</a>。他们支持 <strong>Sandbox </strong>功能。用户可以一键搭建一条从主网分叉的链。这条链运行在云端，我们只需要通过 RPC 进行调用即可。免费用户至多拥有一个沙盒。</p>
+<p>这是 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://my.truffleteams.com/">Truffle Teams</a>。他们支持 <strong>Sandbox</strong> 功能。用户可以一键搭建一条从主网分叉的链。这条链运行在云端，我们只需要通过 RPC 进行调用即可。免费用户至多拥有一个沙盒。</p>
 <p>Sandbox 的好处在于即开即用，链运行在云端，适合团队协作。坏处在于没有日志，无法追踪新产生的交易。如果忘记了新部署的合约地址，那么就得重新部署一遍。</p>
 <h2 id="ganache">Ganache</h2>
 <p>Ganache-cli 也支持从主网进行分叉。可能这就是 Truffle Team 用的产品吧。使用之前我们需要有一个 Provider。可以是 Infura，也可以用不需要注册的 cloudflare-eth。运行起来也很方便，而且支持了更多的自定义选项。<code>ganache-cli --fork https://mainnet.infura.io/v3/&#123;infura_project_id&#125;@&#123;block_number&#125;</code>或<code>ganache-cli -f https://cloudflare-eth.com/ -m "clutch captain shoe salt awake harvest setup primary inmate ugly among become" -i 999 -u 0x9759A6Ac90977b93B58547b4A71c78317f391A28</code></p>
@@ -454,12 +454,14 @@
         </a>
       </div>
       <div class="site-state-item site-state-categories">
+            <a href="/categories/">
         <span class="site-state-item-count">12</span>
-        <span class="site-state-item-name">分类</span>
+        <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
+            <a href="/tags/">
         <span class="site-state-item-count">98</span>
-        <span class="site-state-item-name">标签</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>

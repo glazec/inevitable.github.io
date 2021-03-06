@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
     <url>
+        <loc>https://www.inevitable.tech/categories/index.html</loc>
+    
+        <lastmod>2021-03-06</lastmod>
+    
+    </url>
+  
+    <url>
+        <loc>https://www.inevitable.tech/tags/index.html</loc>
+    
+        <lastmod>2021-03-06</lastmod>
+    
+    </url>
+  
+    <url>
         <loc>https://www.inevitable.tech/posts/495f572d/</loc>
     
         <lastmod>2021-03-06</lastmod>
@@ -290,13 +304,6 @@
   
     <url>
         <loc>https://www.inevitable.tech/timeline/index.html</loc>
-    
-        <lastmod>2021-01-02</lastmod>
-    
-    </url>
-  
-    <url>
-        <loc>https://www.inevitable.tech/tags/index.html</loc>
     
         <lastmod>2021-01-02</lastmod>
     
