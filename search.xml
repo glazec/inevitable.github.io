@@ -3616,7 +3616,7 @@
 <li><code>u</code> 地址拥有写入权限，不需要知道私钥。</li>
 </ul>
 <p>启动了测试链之后，我们可以在终端看到最新的交易信息等。此测试链可以用于 Remix，Truffle，Hardhat。 由于我们用 Ganache-cli 启动测试链，我们没法使用 Ganache GUI。</p>
-<h1 id="hardhat">Hardhat</h1>
+<h2 id="hardhat">Hardhat</h2>
 <p>这个跟 Ganache-cli 差不多。<a href="https://github.com/nomiclabs/hardhat/blob/544c282c6aa0596ce1e6fdc5912f28c973c05c06/packages/hardhat-core/src/internal/hardhat-network/provider/fork/ForkBlockchain.ts">相关源代码</a>。</p>
 <h2 id="原理">原理</h2>
 <p>不用担心分叉主网作为测试链会占很多内存。这些方法都不会将主网信息全部下载到本地，最多进行缓存，加快处理速度。所有关于主网的信息，我们都会通过 Provider 进行查询，只有新的区块会保存在本地。</p>
